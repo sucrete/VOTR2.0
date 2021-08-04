@@ -10,7 +10,7 @@
         &#8220;First, solve the problem. Then, write the code.&#8221;
         <footer>
           <small>
-            <em>&mdash;Jack Johnson</em>
+            <em>&mdash;Jim Jorson</em>
           </small>
         </footer>
       </blockquote>

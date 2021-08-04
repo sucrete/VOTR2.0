@@ -109,7 +109,7 @@ export default {
       ],
       miniVariant: false,
       right: true,
-      rightDrawer: false,
+      rightDrawer: true,
       title: 'Buetify.js'
     }
   }
