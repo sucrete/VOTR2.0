@@ -13,7 +13,7 @@
 
       <!-- NEW CONTAINER FOR CREATING CARDS BELOW -->
 
-      <div v-for="item in divisionsAndOfficials">
+      <div v-for="(item, index) in divisionsAndOfficials" :key="index">
         <div class="sectionHeader">
           {{ item.division }}
         </div>
@@ -22,7 +22,7 @@
           grid-list-lg
         >
           <v-layout row wrap>
-            <v-flex xs12 sm6 md6 class="cardWrapperFlex" v-for="rep in item.representatives">
+            <v-flex xs12 sm6 md6 class="cardWrapperFlex" v-for="(rep,index) in item.representatives" :key="index">
               <v-hover>
                 <v-card color="white" class="mb-2 pb-0" :class="`elevation-${rep.show ? 5 : 2}`">
 
@@ -94,44 +94,44 @@ export default {
     }
   },
   methods: {
-    toTitleCase: function (str) {
+    toTitleCase(str) {
       // credit for toTitleCase() -> https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript/196991#196991
       return str.replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
       })
     },
-    importData: function () {
-      var divisions = this.$store.getters.showMeDatState.googleResponse.data.divisions
-      var divisionQuays = []
+    importData() {
+      const divisions = this.$store.getters.showMeDatState.googleResponse.data.divisions
+      let divisionQuays = []
       divisionQuays = Object.getOwnPropertyNames(divisions)
-      var storer = []
+      const storer = []
       // reversing the division keys and removing the "obj" add-on
-      for (var i = divisionQuays.length - 1; i >= 0; i--) {
+      for (let i = divisionQuays.length - 1; i >= 0; i--) {
         storer.push(divisionQuays[i])
       }
       storer.shift()
       this.divisionKeys = storer
     },
-    dataShaker: function () {
-      var GState = this.googleState
-      var divs = GState.data.divisions
-      var keys = this.divisionKeys
+    dataShaker() {
+      const GState = this.googleState
+      const divs = GState.data.divisions
+      const keys = this.divisionKeys
       for (let ttt = 0; ttt < keys.length; ttt++) {
-        if (divs[keys[ttt]].hasOwnProperty('officeIndices')) {
-          var upperCasedDivisionName1 = this.toTitleCase(divs[keys[ttt]].name)
+        if (Object.prototype.hasOwnProperty.call(divs[keys[ttt]], 'officeIndices')) {
+          let upperCasedDivisionName1 = this.toTitleCase(divs[keys[ttt]].name)
           if (upperCasedDivisionName1.endsWith('City')) {
-            var upperCasedDivisionNameArray1 = upperCasedDivisionName1.split(' ')
+            const upperCasedDivisionNameArray1 = upperCasedDivisionName1.split(' ')
             upperCasedDivisionNameArray1.pop()
             upperCasedDivisionName1 = 'City of ' + upperCasedDivisionNameArray1.join(' ')
           }
-          var superSaver = {}
+          const superSaver = {}
           superSaver.division = upperCasedDivisionName1
           superSaver.representatives = []
           divs[keys[ttt]].officeIndices.forEach(thing1 => {
-            var GOffice1 = GState.data.offices[thing1]
+            const GOffice1 = GState.data.offices[thing1]
             // below is the biodata for each representative using GOffice indices on GState.data e.g. GState.data.officials[GOffice1.officialIndices[1]]
             GOffice1.officialIndices.forEach(corazon => {
-              var officialObject1 = {}
+              const officialObject1 = {}
               officialObject1.index = corazon
               officialObject1.show = false
               officialObject1.repTitle = GOffice1.name
@@ -142,10 +142,10 @@ export default {
               } else if (corazon === 1) {
                 officialObject1.repPhotoURL = 'http://i.dailymail.co.uk/i/pix/2017/10/31/14/45DE40EA00000578-5035763-image-a-10_1509461772135.jpg'
               }
-              var theOfficial = GState.data.officials[corazon]
+              const theOfficial = GState.data.officials[corazon]
               officialObject1.party = theOfficial.party
               if (theOfficial.address !== undefined) {
-                var _oa = theOfficial.address[0]
+                const _oa = theOfficial.address[0]
                 officialObject1.addressLine1 = _oa.line2
                 officialObject1.addressLine2 = _oa.city + ', ' + _oa.state + ' ' + _oa.zip
               }
@@ -162,7 +162,7 @@ export default {
               officialObject1.channels = []
               if (!(theOfficial.channels === undefined)) {
                 theOfficial.channels.forEach(Chanel => {
-                  var channelKeep = {}
+                  const channelKeep = {}
                   channelKeep.channelIcon = ''
                   channelKeep.channelLink = ''
                   if (!(Chanel.type === 'GooglePlus')) {
