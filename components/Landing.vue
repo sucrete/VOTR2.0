@@ -3,7 +3,7 @@
     <div id="siteTitleWrapper">
       <h1 class="siteTitle" title="The">The</h1>
       <br />
-      <h1 class="siteTitle" title="Voter's">Voter's</h1>
+      <h1 class="siteTitle" title="Voter's">Boter's</h1>
       <br />
       <h1 class="siteTitle" title="Companion">Companion</h1>
     </div>
