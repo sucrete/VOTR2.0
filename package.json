@@ -17,6 +17,7 @@
     "marked": "^3.0.0",
     "nuxt": "^2.15.7",
     "places.js": "^1.19.0",
+    "vue-js-modal": "^2.0.1",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {

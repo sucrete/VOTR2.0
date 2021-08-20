@@ -3,9 +3,10 @@
     <div id="siteTitleWrapper">
       <h1 class="siteTitle" title="The">The</h1>
       <br />
-      <h1 class="siteTitle" title="Voter's">Boter's</h1>
+      <h1 class="siteTitle" title="Voter's">Voter's</h1>
       <br />
       <h1 class="siteTitle" title="Companion">Companion</h1>
+      <img class="fordFan" src="fordfan.png" />
     </div>
     <div id="informationWrapper">
       <div id="inputEverything">
@@ -30,27 +31,7 @@
           target="_blank"
         >U.S. Vote Foundation</a>.
       </div>
-      <!-- <img id="USSign" src="/flag.svg" hidden /> -->
-      <img id="voteWithThis" src="/pencil2.svg" />
     </div>
-    <modal
-      name="v--modal-box"
-      class="v--modal-box"
-      :width="200"
-      :height="200"
-      :delay="100"
-      transition="scale"
-    >
-      <div class="image">
-        <img
-          style="width: 35px; height: auto; position: relative; top: 10px;"
-          src="/yellow_star.svg"
-        />
-      </div>
-      <span
-        style="font-family: 'Roboto', sans-serif; color: white; text-align: center; font-weight: 500; font-size: 140%;"
-      >LOADING...</span>
-    </modal>
   </div>
 </template>
 
@@ -2405,17 +2386,11 @@ export default {
     },
   },
   methods: {
-    show() {
-      this.$modal.show("v--modal-box");
-    },
-    hide() {
-      this.$modal.hide("v--modal-box");
-    },
+    
     setUsersAddress(val) {
       this.$store.commit("setUsersAddress", val);
     },
     searchEvent() {
-      this.show();
       this.searchGoogleAPI();
     },
     searchGoogleAPI() {
@@ -2539,9 +2514,9 @@ export default {
         }
       }
       this.$store.commit("setUSVoteElections", self.voterAPI.electionInfo);
-      console.log("voterAPI.electionInfo added to store");
+      // console.log("voterAPI.electionInfo added to store");
       this.$store.commit("setVoterInformation", self.voterAPI.voterInfo);
-      console.log("voterAPI.voterInfo added to store");
+      // console.log("voterAPI.voterInfo added to store");
       this.$router.push({ path: "main" });
     },
     updateValue(val) {
@@ -2605,7 +2580,7 @@ footer {
   bottom: 1.5em;
 }
 #app {
-  background-color: #668ee4;
+  background-color: #8b9ec7;
 }
 #infoForTheUser {
   padding: 5px 35px 0px;
@@ -2659,15 +2634,14 @@ a#usvLink:hover {
 #siteTitleWrapper {
   padding-bottom: 0.8em;
   position: relative;
-  top: 0.5em;
 }
 .siteTitle:first-of-type {
-  margin-top: 0.6em;
+  margin-top: 0.3em;
 }
 .siteTitle {
   z-index: 9;
-  font-family: "Eczar", serif;
-  color: white;
+  font-family: "Oswald", serif;
+  color: rgb(36, 35, 32);
   text-align: left;
   font-size: 5.5em;
   line-height: 75%;
@@ -2675,12 +2649,13 @@ a#usvLink:hover {
   padding-left: 1.05em;
   /* padding-top: .3em; */
   position: relative;
-  top: 0.8em;
+  text-transform: uppercase;
+  top: 0.6em;
 }
 .siteTitle::before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 0.1em #668ee4;
+  -webkit-text-stroke: 0.05em #F9F5F0;
   left: 0;
   top: 0;
   padding-left: 1.05em;
@@ -2827,20 +2802,10 @@ input::placeholder {
   letter-spacing: 0.06em;
 }
 
-img.star {
-  height: 23px;
-  width: auto;
-  margin-left: 0.5em;
-}
-#starsWrapper {
-  position: absolute;
-  right: 0.8em;
-  top: 0.5em;
-}
 #landing {
   position: relative;
-  background-image: url("/paperAndPencils.svg");
   background-repeat: no-repeat;
+  margin-bottom: 4em;
 }
 @media screen and (max-width: 750px) {
   .siteTitle::before {
@@ -3032,7 +2997,12 @@ img.star {
     -moz-osx-font-smoothing: grayscale;
   }
 }
-
+.fordFan {
+  position: absolute;
+  width: 50%;
+  right: 5%;
+  top: 5%;
+}
 /* below for iPhone 6/7/8 plus  */
 @media screen and (min-width: 413px) and (max-width: 432px) {
   .siteTitle {
