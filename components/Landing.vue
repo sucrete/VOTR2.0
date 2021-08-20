@@ -1,5 +1,6 @@
 <template>
   <div id="landing">
+    <img src="static.png" class="static" />
     <div id="siteTitleWrapper">
       <h1 class="siteTitle" title="The">The</h1>
       <br />
@@ -20,7 +21,7 @@
       </div>
       <div
         id="infoForTheUser"
-      >A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, on how to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
+      >A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, on ways to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
       <div id="USVoteHeader">
         Made with
         <span id="generous">generous</span> support from the
@@ -2641,7 +2642,7 @@ a#usvLink:hover {
   margin-top: 0.15em;
 }
 .siteTitle {
-  z-index: 9;
+  z-index: 2;
   font-family: "Oswald", serif;
   color: rgb(34, 33, 31);
   text-align: left;
@@ -2692,7 +2693,7 @@ a#usvLink:hover {
   box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
               0 2px 2px rgba(0,0,0,0.05), 
               0 4px 4px rgba(0,0,0,0.06);
-  z-index: 2;
+  z-index: 200;
 }
 
 .ap-dataset-places * {
@@ -2704,6 +2705,7 @@ a#usvLink:hover {
   margin-right: auto;
   position: relative;
   margin-bottom: .7em;
+  z-index: 90;
 }
 #address-input {
   padding-left: 15px;
@@ -2804,7 +2806,16 @@ input:focus {
 input::placeholder {
   color: #807b77 !important;
 }
-
+.static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .5;
+  height: 865px;
+  width: 750px;
+  z-index: 4;
+  overflow: hidden;
+}
 
 
 
@@ -2844,9 +2855,7 @@ input::placeholder {
     padding-left: 9px;
     position: absolute;
   }
-  .ap-dropdown-menu {
-    /* left: -1vw !important; */
-  }
+  
   .logoBlock {
     width: 14.6rem;
     height: 11rem;
@@ -2943,45 +2952,15 @@ input::placeholder {
   .siteTitle {
     font-size: 2.9em !important;
   }
-  #USVoteHeader {
-  }
-  #USVoteHeader,
-  .button {
-    /* font-size: 1em !important; */
-  }
-  #inputEverything {
-    /* font-size: 100%;
-    margin-bottom: 4em !important; */
-  }
-  #address-input {
-    /* padding-left: 9px; */
-  }
+
 }
-@media screen and (max-width: 415px) and (max-width: 450px) {
-  #usVotersIcon {
-  }
-}
+
 @media screen and (max-width: 375px) and (max-height: 700px) {
   #inputEverything {
     margin-top: 4.8em;
   }
 }
-/* iPhone X below */
-@media screen and (max-width: 375px) and (min-height: 701px) and (max-height: 812px) {
-  #USVoteHeader {
-    /* font-size: 1.2em;
-    padding-top: 6em; */
-  }
-  .siteTitle {
-    /* margin-top: .9em;
-    margin-bottom: .7em; */
-  }
 
-  #inputEverything {
-    /* margin-top: 5.5em;
-    margin-bottom: 5.5em; */
-  }
-}
 @media screen and (min-width: 750px) {
   #usVotersIcon {
     right: 8em;
