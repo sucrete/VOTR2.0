@@ -2643,7 +2643,7 @@ a#usvLink:hover {
 .siteTitle {
   z-index: 9;
   font-family: "Oswald", serif;
-  color: rgb(36, 35, 32);
+  color: rgb(34, 33, 31);
   text-align: left;
   font-size: 6.2em;
   line-height: 85%;
@@ -2653,6 +2653,7 @@ a#usvLink:hover {
   position: relative;
   text-transform: uppercase;
   top: 0.75em;
+  /* text-shadow: 2px 2px 0 #0C3447, 5px 5px 0 #AF0022, 10px 10px 0 #00131E; */
 }
 .siteTitle::before {
   content: attr(title);
@@ -2665,9 +2666,9 @@ a#usvLink:hover {
 }
 .fordFan {
   position: absolute;
-  width: 43%;
-  right: 5%;
-  top: 5%;
+  width: 36%;
+  right: 9%;
+  top: 6%;
   z-index: 50;
 }
 #landing {
@@ -2688,9 +2689,9 @@ a#usvLink:hover {
   border-radius: 0.5em;
   margin: 0 auto;
   position: relative;
-  /* box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
               0 2px 2px rgba(0,0,0,0.05), 
-              0 4px 4px rgba(0,0,0,0.06); */
+              0 4px 4px rgba(0,0,0,0.06);
   z-index: 2;
 }
 
