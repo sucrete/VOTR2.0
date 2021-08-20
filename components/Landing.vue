@@ -20,7 +20,7 @@
       </div>
       <div
         id="infoForTheUser"
-      >A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, how to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
+      >A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, on how to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
       <div id="USVoteHeader">
         Made with
         <span id="generous">generous</span> support from the
@@ -2584,7 +2584,7 @@ footer {
 }
 #infoForTheUser {
   padding: 5px 35px 0px;
-  color: rgb(108, 108, 108);
+  color: rgb(217, 122, 92);
 }
 #USVoteHeader {
   padding: 0px 35px 40px;
@@ -2676,11 +2676,11 @@ a#usvLink:hover {
   background-repeat: no-repeat;
   outline: 12px double #8192b6;
   outline-offset: -25px;
-  height: 875px;
-  /* background: url(../static/stripes.svg);
-  background-size: 170%;
+  height: 865px;
+  background: url(../static/exclamation.svg);
+  background-size: 100%;
   background-position: 20% -140%;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 #informationWrapper {
   background-color: #FBFBFB;
@@ -2710,7 +2710,7 @@ a#usvLink:hover {
   padding-top: 2px;
   display: block;
   color: #807b77;
-  background-color: #fbfbfb;
+  background-color: white;
   position: relative;
   /* width: 35em !important; */
   margin: 0 auto;

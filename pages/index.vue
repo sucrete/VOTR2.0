@@ -177,59 +177,6 @@ input, input:focus {
   z-index: 778;
   bottom: 50px;
 }
-
-/* The loader below created by Alex Rutherford >>> https://codepen.io/Ruddy/pen/RNRybN  */
-@keyframes rotate {
-  0% {
-    transform: rotate(90deg);
-  }
-  10% {
-    opacity: 0;
-  }
-  35% {
-    transform: rotate(0deg);
-
-  }
-  55% {
-    opacity: 1;
-  }
-  65% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-
-  100%{
-    transform: rotate(-90deg);
-  }
-}
-
-.v--modal-overlay .v--modal-box {
-  overflow: visible !important;
-  position: relative !important;
-  background-color: #acb4c5;
-  box-shadow: 0px 8px 12px rgba(58, 68, 41, 0.2), 0px 12px 20px rgba(0, 0, 0, .1), 0px 0px 17px rgba(0, 0, 0, .14)!important;
-  border-color: white;
-  border-style: solid;
-  border-width: 5px;
-}
-
-.v--modal-overlay {
-  background-color: rgba(0, 0, 0, .4);
-  border-radius: 0px;
-  /* width: 100vw;
-  height: 100vh; */
-  border-style: none;
-}
-.scale-enter-active, .scale-leave-active {
- /* transition: all 0.5s; */
-}
-.scale-enter, .scale-leave-active {
- opacity: 0;
- /* transform: scale(0.3) translateY(24px); */
-}
 @media screen and (min-width: 376px) and (max-width: 432px) {
   footer {
     bottom: 8px !important;
@@ -259,9 +206,6 @@ input, input:focus {
   #overviewNotice {
     padding-right: 3em;
     padding-left: .2em;
-  }
-  #logoLink {
-
   }
   footer {
     width: 95%;
