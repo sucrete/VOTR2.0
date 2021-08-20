@@ -63,15 +63,14 @@ html {
   width: 46rem;
   margin: auto;
   margin-top: 1.5em;
-  margin-bottom: 5em;
+  margin-bottom: 1.5em;
   text-align: center;
   /* box-shadow from Domenico on https://codepen.io/ryandom/pen/ALQkWq*/
   box-shadow:  0 0.4rem 0.8rem rgba(0, 0, 0, 0.2), 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);;
   /* padding: 10px 24px; */
-  min-height: 52em;
   position: relative;
   border-radius: 3px;
-  padding-bottom: 4px;
+  /* padding-bottom: 4px; */
 }
 #overviewNotice {
   color: rgb(94, 94, 90);

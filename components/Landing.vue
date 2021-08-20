@@ -2584,7 +2584,7 @@ footer {
 }
 #infoForTheUser {
   padding: 5px 35px 0px;
-  color: orange;
+  color: rgb(108, 108, 108);
 }
 #USVoteHeader {
   padding: 0px 35px 40px;
@@ -2597,6 +2597,8 @@ footer {
   position: relative;
   text-align: left;
   font-size: 1.5em;
+  line-height: 1.3;
+  text-shadow: 0px 0px 3px #FBFBFB;
 }
 a#usvLink,
 a#usvLink:visited {
@@ -2612,8 +2614,8 @@ a#usvLink:visited {
   display: block;
   position: absolute;
   border-bottom: solid 2px #dadee6;
-  bottom: 38px;
-  width: 41.2%;
+  bottom: 40px;
+  width: 40%;
   /* left: 6.3%; */
   margin: 0 auto;
   -webkit-transition: all 0.5s;
@@ -2624,7 +2626,7 @@ a#usvLink:hover {
   color: #668ee4 !important;
 }
 #usvLink:hover::before {
-  border-bottom: solid 2px #668ee4;
+  border-bottom: solid 2px #668ee4bb;
 }
 #usVotersIcon {
   height: 120px;
@@ -2636,47 +2638,71 @@ a#usvLink:hover {
   position: relative;
 }
 .siteTitle:first-of-type {
-  margin-top: 0.3em;
+  margin-top: 0.15em;
 }
 .siteTitle {
   z-index: 9;
   font-family: "Oswald", serif;
   color: rgb(36, 35, 32);
   text-align: left;
-  font-size: 5.5em;
-  line-height: 75%;
-  font-weight: 500;
-  padding-left: 1.05em;
+  font-size: 6.2em;
+  line-height: 85%;
+  font-weight: 600;
+  padding-left: .9em;
   /* padding-top: .3em; */
   position: relative;
   text-transform: uppercase;
-  top: 0.6em;
+  top: 0.75em;
 }
 .siteTitle::before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 0.05em #F9F5F0;
+  -webkit-text-stroke: 0.05em rgb(235, 226, 217);
   left: 0;
   top: 0;
-  padding-left: 1.05em;
+  padding-left: .9em;
   z-index: -1;
 }
+.fordFan {
+  position: absolute;
+  width: 43%;
+  right: 5%;
+  top: 5%;
+  z-index: 50;
+}
+#landing {
+  position: relative;
+  background-repeat: no-repeat;
+  outline: 12px double #8192b6;
+  outline-offset: -25px;
+  height: 875px;
+  /* background: url(../static/stripes.svg);
+  background-size: 170%;
+  background-position: 20% -140%;
+  background-repeat: no-repeat; */
+}
 #informationWrapper {
-  background-color: rgb(249, 245, 240);
+  background-color: #FBFBFB;
   width: 35em;
-  height: 25em;
+  /* height: 25em; */
   border-radius: 0.5em;
   margin: 0 auto;
+  position: relative;
+  /* box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.06); */
+  z-index: 2;
 }
+
 .ap-dataset-places * {
   font-family: "Roboto", sans-serif;
 }
 #inputEverything {
-  margin-top: 6.5em;
+  margin-top: 7em;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  margin-bottom: 1.2em;
+  margin-bottom: .7em;
 }
 #address-input {
   padding-left: 15px;
@@ -2778,35 +2804,10 @@ input::placeholder {
   color: #807b77 !important;
 }
 
-#infoAndStarsWrapper {
-  width: 37em;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  height: 45px;
-  margin-top: 1.7em;
-}
 
-.buttonWrapper {
-  width: 100%;
-}
-.button {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: block;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 1.2em;
-  margin: 0 10px;
-  position: relative;
-  letter-spacing: 0.06em;
-}
 
-#landing {
-  position: relative;
-  background-repeat: no-repeat;
-  margin-bottom: 4em;
-}
+
+
 @media screen and (max-width: 750px) {
   .siteTitle::before {
     content: unset;
@@ -2871,7 +2872,7 @@ input::placeholder {
   }
   #USVoteHeader,
   #infoForTheUser {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   #USVoteHeader {
     padding: 0px 25px 0px;
@@ -2907,7 +2908,9 @@ input::placeholder {
     padding-bottom: 0.2em;
   }
 }
-
+.v-application--wrap {
+  min-height: unset;
+}
 @media screen and (max-width: 450px) {
   #infoAndStarsWrapper,
   .buttonWrapper,
@@ -2927,7 +2930,7 @@ input::placeholder {
     right: 6vw;
   }
   .siteTitle {
-    font-size: 4em;
+    font-size: 3.5em;
     padding-left: 0.6em;
   }
 }
@@ -2997,12 +3000,7 @@ input::placeholder {
     -moz-osx-font-smoothing: grayscale;
   }
 }
-.fordFan {
-  position: absolute;
-  width: 50%;
-  right: 5%;
-  top: 5%;
-}
+
 /* below for iPhone 6/7/8 plus  */
 @media screen and (min-width: 413px) and (max-width: 432px) {
   .siteTitle {
