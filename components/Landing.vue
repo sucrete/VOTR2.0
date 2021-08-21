@@ -19,19 +19,9 @@
           placeholder="What is your address?"
         />
       </div>
-      <div
-        id="infoForTheUser"
-      >A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, on ways to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
-      <div id="USVoteHeader">
-        Made with
-        <span id="generous">generous</span> support from the
-        <br />
-        <a
-          id="usvLink"
-          href="https://www.usvotefoundation.org/"
-          target="_blank"
-        >U.S. Vote Foundation</a>.
-      </div>
+      <div id="infoForTheUser">A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, on ways to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
+      
+      <img src="mauve2.png" class="USVoteBadge" />
     </div>
   </div>
 </template>
@@ -40,7 +30,6 @@
 /* eslint-disable */
 import axios from "axios";
 import places from "places.js";
-import carpet from "../static/yellow_star.svg";
 import lagoc from "../static/united-states.svg";
 
 export default {
@@ -2584,20 +2573,14 @@ footer {
   background-color: #8b9ec7;
 }
 #infoForTheUser {
-  padding: 5px 35px 0px;
+  padding: 15px 35px 0px;
   color: rgb(217, 122, 92);
-}
-#USVoteHeader {
-  padding: 0px 35px 40px;
-  color: #9cacce;
-}
-#USVoteHeader,
-#infoForTheUser {
+  width: 70%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   position: relative;
   text-align: left;
-  font-size: 1.5em;
+  font-size: 1.4em;
   line-height: 1.3;
   text-shadow: 0px 0px 3px #FBFBFB;
 }
@@ -2634,6 +2617,7 @@ a#usvLink:hover {
   position: absolute;
   top: 13em;
 }
+
 #siteTitleWrapper {
   padding-bottom: 0.8em;
   position: relative;
@@ -2675,27 +2659,43 @@ a#usvLink:hover {
 #landing {
   position: relative;
   background-repeat: no-repeat;
-  outline: 12px double #8192b6;
+  outline: 5px solid #8192b6;
   outline-offset: -25px;
   height: 865px;
   background: url(../static/exclamation.svg);
   background-size: 100%;
   background-position: 20% -140%;
   background-repeat: no-repeat;
+  
+}
+.USVoteBadge {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  width: 150px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.04)) drop-shadow(0 2px 2px rgba(0,0,0,0.05))  drop-shadow(0 4px 4px rgba(0,0,0,0.06)) drop-shadow( 0 6px 6px rgba(0, 0, 0, .07)); 
 }
 #informationWrapper {
   background-color: #FBFBFB;
   width: 35em;
-  /* height: 25em; */
+  height: 21.5em;
   border-radius: 0.5em;
   margin: 0 auto;
   position: relative;
   box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
               0 2px 2px rgba(0,0,0,0.05), 
-              0 4px 4px rgba(0,0,0,0.06);
+              0 4px 4px rgba(0,0,0,0.07);
   z-index: 200;
+  background-color: #f5f3ee;
+background-image: radial-gradient(
+  circle farthest-corner at top left, rgb(242, 248, 232) 0%, rgba(240, 243, 217, 0) 50%),
+    radial-gradient(
+    circle farthest-side at top right, rgb(240, 223, 227) 0%, rgba(231, 219, 216, 0) 10%),
+radial-gradient(circle farthest-corner at bottom right, rgba(228, 199, 188, 0.87) 0%, rgba(218, 157, 138, 0) 33%),
+    radial-gradient(
+    circle farthest-corner at top right, rgb(225, 224, 241) 0%, rgba(155, 221, 240,0) 50%),
+  radial-gradient(ellipse at bottom center, rgb(241, 238, 222) 0%, rgba(254, 243, 159, 0) 80%);
 }
-
 .ap-dataset-places * {
   font-family: "Roboto", sans-serif;
 }
@@ -2706,6 +2706,7 @@ a#usvLink:hover {
   position: relative;
   margin-bottom: .7em;
   z-index: 90;
+
 }
 #address-input {
   padding-left: 15px;
@@ -2787,6 +2788,9 @@ input:focus::-webkit-input-placeholder {
 .ap-icon-clear {
   right: 15px;
 }
+.theme--dark.v-application {
+  color: unset;
+}
 .ap-dropdown-menu {
   margin-top: 0px;
   width: 35em;
@@ -2816,10 +2820,6 @@ input::placeholder {
   z-index: 4;
   overflow: hidden;
 }
-
-
-
-
 @media screen and (max-width: 750px) {
   .siteTitle::before {
     content: unset;
