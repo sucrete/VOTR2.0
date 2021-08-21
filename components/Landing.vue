@@ -20,7 +20,7 @@
         />
       </div>
       <div id="infoForTheUser">A voting utility designed to spark engagement, The Voter's Companion keeps you clued-in to elections happening in your region, on ways to vote, and who your representatives are. Enter your address. Get registered. Stay informed.</div>
-      
+      <img src="USA.svg" class="USA" />
       <img src="mauve2.png" class="USVoteBadge" />
     </div>
   </div>
@@ -2643,7 +2643,7 @@ a#usvLink:hover {
 .siteTitle::before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 0.05em rgb(235, 226, 217);
+  -webkit-text-stroke: 0.06em rgb(235, 226, 217);
   left: 0;
   top: 0;
   padding-left: .9em;
@@ -2653,13 +2653,13 @@ a#usvLink:hover {
   position: absolute;
   width: 36%;
   right: 9%;
-  top: 6%;
+  top: 9%;
   z-index: 50;
 }
 #landing {
   position: relative;
   background-repeat: no-repeat;
-  outline: 5px solid #8192b6;
+  outline: 5px dotted #6D7DAD;
   outline-offset: -25px;
   height: 865px;
   background: url(../static/exclamation.svg);
@@ -2673,7 +2673,15 @@ a#usvLink:hover {
   right: 24px;
   bottom: 20px;
   width: 150px;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.04)) drop-shadow(0 2px 2px rgba(0,0,0,0.05))  drop-shadow(0 4px 4px rgba(0,0,0,0.06)) drop-shadow( 0 6px 6px rgba(0, 0, 0, .07)); 
+  height: auto;
+  /* filter: drop-shadow(0 1px 1px rgba(0,0,0,0.04)) drop-shadow(0 2px 2px rgba(0,0,0,0.05))  drop-shadow(0 4px 4px rgba(0,0,0,0.06)) drop-shadow( 0 6px 6px rgba(0, 0, 0, .07));  */
+}
+.USA {
+  position: absolute;
+  top: 70px;
+  right: 24px;
+  width: 150px;
+height: 100px;
 }
 #informationWrapper {
   background-color: #FBFBFB;
