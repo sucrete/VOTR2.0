@@ -2659,7 +2659,7 @@ a#usvLink:hover {
 #landing {
   position: relative;
   background-repeat: no-repeat;
-  outline: 5px dotted #6D7DAD;
+  outline: 5px dotted #6d7dada8;
   outline-offset: -25px;
   height: 865px;
   background: url(../static/exclamation.svg);
@@ -2672,7 +2672,7 @@ a#usvLink:hover {
   position: absolute;
   right: 24px;
   bottom: 20px;
-  width: 150px;
+  width: 145px;
   height: auto;
   /* filter: drop-shadow(0 1px 1px rgba(0,0,0,0.04)) drop-shadow(0 2px 2px rgba(0,0,0,0.05))  drop-shadow(0 4px 4px rgba(0,0,0,0.06)) drop-shadow( 0 6px 6px rgba(0, 0, 0, .07));  */
 }
