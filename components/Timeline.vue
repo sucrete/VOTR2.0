@@ -164,9 +164,6 @@ export default {
       relativeTime: ''
     }
   },
-  components: {
-
-  },
   methods: {
     returnRelativeTime (date) {
       return hdate.relativeTime(date, {futureSuffix: 'from TODAY'})

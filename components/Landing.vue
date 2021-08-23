@@ -2384,37 +2384,37 @@ export default {
       this.searchGoogleAPI();
     },
     searchGoogleAPI() {
-      var state = this.$store.getters.showMeDatState;
-
-      var noJoke = process.env.GOOGLE_API_KEY;
-      var postcode = "";
-      if (!(state.form.postcode === undefined)) {
-        postcode = state.form.postcode;
-      }
-      var chainedAddress = state.form.country.label + postcode;
-      var convertedAddress = chainedAddress
-        .replace(", United States of America", " ")
-        .split(" ")
-        .join("+");
-      var convertedAddressFinal = convertedAddress.split(",").join("%2C");
-      axios
-        .get(
-          "https://www.googleapis.com/civicinfo/v2/representatives?key=" +
-            noJoke +
-            "&address=" +
-            convertedAddressFinal
-        )
-        .then((response) => {
-          this.$store.commit("setGoogleResponse", response);
-          console.log(
-            "RESPONSE SUCCESS. HERE IT BE ---->   " +
-              JSON.stringify(response, null, "\t")
-          );
-          this.postAndGetUSVoteInformation();
-        })
-        .catch((err) => {
-          console.log("searchGoogleAPI method failed. error----> " + err);
-        });
+      this.postAndGetUSVoteInformation();
+      // var state = this.$store.getters.showMeDatState;
+      // var noJoke = process.env.GOOGLE_API_KEY;
+      // var postcode = "";
+      // if (!(state.form.postcode === undefined)) {
+      //   postcode = state.form.postcode;
+      // }
+      // var chainedAddress = state.form.country.label + postcode;
+      // var convertedAddress = chainedAddress
+      //   .replace(", United States of America", " ")
+      //   .split(" ")
+      //   .join("+");
+      // var convertedAddressFinal = convertedAddress.split(",").join("%2C");
+      // axios
+      //   .get(
+      //     "https://www.googleapis.com/civicinfo/v2/representatives?key=" +
+      //       noJoke +
+      //       "&address=" +
+      //       convertedAddressFinal
+      //   )
+      //   .then((response) => {
+      //     this.$store.commit("setGoogleResponse", response);
+      //     console.log(
+      //       "RESPONSE SUCCESS. HERE IT BE ---->   " +
+      //         JSON.stringify(response, null, "\t")
+      //     );
+      //     this.postAndGetUSVoteInformation();
+      //   })
+      //   .catch((err) => {
+      //     console.log("searchGoogleAPI method failed. error----> " + err);
+      //   });
     },
     postAndGetUSVoteInformation() {
       this.setInfoAndPush();
@@ -2570,7 +2570,7 @@ footer {
   bottom: 1.5em;
 }
 #app {
-  background-color: #8b9ec7;
+  background-color: #96a6c9;
 }
 #infoForTheUser {
   padding: 15px 35px 0px;
