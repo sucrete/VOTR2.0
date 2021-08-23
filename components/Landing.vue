@@ -27,11 +27,11 @@
 </template>
 
 <script>
-/* eslint-disable */
+
 import places from "places.js";
 
 export default {
-  name: "landing",
+  name: "Landing",
   data() {
     return {
       stateID: "",
@@ -2908,184 +2908,35 @@ export default {
       },
     };
   },
-  computed: {
-    state() {
-      // return this.$store.getters.showMeDatState;
-    },
-  },
   methods: {
-    
-    setUsersAddress(val) {
-      // this.$store.commit("setUsersAddress", val);
-    },
-    searchEvent() {
-      this.searchGoogleAPI();
-    },
-    searchGoogleAPI() {
-      this.postAndGetUSVoteInformation();
-      var state = this.$store.getters.showMeDatState;
-      var noJoke = process.env.GOOGLE_API_KEY;
-      var postcode = "";
-      if (!(state.form.postcode === undefined)) {
-        postcode = state.form.postcode;
-      }
-      var chainedAddress = state.form.country.label + postcode;
-      var convertedAddress = chainedAddress
-        .replace(", United States of America", " ")
-        .split(" ")
-        .join("+");
-      var convertedAddressFinal = convertedAddress.split(",").join("%2C");
-      axios
-        .get(
-          "https://www.googleapis.com/civicinfo/v2/representatives?key=" +
-            noJoke +
-            "&address=" +
-            convertedAddressFinal
-        )
-        .then((response) => {
-          this.$store.commit("setGoogleResponse", response);
-          console.log(
-            "RESPONSE SUCCESS. HERE IT BE ---->   " +
-              JSON.stringify(response, null, "\t")
-          );
-          this.postAndGetUSVoteInformation();
-        })
-        .catch((err) => {
-          console.log("searchGoogleAPI method failed. error----> " + err);
-        });
-    },
-    postAndGetUSVoteInformation() {
-      this.setInfoAndPush();
-      // const axiosUSVotePost = axios.create();
-      // var state = this.$store.getters.showMeDatState;
-      // // var allStates = state.allStatesResponse.data.objects
-      // var stateName = state.algoliaResponse.administrative;
-      // axiosUSVotePost
-      //   .post("/api/postVoterAPI", {
-      //     data: {
-      //       USVoteKey: process.env.VOTE_KEY,
-      //       voterStateName: stateName,
-      //     },
-      //   })
-      //   .then((response) => {
-      //     console.log("your USVotePost method occurred");
-      //     console.log("\n" + "it worked, bruv!" + "\n" + "\n");
-      //     // console.log(JSON.stringify(response.data, null, '\t'))
-      //     const axiosUSVoteGet = axios.create();
-      //     axiosUSVoteGet
-      //       .get("/api/getVoterAPI")
-      //       .then((response) => {
-      //         // vAPI = response.data
-      //         self.voterAPI = response.data;
-      //         console.log(
-      //           "getUSVote went through" +
-      //             "\n" +
-      //             "getUSVote went through" +
-      //             "\n" +
-      //             "getUSVote went through" +
-      //             "\n" +
-      //             "getUSVote went through" +
-      //             "\n" +
-      //             "getUSVote went through" +
-      //             "\n"
-      //         );
-      //         console.log(
-      //           "+ ---------------- self.voterAPI ---------------- +" +
-      //             "\n" +
-      //             JSON.stringify(self.voterAPI, null, "\t")
-      //         );
-      //         this.setInfoAndPush();
-      //       })
-      //       .catch(function (error) {
-      //         console.log(
-      //           "getVoterAPI DIDN'T go through" +
-      //             "\n" +
-      //             "getVoterAPI DIDN'T go through" +
-      //             "\n" +
-      //             "getVoterAPI DIDN'T go through" +
-      //             "\n" +
-      //             "getVoterAPI DIDN'T go through" +
-      //             "\n" +
-      //             "getVoterAPI DIDN'T go through" +
-      //             "\n" +
-      //             error
-      //         );
-      //       });
-      //   })
-      //   .catch(function (error) {
-      //     console.log("POST test error ----->  " + error);
-      //   });
-    },
-    setInfoAndPush() {
-      console.log("setInfoAndPush fired");
-      if (self.voterAPI.voterInfo.objects[0].lookup_tools) {
-        var LTArray = self.voterAPI.voterInfo.objects[0].lookup_tools;
-        for (var dubs = 0; dubs < LTArray.length; dubs++) {
-          if (LTArray[dubs].lookup_tool.id === 4) {
-            if (!(LTArray[dubs].url === undefined)) {
-              let ourURL = LTArray[dubs].url;
-              this.$store.commit("setUserBadgeURL", LTArray[dubs].url);
-              console.log(
-                "\t" +
-                  "🖖" +
-                  "\n" +
-                  "SUCCESS!" +
-                  "\n" +
-                  "\t" +
-                  "🎉" +
-                  "\n" +
-                  this.$store.getters.getUserBadgeURL
-              );
-              this.$store.commit("displayBadgeQuestionMark", true);
-            }
-          }
-        }
-      }
-      this.$store.commit("setUSVoteElections", self.voterAPI.electionInfo);
-      // console.log("voterAPI.electionInfo added to store");
-      this.$store.commit("setVoterInformation", self.voterAPI.voterInfo);
-      // console.log("voterAPI.voterInfo added to store");
-      this.$router.push({ path: "main" });
-    },
     updateValue(val) {
-      // this.$store.commit("setUsersAddress", val);
-    },
-    updatePostcode(val) {
-      this.$store.commit("setUsersPostcode", val);
-    },
-    updateSuggestion(val) {
-      this.$store.commit("setSuggestion", val);
-    },
+    }
   },
   mounted() {
-    var placesAutocomplete = places({
+    const placesAutocomplete = places({
       container: document.getElementById("address-input"),
       type: "address",
       countries: ["us"],
       autoselect: true,
-      value: function (suggestion) {
+      value: (suggestion) => {
         return suggestion;
       },
     });
 
     placesAutocomplete.on("change", (e) => {
-      this.updateValue(e.suggestion.value);
-      this.updatePostcode(e.suggestion.postcode);
-      this.updateSuggestion(e.suggestion);
-      this.searchEvent();
+      this.$router.push({ path: "/main" });
     });
 
     placesAutocomplete.on("clear", function () {
-      var blank = null;
+      const blank = null;
       this.updateValue(blank);
-      this.updatePostcode(blank);
+      // this.updatePostcode(blank);
     });
   },
   beforeDestroy() {
-    this.placesAutocomplete.destroy();
-    return false;
+    // this.placesAutocomplete.destroy();
+    // return false;
   },
-  created() {},
 };
 </script>
 <!-- if you add "scoped" next to your <style> tag your modal will not be a circle -->
@@ -3181,7 +3032,7 @@ a#usvLink:hover {
 .siteTitle::before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 0.06em rgb(235, 226, 217);
+  -webkit-text-stroke: 0.06em #e9e9e9;
   left: 0;
   top: 0;
   padding-left: .9em;
