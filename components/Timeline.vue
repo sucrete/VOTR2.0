@@ -90,8 +90,7 @@
 </template>
 
 <script>
-/* eslint-disable */
-var hdate = require('human-date')
+const hdate = require('human-date')
 export default {
   name: 'Timeline',
   data () {
@@ -161,7 +160,212 @@ export default {
         '2': '#29417e'
       },
       todaysDate: '',
-      relativeTime: ''
+      relativeTime: '',
+      electionInfo: {
+        meta: {
+          offset: 0,
+          limit: 10,
+          total_objects: 1,
+          next: null,
+          previous: null,
+        },
+        objects: [
+          {
+            id: 2882,
+            created_at: "2020-01-11T16:22:03.005417Z",
+            updated_at: "2020-08-24T23:44:56.005299Z",
+            title: "Missouri General Election",
+            state: {
+              short_name: "MO",
+              id: "S29",
+              name: "Missouri",
+            },
+            election_level: {
+              id: 18,
+              name: "Federal",
+            },
+            election_type: {
+              id: 2,
+              name: "General",
+            },
+            election_type_detail: null,
+            election_status: "approved",
+            election_day_registration_is_available: false,
+            use_overseas_dates_as_military_dates: true,
+            election_date: "2020-11-03",
+            is_public: true,
+            additional_information: "",
+            locations: [
+              {
+                type: "state",
+                id: "S29",
+                geoid: "29",
+                name: "Missouri",
+              },
+            ],
+            urls: [
+              {
+                id: 1431,
+                url_type: {
+                  id: 1,
+                  name: "Election Web Site",
+                },
+                url: "http://www.sos.mo.gov/elections/govotemissouri",
+                name: "Missouri Voting",
+              },
+            ],
+            dates: [
+              {
+                id: 39442,
+                kind: "AVT",
+                date_type: {
+                  id: 49,
+                  default: false,
+                  name: "In the Election Office by",
+                },
+                date: "2020-11-02",
+                time: "17:00:00",
+                time_zone: "US/Central",
+                time_zone_offset: "-0500",
+                date_human_readable:
+                  "In the Election Office by Mon Nov 2, 2020 5:00PM CST",
+              },
+              {
+                id: 39443,
+                kind: "DBED",
+                date_type: {
+                  id: 1,
+                  default: true,
+                  name: "Blank - (Date Only - No Descriptive Label)",
+                },
+                date: "2020-11-03",
+                time: "19:00:00",
+                time_zone: "US/Central",
+                time_zone_offset: "-0500",
+                date_human_readable: "Tue Nov 3, 2020 7:00PM CST",
+              },
+              {
+                id: 39444,
+                kind: "DBRD",
+                date_type: {
+                  id: 10,
+                  default: false,
+                  name: "Received by",
+                },
+                date: "2020-10-21",
+                time: "17:00:00",
+                time_zone: "US/Central",
+                time_zone_offset: "-0500",
+                date_human_readable:
+                  "Received by Wed Oct 21, 2020 5:00PM CDT",
+              },
+              {
+                id: 39445,
+                kind: "DRD",
+                date_type: {
+                  id: 9,
+                  default: false,
+                  name: "Postmarked by",
+                },
+                date: "2020-10-07",
+                time: null,
+                time_zone: null,
+                time_zone_offset: null,
+                date_human_readable: "Postmarked by Wed Oct 7, 2020",
+              },
+              {
+                id: 39446,
+                kind: "MRD",
+                date_type: {
+                  id: 52,
+                  default: false,
+                  name: "Away from US on Active Duty by",
+                },
+                date: "2020-11-03",
+                time: null,
+                time_zone: null,
+                time_zone_offset: null,
+                date_human_readable:
+                  "Away from US on Active Duty by Tue Nov 3, 2020",
+              },
+              {
+                id: 39447,
+                kind: "OBED",
+                date_type: {
+                  id: 9,
+                  default: false,
+                  name: "Postmarked by",
+                },
+                date: "2020-11-02",
+                time: null,
+                time_zone: null,
+                time_zone_offset: null,
+                date_human_readable: "Postmarked by Mon Nov 2, 2020",
+              },
+              {
+                id: 39448,
+                kind: "OBED",
+                date_type: {
+                  id: 15,
+                  default: false,
+                  name: "Post received by",
+                },
+                date: "2020-11-06",
+                time: "12:00:00",
+                time_zone: "US/Central",
+                time_zone_offset: "-0500",
+                date_human_readable:
+                  "Post received by Fri Nov 6, 2020 12:00PM CST",
+              },
+              {
+                id: 39449,
+                kind: "OBED",
+                date_type: {
+                  id: 32,
+                  default: false,
+                  name: "Email or Fax by",
+                },
+                date: "2020-11-03",
+                time: "19:00:00",
+                time_zone: "US/Central",
+                time_zone_offset: "-0500",
+                date_human_readable:
+                  "Email or Fax by Tue Nov 3, 2020 7:00PM CST",
+              },
+              {
+                id: 39450,
+                kind: "OBRD",
+                date_type: {
+                  id: 10,
+                  default: false,
+                  name: "Received by",
+                },
+                date: "2020-10-21",
+                time: "17:00:00",
+                time_zone: "US/Central",
+                time_zone_offset: "-0500",
+                date_human_readable:
+                  "Received by Wed Oct 21, 2020 5:00PM CDT",
+              },
+              {
+                id: 39451,
+                kind: "ORD",
+                date_type: {
+                  id: 9,
+                  default: false,
+                  name: "Postmarked by",
+                },
+                date: "2020-10-07",
+                time: null,
+                time_zone: null,
+                time_zone_offset: null,
+                date_human_readable: "Postmarked by Wed Oct 7, 2020",
+              },
+            ],
+            short_url: "https://api.usvotefoundation.org/e/cic/",
+          },
+        ],
+      }
     }
   },
   methods: {
@@ -171,30 +375,30 @@ export default {
     returnPrettyDate (date) {
       return hdate.prettyPrint(date)
     },
-    getTodaysDate () {
-      var today = new Date()
-      var dd = String(today.getDate()).padStart(2, '0')
-      var mm = String(today.getMonth() + 1).padStart(2, '0') // January is 0!
-      var yyyy = today.getFullYear()
-      this.todaysDate = mm + '/' + dd + '/' + yyyy
+    getTodaysDate () {  
+      const currentDate = new Date()
+      const day = currentDate.getDate()
+      const month = currentDate.getMonth() + 1
+      const year = currentDate.getFullYear()
+      this.todaysDate = month + '/' + day + '/' + year
     },
     timeToVoteGuys () {
-      var electionsInfo = this.$store.getters.getElections.objects
-      var electionsInfoSorted = electionsInfo.sort(this.sorter)
+      // const electionsInfo = this.$store.getters.getElections.objects
+      const electionsInfoSorted = this.electionInfo.sort(this.sorter)
 
-      if (electionsInfo.length === 0) {
+      if (this.electionInfo.length === 0) {
         this.useDummyInfo = true
         this.electionsTimelineObject = this.dummyInfo
       }
       // colorIndex key: 0 = baby blue (#cedcf1), 1 = dusty blue (#adb5c4), 2 = strong blue (#29417e)
-      console.log(' 🤲 🤲 🤲 🤲 🤲 🤲 🤲 ' + '\n' + JSON.stringify(electionsInfo, null, '\t'))
-      var colorIndex = 0
+      console.log(' 🤲 🤲 🤲 🤲 🤲 🤲 🤲 ' + '\n' + JSON.stringify(this.electionInfo, null, '\t'))
+      let colorIndex = 0
       electionsInfoSorted.forEach(tally => {
-        var timelineItemSaver = {}
-        var electionDateArray = tally.election_date.split('-')
-        var firstElement = electionDateArray.shift()
+        const timelineItemSaver = {}
+        const electionDateArray = tally.election_date.split('-')
+        const firstElement = electionDateArray.shift()
         electionDateArray.push(firstElement)
-        var electionDate = electionDateArray.join('/')
+        const electionDate = electionDateArray.join('/')
         // your TIMELINE ITEM date below (ie prettyElectionDate)
         timelineItemSaver.electionDate = electionDate
         // the TITLE OF THE ELECTION below (ie electionTitle)
@@ -265,18 +469,7 @@ export default {
       }
       return comparison
     },
-    getDate () {
-      // js for getDate() from https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
-      var objToday = new Date()
-      var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-      var dayOfWeek = weekday[objToday.getDay()]
-      var dayOfMonth = today + (objToday.getDate() < 10) ? '0' + objToday.getDate() : objToday.getDate()
-      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-      var curMonth = months[objToday.getMonth()]
-      var curYear = objToday.getFullYear()
-      var today = dayOfWeek + ' ' + dayOfMonth + ' of ' + curMonth + ', ' + curYear
-      return today
-    }
+   
   },
   mounted () {
     this.timeToVoteGuys()

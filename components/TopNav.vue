@@ -1,41 +1,39 @@
 
 <template>
+<div>
+  
   <v-tabs
     right
     color="#668ee4"
     class="topNavvy"
+    v-model="tab"
   >
-    <a href="/">
-      <img class="flagLogo" src=" flagLogo.svg ">
-    </a>
+  <a href="/">
+    <img class="flagLogo" src=" flagLogo.svg ">
+  </a>
     <v-spacer></v-spacer>
     <v-tabs-slider color="white"></v-tabs-slider>
 
-    <v-tab :key="i">
-      {{ i }}
-    </v-tab>
-    <v-tab :key="ii">
-      {{ ii }}
-    </v-tab>
-    <v-tab class="mr-2" :key="iii">
-      {{ iii }}
-    </v-tab>
+    <v-tab v-for="item in items" :key="item">
+      {{ item }}
+    </v-tab> 
+  </v-tabs>
 
-    <v-tabs-items>
+  <v-tabs-items v-model="tab">
       <v-tab-item :key="i">
-        <Timeline></Timeline>
+        <Timeline/>
       </v-tab-item>
       <v-tab-item :key="ii">
-        <Resources></Resources>
+        <Resources/>
       </v-tab-item>
       <v-tab-item :key="iii">
-        <Officials></Officials>
+        <Officials/>
       </v-tab-item>
     </v-tabs-items>
-  </v-tabs>
+    </div>
 </template>
 
-<script>
+// <script>
 // import Officials from './Officials.vue'
 // import Timeline from './Timeline.vue'
 // import Resources from './Resources.vue'
@@ -48,13 +46,14 @@ export default {
       i: 'Timeline',
       ii: 'Resources',
       iii: 'Officials',
+      items: ['Timeline', 'Resources', 'Officials'],
     }
   },
-//   components: {
-//     Officials,
-//     Timeline,
-//     Resources
-//   }
+  // components: {
+  //   Officials,
+  //   Timeline,
+  //   Resources
+  // }
 }
 </script>
 

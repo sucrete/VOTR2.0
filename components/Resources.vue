@@ -37,8 +37,8 @@
 </template>
 
 <script>
-/* eslint-disable */
-var marked = require('marked')
+
+const marked = require('marked')
 
 export default {
   name: 'Resources',
@@ -85,15 +85,15 @@ export default {
     }
   },
   methods: {
-    makeActive: function (item) {
+    makeActive: (item) => {
       this.active = item
     },
     capitalizeIt (string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
     },
     fillItUp () {
-      var voterInfo = this.$store.getters.getVoterInfo.objects[0]
-      var generalInfo = voterInfo.voting_general_info
+      const voterInfo = this.$store.getters.getVoterInfo.objects[0]
+      const generalInfo = voterInfo.voting_general_info
       this.generalInfo = marked(generalInfo)
       this.stateName = voterInfo.state.name
       voterInfo.eligibility_requirements.forEach(headly => {
@@ -103,7 +103,8 @@ export default {
           this.eligibility += '<li>' + this.capitalizeIt(itemys.item.name) + '</li>'
         })
         this.eligibility += '</ul>'
-        if (headly.hasOwnProperty('footer')) {
+        // Object.prototype.hasOwnProperty.call(divs[keys[ttt]], 'officeIndices')
+        if (Object.prototype.hasOwnProperty.call(headly, 'footer')) {
           this.eligibility += '<p id="resourcesFooter"><em>' + headly.footer + '</em></p>'
         }
       })
@@ -114,28 +115,28 @@ export default {
           this.IDRequirements += '<li>' + this.capitalizeIt(itemysis.item.name) + '</li>'
         })
         this.IDRequirements += '</ul>'
-        if (credly.hasOwnProperty('footer')) {
+        if (Object.prototype.hasOwnProperty.call(credly, 'footer')) {
           this.IDRequirements += '<p id="resourcesFooter"><em>' + credly.footer + '</em></p>'
         }
       })
       voterInfo.lookup_tools.forEach(tooly => {
-        var tableElementsKeeper = {}
+        const tableElementsKeeper = {}
         tableElementsKeeper.votersToolsName = tooly.lookup_tool.name
         tableElementsKeeper.votersToolsURL = tooly.url
         this.resourcesObject.push(tableElementsKeeper)
       })
     },
     insertIcon () {
-      var ourHeading = document.getElementById('find-my-polling-place')
-      var aLink = ourHeading.childNodes[0]
-      var ourLink = aLink.getAttribute('href')
-      var iconHTML = '<i aria-hidden="true" class="v-icon material-icons" style="color: white; font-size: 18px;">place</i>'
-      var buttonHTML = '<form action="' + ourLink + '" method="get" target="_blank"><button id="find-my-trolling-place"> ' + iconHTML + ' Find My Polling Place </button></form>'
+      const ourHeading = document.getElementById('find-my-polling-place')
+      const aLink = ourHeading.childNodes[0]
+      const ourLink = aLink.getAttribute('href')
+      const iconHTML = '<i aria-hidden="true" class="v-icon material-icons" style="color: white; font-size: 18px;">place</i>'
+      const buttonHTML = '<form action="' + ourLink + '" method="get" target="_blank"><button id="find-my-trolling-place"> ' + iconHTML + ' Find My Polling Place </button></form>'
       ourHeading.insertAdjacentHTML('beforebegin', buttonHTML)
       ourHeading.parentNode.removeChild(ourHeading)
     },
     convertNewLines (str) {
-      var flippedstring = str.split('\r\n').join('<br />')
+      const flippedstring = str.split('\r\n').join('<br />')
       return flippedstring
     }
   },
