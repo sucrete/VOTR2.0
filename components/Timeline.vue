@@ -34,7 +34,7 @@
             <v-flex xs5 text-xs-right>{{ returnRelativeTime(votable.electionDate) }}</v-flex>
           </v-layout>
           <div class="text-xs-left mb-2 subheading font-weight-bold">
-            {{ votable.electionTitle }}
+            <span class="electionTitle">{{ votable.electionTitle }}</span>
             <span class="infoTooltip" v-if="votable.electionType !== null">
               <span class="infoTooltipText">?</span>
               <span class="tooltiptext" v-html="electionTypes[votable.electionType]"></span>
@@ -506,11 +506,20 @@ export default {
 .todayElement {
   position: relative;
 }
+.todayElement:nth-of-type(1),.text-xs-left {
+  text-align: left;
+}
+.todayElement:nth-of-type(2),.text-xs-right {
+  text-align: right;
+}
 .timelineContainer {
   padding-top: 0px;
 }
 footer {
   display: block;
+}
+.electionTitle {
+  font-size: 1.3rem;
 }
 .infoTooltip {
   cursor: default;
@@ -532,22 +541,41 @@ span.tooltiptext p, span.tooltiptext q {
   font-size: 120%;
   animation: shake 17.82s cubic-bezier(.36,.07,.19,.97) both infinite;
   animation-delay: 2.5s;
+  bottom: -3px;
+  left: -3px;
+}
+.v-list {
+  text-align: left;
 }
 @keyframes shake {
+  0% {
+    color: black;
+    
+  }
+  .25% {
+    font-size: 120%;
+  }
   .46015713% {
     transform: rotate(6deg);
+    
+    
   }
   .92031425% {
     transform: rotate(9.25deg);
+    
   }
   1.38047138% {
     transform: rotate(2.5deg);
+    
   }
   1.84062851% {
     transform: rotate(12.5deg);
+    font-size: 140%;
+    color: green;
   }
   2.30078563% {
     transform: rotate(2.25deg);
+    
   }
   2.76094276% {
     transform: rotate(12.5deg);
@@ -560,6 +588,15 @@ span.tooltiptext p, span.tooltiptext q {
   }
   4.14141414% {
     transform: rotate(6deg);
+    
+  }
+  5% {
+    color: green;
+    font-size: 140%;
+  }
+  10% {
+    font-size: 120%;
+color: black;
   }
 }
 .tooltiptext {
@@ -572,9 +609,9 @@ span.tooltiptext p, span.tooltiptext q {
   border-radius: 3px;
   padding: 16px;
   position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
+  z-index: 55;
+  bottom: 135%;
+  left: 38%;
   margin-left: -256px;
   opacity: 0;
   transition: opacity 0.3s;

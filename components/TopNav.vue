@@ -84,6 +84,7 @@ a.logo {
   line-height: 2.5rem;
   transform: translateY(-50%);
   font-family: "Oswald", sans-serif;
+  color: black;
 }
 
 .v-tabs__div {
