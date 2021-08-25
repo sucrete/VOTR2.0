@@ -15,9 +15,9 @@
           color="orange"
           v-bind:class="{ dummyInfo: useDummyInfo }"
         >
-          <v-layout justify-space-between class="subheading">
-            <v-flex xs7 text-xs-left class="todayElement">{{ returnPrettyDate(todaysDate) }}</v-flex>
-            <v-flex xs5 text-xs-right class="todayElement">TODAY</v-flex>
+          <v-layout class="subheading">
+            <v-flex text-xs-left class="todayElement">{{ returnPrettyDate(todaysDate) }}</v-flex>
+            <v-flex text-xs-right class="todayElement">TODAY</v-flex>
           </v-layout>
         </v-timeline-item>
 
@@ -47,40 +47,40 @@
             class="timelineList"
             v-bind:class="{ dummyInfo: useDummyInfo }"
           >
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-title>New Voter Registration Dates</v-list-tile-title>
-                <v-list-tile-sub-title v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info, index) in votable.newVoterRegistrationDates" :key="index">{{ info }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>New Voter Registration Dates</v-list-item-title>
+                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info, index) in votable.newVoterRegistrationDates" :key="index">{{ info }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
 
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-title>Absentee Ballot Request Dates</v-list-tile-title>
-                <v-list-tile-sub-title v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info, index) in votable.newVoterRegistrationDates" :key="index">{{ info }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Absentee Ballot Request Dates</v-list-item-title>
+                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info, index) in votable.newVoterRegistrationDates" :key="index">{{ info }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
 
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-title>Absentee Ballot Return Dates</v-list-tile-title>
-                <v-list-tile-sub-title v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info,index) in votable.absenteeBallotReturnDates" :key="index">{{ info }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Absentee Ballot Return Dates</v-list-item-title>
+                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info,index) in votable.absenteeBallotReturnDates" :key="index">{{ info }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
 
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-title>Window for In-Person Absentee Voting</v-list-tile-title>
-                <v-list-tile-sub-title v-bind:class="{ dummyInfo: useDummyInfo }">{{ votable.inPersonAbsenteeVotingToFrom }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Window for In-Person Absentee Voting</v-list-item-title>
+                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }">{{ votable.inPersonAbsenteeVotingToFrom }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
 
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-title>Window for Early Voting</v-list-tile-title>
-                <v-list-tile-sub-title v-bind:class="{ dummyInfo: useDummyInfo }">{{ votable.earlyVotingToFrom }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Window for Early Voting</v-list-item-title>
+                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }">{{ votable.earlyVotingToFrom }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
 
           </v-list>
         </v-timeline-item>
@@ -96,8 +96,8 @@ export default {
   data () {
     return {
       timelineHTML: '',
-      presentBadge: this.$store.getters.shouldIDisplayBadge,
-      regURL: this.$store.getters.getUserBadgeURL,
+      // presentBadge: this.$store.getters.shouldIDisplayBadge,
+      // regURL: this.$store.getters.getUserBadgeURL,
       electionsTimelineObject: [],
       useDummyInfo: false,
       electionTypes: {
@@ -384,7 +384,7 @@ export default {
     },
     timeToVoteGuys () {
       // const electionsInfo = this.$store.getters.getElections.objects
-      const electionsInfoSorted = this.electionInfo.sort(this.sorter)
+      const electionsInfoSorted = this.electionInfo.objects.sort(this.sorter)
 
       if (this.electionInfo.length === 0) {
         this.useDummyInfo = true
@@ -505,7 +505,6 @@ export default {
 }
 .todayElement {
   position: relative;
-  top: 1em;
 }
 .timelineContainer {
   padding-top: 0px;
