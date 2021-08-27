@@ -32,7 +32,7 @@
     </v-tabs-items>
     <footer>
       <a id="logoLink" href="https://www.usvotefoundation.org/" target="_blank">
-        <img src="mauve2.png"/>
+        <img src="voteFoundationBadge.png"/>
       </a>
     </footer>
     </div>
@@ -47,6 +47,7 @@ export default {
   name: 'TopNav',
   data () {
     return {
+      tab: null,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       i: 'Timeline',
       ii: 'Resources',
@@ -127,9 +128,13 @@ footer {
     filter:drop-shadow(4px 4px 0 #A57F70)*/
 }
 html {
-  background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
+  /* background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
+  min-height: 100vh;
+  box-sizing: border-box; */
+  background: linen url( "../static/stripes.svg" ) no-repeat center center;
   min-height: 100vh;
   box-sizing: border-box;
+  background-size: cover;
 }
 
 *, *:before, *:after {
@@ -148,13 +153,16 @@ html {
   margin-top: 1.5em;
   margin-bottom: 5em;
   text-align: center;
-  /* box-shadow from Domenico on https://codepen.io/ryandom/pen/ALQkWq*/
-  box-shadow:  0 0.4rem 0.8rem rgba(0, 0, 0, 0.2), 0 0.8rem 1.6rem rgba(0, 0, 0, 0.1);;
-  /* padding: 10px 24px; */
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
+            0 2px 2px rgba(0,0,0,0.05), 
+            0 4px 4px rgba(0,0,0,0.06), 
+            0 8px 8px rgba(0,0,0,0.07), 
+            0 16px 16px rgba(0,0,0,0.08);
   min-height: 52em;
   position: relative;
   border-radius: 3px;
   padding-bottom: 4px;
+  background: white;
 }
 #overviewNotice {
   color: rgb(94, 94, 90);
@@ -352,8 +360,8 @@ input, input:focus {
 }
 @media only screen and (max-width: 380px) {
   html, body {
-    background: rgb(253, 253, 253) !important;
-    min-height: 100vh;
+    /* background: rgb(253, 253, 253) !important;
+    min-height: 100vh; */
   }
 }
 @media only screen and (max-width: 375px) {

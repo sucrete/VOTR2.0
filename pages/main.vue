@@ -12,7 +12,7 @@ export default {
 
 <style>
 #app, body::after, body::before, html::after, html::before {
-  background-color: rgb(253, 253, 253);
-  background-image: unset;
+  /* background-color:white; */
+  /* background-image: unset; */
 }
 </style>

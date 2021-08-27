@@ -391,7 +391,7 @@ export default {
         this.electionsTimelineObject = this.dummyInfo
       }
       // colorIndex key: 0 = baby blue (#cedcf1), 1 = dusty blue (#adb5c4), 2 = strong blue (#29417e)
-      console.log(' 🤲 🤲 🤲 🤲 🤲 🤲 🤲 ' + '\n' + JSON.stringify(this.electionInfo, null, '\t'))
+      // console.log(' 🤲 🤲 🤲 🤲 🤲 🤲 🤲 ' + '\n' + JSON.stringify(this.electionInfo, null, '\t'))
       let colorIndex = 0
       electionsInfoSorted.forEach(tally => {
         const timelineItemSaver = {}

@@ -44,9 +44,10 @@ footer {
     filter:drop-shadow(4px 4px 0 #A57F70)*/
 }
 html {
-  background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
+  background: linen url( "../static/stripes.svg" ) no-repeat center center;
   min-height: 100vh;
   box-sizing: border-box;
+  background-size: cover;
 }
 
 *, *:before, *:after {
@@ -65,7 +66,11 @@ html {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   box-shadow: 0 1px 1px rgba(0,0,0,0.01), 
+              0 2px 2px rgba(0,0,0,0.02), 
+              0 4px 4px rgba(0,0,0,0.03), 
+              0 8px 8px rgba(0,0,0,0.04), 
+              0 16px 16px rgba(0,0,0,0.05);
   border-bottom: 2px solid rgba(0, 0, 0, 0.008);
   position: relative;
   border-radius: 3px;
