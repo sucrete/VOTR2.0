@@ -16,7 +16,8 @@
 
     <v-tab v-for="item in items" :key="item">
       {{ item }}
-    </v-tab> 
+    </v-tab>
+    <img src="registerBadge.png" class="registerBadge"/>
   </v-tabs>
 
   <v-tabs-items v-model="tab">
@@ -64,6 +65,15 @@ export default {
 </script>
 
 <style>
+.registerBadge {
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+}
+.topNavvy {
+  overflow: visible;
+  z-index: 100;
+}
 .v-tabs__item {
   font-family: 'Roboto', sans-serif;
   color: white !important;
@@ -131,7 +141,7 @@ html {
   /* background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
   min-height: 100vh;
   box-sizing: border-box; */
-  background: linen url( "../static/stripes.svg" ) no-repeat center center;
+  background: linen url( "../static/stripes.svg" ) no-repeat center center fixed;
   min-height: 100vh;
   box-sizing: border-box;
   background-size: cover;
@@ -213,7 +223,7 @@ a {
   text-decoration: none !important;
 }
 a:visited {
-  color: #5b524a !important;
+  color: rgb(54, 54, 54) !important;
   text-decoration: none !important;
 }
 

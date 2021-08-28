@@ -1854,9 +1854,9 @@ export default {
   mounted () {
     this.fillItUp()
     console.log("beef eater")
-    this.$nextTick(function () {
-      this.insertIcon()
-    })
+    // this.$nextTick(function () {
+    //   this.insertIcon()
+    // })
   }
 }
 </script>

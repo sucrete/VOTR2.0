@@ -590,13 +590,16 @@ span.tooltiptext p, span.tooltiptext q {
     transform: rotate(6deg);
     
   }
-  5% {
-    color: green;
+  8% {
+    
     font-size: 140%;
+  }
+  8.5% {
+color: green;
   }
   10% {
     font-size: 120%;
-color: black;
+    color: black;
   }
 }
 .tooltiptext {
@@ -663,9 +666,11 @@ ul.timeline {
   margin-left: -1.3rem;
 }
 .timelineList {
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   position: relative;
   left: -.9em;
+      background-color: #f6f7fc !important;
+    border-radius: 5px !important;
 }
 .timeline-item-content {
   margin-top: .2rem;
