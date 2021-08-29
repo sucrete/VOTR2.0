@@ -17,8 +17,9 @@
     <v-tab v-for="item in items" :key="item">
       {{ item }}
     </v-tab>
-    <img src="registerBadge.png" class="registerBadge"/>
+    
   </v-tabs>
+  <a href="https://www.sos.mo.gov/elections/goVoteMissouri/register" target="_blank" class="registerBadge"><img src="registerBadge.png" /></a>
 
   <v-tabs-items v-model="tab">
       <v-tab-item :key="i">
@@ -67,8 +68,15 @@ export default {
 <style>
 .registerBadge {
   position: absolute;
-  top: 5rem;
-  left: 1rem;
+  top: 7.5rem;
+  right: 1rem;
+  z-index: 777;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
+    drop-shadow(0 2px 2px rgba(0,0,0,0.07))
+    drop-shadow(0 4px 4px rgba(0,0,0,0.08))
+    drop-shadow(0 8px 8px rgba(0,0,0,0.09))
+    drop-shadow(0 16px 16px rgba(0,0,0,0.1))
+    drop-shadow(0 32px 32px rgba(0,0,0,0.11));
 }
 .topNavvy {
   overflow: visible;

@@ -25,12 +25,9 @@
     <div id="additionalResources">
       <span class="headline">Additional Government Resources for {{ stateName }} Voters</span>
       <v-list class="govResourcesList">
-        <v-list-item v-for="(lilinfos,index) in resourcesObject" :key="index">
-          <v-list-item-content class="text-xs-left">
-            <v-list-item-title>{{ lilinfos.votersToolsName }}</v-list-item-title>
-            <v-list-item-subtitle class="govResourcesListSubtitle"><a :href="lilinfos.votersToolsURL" target="_blank">{{ lilinfos.votersToolsURL }}</a></v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+        <a class="govResourcesItem" :href="lilinfos.votersToolsURL" target="_blank" v-for="(lilinfos,index) in resourcesObject" :key="index">
+            <span>{{ lilinfos.votersToolsName }}</span>
+        </a>
       </v-list>
     </div>
   </div>
@@ -1868,7 +1865,6 @@ export default {
   width: 95%;
   will-change: box-shadow;
   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
-  border-radius: 28px;
   align-items: center;
   border-radius: 2px;
   display: inline-flex;
@@ -1891,7 +1887,7 @@ export default {
   user-select: none;
 }
 #additionalResources {
-  background-color: rgba(204, 219, 242, .3);
+  background-color: #F7F7F7;
   /* position: absolute; */
   min-height: 10em;
   width: 97%;
@@ -1899,7 +1895,7 @@ export default {
   color: #3e3830;
   margin: 0 auto;
   margin-bottom: 10px;
-  padding: 16px;
+  padding: 25px;
   border-radius: 3px;
   display: block;
 }
@@ -1974,8 +1970,40 @@ export default {
 .govResourcesList {
   background-color: transparent !important;
   font-family: 'Roboto', sans-serif;
+  padding: 0px 16px 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
+.govResourcesItem {
+flex-basis: 30%; 
+background-color: #fdfdfd;
+border-radius: 7px;
+text-align: center;
+height: 120px;
+margin-top: 5%;
+position: relative;
+transition: .3s all ease;
+box-shadow: 0 1px 1px rgba(0,0,0,0.01), 
+              0 2px 2px rgba(0,0,0,0.02), 
+              0 4px 4px rgba(0,0,0,0.03), 
+              0 8px 8px rgba(0,0,0,0.04);
+}
+.govResourcesItem:hover {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.01), 
+              0 2px 2px rgba(0,0,0,0.02), 
+              0 4px 4px rgba(0,0,0,0.03), 
+              0 8px 8px rgba(0,0,0,0.04), 
+              0 16px 16px rgba(0,0,0,0.05);
+              background-color: white;
+}
+.govResourcesItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+}
 ul {
   margin: 0;
 }

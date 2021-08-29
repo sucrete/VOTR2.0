@@ -665,12 +665,15 @@ color: green;
 ul.timeline {
   margin-left: -1.3rem;
 }
+.v-list-item .v-list-item__title, .v-list-item .v-list-item__subtitle {
+  color: grey !important;
+}
 .timelineList {
   /* background-color: transparent !important; */
   position: relative;
   left: -.9em;
-      background-color: #f6f7fc !important;
-    border-radius: 5px !important;
+  background-color: #f7f7f7 !important;
+  border-radius: 5px !important;
 }
 .timeline-item-content {
   margin-top: .2rem;
