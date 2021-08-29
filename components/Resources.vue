@@ -1977,7 +1977,7 @@ export default {
 }
 .govResourcesItem {
 flex-basis: 30%; 
-background-color: #fdfdfd;
+background-color: #fff;
 border-radius: 7px;
 text-align: center;
 height: 120px;
@@ -1995,7 +1995,12 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.01),
               0 4px 4px rgba(0,0,0,0.03), 
               0 8px 8px rgba(0,0,0,0.04), 
               0 16px 16px rgba(0,0,0,0.05);
-              background-color: white;
+}
+.govResourcesItem:hover span {
+  color: rgb(58, 57, 55); 
+}
+.govResourcesItem:visited {
+  color: rgb(78, 76, 74);
 }
 .govResourcesItem span {
   position: absolute;
@@ -2003,6 +2008,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.01),
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 500;
+  color: rgb(78, 76, 74);
 }
 ul {
   margin: 0;

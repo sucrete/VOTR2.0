@@ -134,16 +134,15 @@ footer {
   border-radius: 3px;
   display: block;
   margin-bottom: 5.5px;
+  position: relative;
 }
 #logoLink {
   z-index: 777;
-  position: relative;
-  top: .3em;
-  float: right;
+  position: absolute;
+  top: 52%;
+  right: 2rem;
+  transform: translateY(-50%);
   filter: drop-shadow(0 2px 3px rgba(60, 63, 76, 0.46));
-	-webkit-filter: drop-shadow(0 2px 3px rgba(60, 63, 76, 0.46));
-  /* -webkit-filter: drop-shadow(4px 4px 0 #A57F70);
-    filter:drop-shadow(4px 4px 0 #A57F70)*/
 }
 html {
   /* background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
@@ -191,7 +190,7 @@ html {
   height: 12rem;
   padding-left: .7em;
   font-weight: 400;
-  letter-spacing: .07em;
+  /* letter-spacing: .07em; */
 }
 #overviewNoticeWrapper {
   background-color: rgba(230, 230, 230, 0.8);
