@@ -70,17 +70,26 @@ export default {
   position: absolute;
   top: 7.5rem;
   right: 1rem;
-  z-index: 777;
+  z-index: 7;
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
     drop-shadow(0 2px 2px rgba(0,0,0,0.07))
     drop-shadow(0 4px 4px rgba(0,0,0,0.08))
     drop-shadow(0 8px 8px rgba(0,0,0,0.09))
     drop-shadow(0 16px 16px rgba(0,0,0,0.1))
     drop-shadow(0 32px 32px rgba(0,0,0,0.11));
+    transition: all .4s ease;
 }
-.topNavvy {
-  overflow: visible;
-  z-index: 100;
+.registerBadge:hover {
+  /* filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
+    drop-shadow(0 2px 2px rgba(0,0,0,0.07))
+    drop-shadow(0 4px 4px rgba(0,0,0,0.08))
+    drop-shadow(0 8px 8px rgba(0,0,0,0.09))
+    drop-shadow(0 16px 16px rgba(0,0,0,0.1))
+    ; */
+    transform: rotate(2deg);
+}
+.topNavvy .v-item-group .v-slide-group__wrapper {
+  background-color: #d5d9e1;
 }
 .v-tabs__item {
   font-family: 'Roboto', sans-serif;
@@ -127,7 +136,7 @@ footer {
   background-color: rgb(222, 222, 222);
   height: 15em;
   width: 97%;
-  bottom: 10px;
+  bottom: 0px;
   color: #3e3830;
   margin: 0 auto;
   padding: 16px;
@@ -140,7 +149,7 @@ footer {
   z-index: 777;
   position: absolute;
   top: 52%;
-  right: 2rem;
+  right: 2.5rem;
   transform: translateY(-50%);
   filter: drop-shadow(0 2px 3px rgba(60, 63, 76, 0.46));
 }
@@ -148,7 +157,7 @@ html {
   /* background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
   min-height: 100vh;
   box-sizing: border-box; */
-  background: linen url( "../static/stripes.svg" ) no-repeat center center fixed;
+  background: rgb(243, 241, 240) url( "../static/stripes.svg" ) no-repeat center center fixed;
   min-height: 100vh;
   box-sizing: border-box;
   background-size: cover;
@@ -168,7 +177,7 @@ html {
   width: 46rem;
   margin: auto;
   margin-top: 1.5em;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   text-align: center;
   box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
             0 2px 2px rgba(0,0,0,0.05), 
@@ -190,7 +199,6 @@ html {
   height: 12rem;
   padding-left: .7em;
   font-weight: 400;
-  /* letter-spacing: .07em; */
 }
 #overviewNoticeWrapper {
   background-color: rgba(230, 230, 230, 0.8);

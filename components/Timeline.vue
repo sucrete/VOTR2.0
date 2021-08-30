@@ -622,7 +622,12 @@ color: green;
   padding-top: 18px;
   padding-left: 18px;
   padding-bottom: 5px;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,0.04), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.06), 
+              0 8px 8px rgba(0,0,0,0.07), 
+              0 16px 16px rgba(0,0,0,0.08),
+              0 32px 32px rgba(0,0,0,.09);
 }
 .infoTooltip .tooltiptext::after {
   content: "";

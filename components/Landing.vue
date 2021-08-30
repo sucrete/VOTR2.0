@@ -1485,7 +1485,7 @@ input:focus::-webkit-input-placeholder {
 .ap-dropdown-menu {
   margin-top: 0px;
   width: 35em;
-  top: 2.8em !important;
+  top: 2.4em !important;
   /* left: 5.45em !important; */
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;

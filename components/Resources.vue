@@ -23,7 +23,7 @@
     </v-tabs>
     <div id="resourcesSpacer"></div>
     <div id="additionalResources">
-      <span class="headline">Additional Government Resources for {{ stateName }} Voters</span>
+      <span class="headline">Additional Resources for {{ stateName }} Voters</span>
       <v-list class="govResourcesList">
         <a class="govResourcesItem" :href="lilinfos.votersToolsURL" target="_blank" v-for="(lilinfos,index) in resourcesObject" :key="index">
             <span>{{ lilinfos.votersToolsName }}</span>

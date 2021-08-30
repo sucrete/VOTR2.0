@@ -44,7 +44,7 @@ footer {
     filter:drop-shadow(4px 4px 0 #A57F70)*/
 }
 html {
-  background: linen url( "../static/stripes.svg" ) no-repeat center center fixed;
+  background: rgb(243, 241, 240) url( "../static/stripes.svg" ) no-repeat center center fixed;
   min-height: 100vh;
   box-sizing: border-box;
   background-size: cover;
