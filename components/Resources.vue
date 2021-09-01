@@ -1919,6 +1919,8 @@ export default {
   line-height: 1.444444;
   font-size: 16px;
   font-style: normal;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
 }
 .v-tabs.knowledgeTabs .v-window > * {
   text-align: left;

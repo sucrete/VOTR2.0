@@ -2,7 +2,7 @@
  <Landing />
 </template>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900|Eczar:500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
 
 .v-tabs__div {
   cursor: pointer;
@@ -48,8 +48,8 @@ html {
   min-height: 100vh;
   box-sizing: border-box;
   background-size: cover;
+  /* box-shadow: 0 0 10px inset */
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -66,35 +66,13 @@ html {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   text-align: center;
-   box-shadow: 0 1px 1px rgba(0,0,0,0.01), 
-              0 2px 2px rgba(0,0,0,0.02), 
-              0 4px 4px rgba(0,0,0,0.03), 
-              0 8px 8px rgba(0,0,0,0.04), 
-              0 16px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(141, 118, 111, 0.13), 
+              0 2px 2px rgba(141, 118, 111,0.14), 
+              0 4px 4px rgba(141, 118, 111,0.15), 
+              0 8px 8px rgba(141, 118, 111,0.16);
   border-bottom: 2px solid rgba(0, 0, 0, 0.008);
   position: relative;
   border-radius: 3px;
-}
-#overviewNotice {
-  color: rgb(94, 94, 90);
-  font-size: 130%;
-  width: 20rem;
-  text-align: left;
-  line-height: 150%;
-  height: 12rem;
-  padding-left: .7em;
-  font-weight: 400;
-  letter-spacing: .07em;
-}
-#overviewNoticeWrapper {
-  background-color: rgba(230, 230, 230, 0.8);
-  font-family: 'Karla', sans-serif;
-  width: 100%;
-  padding-left: 1.75rem;
-  padding-top: 2.2rem;
-  padding-bottom: 1rem;
-  position: relative;
-  margin-bottom: 0em;
 }
 #overviewMarquee {
   font-size: 200%;

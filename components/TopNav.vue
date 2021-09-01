@@ -77,17 +77,8 @@ export default {
     drop-shadow(0 8px 8px rgba(0,0,0,0.09))
     drop-shadow(0 16px 16px rgba(0,0,0,0.1))
     drop-shadow(0 32px 32px rgba(0,0,0,0.11));
-    transition: all .4s ease;
 }
-.registerBadge:hover {
-  /* filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
-    drop-shadow(0 2px 2px rgba(0,0,0,0.07))
-    drop-shadow(0 4px 4px rgba(0,0,0,0.08))
-    drop-shadow(0 8px 8px rgba(0,0,0,0.09))
-    drop-shadow(0 16px 16px rgba(0,0,0,0.1))
-    ; */
-    transform: rotate(2deg);
-}
+
 .topNavvy .v-item-group .v-slide-group__wrapper {
   background-color: #d5d9e1;
 }
@@ -191,18 +182,18 @@ html {
   background: white;
 }
 #overviewNotice {
-  color: rgb(94, 94, 90);
+  color: rgb(121, 117, 117);
   font-size: 130%;
   width: 20rem;
   text-align: left;
   line-height: 150%;
   height: 12rem;
   padding-left: .7em;
-  font-weight: 400;
+  font-weight: 500;
 }
 #overviewNoticeWrapper {
-  background-color: rgba(230, 230, 230, 0.8);
-  font-family: 'Karla', sans-serif;
+  background: linear-gradient(135deg, #ebe6e5 12%, #e4e0db 46%, #e4e3e4 70%, #eaebf3 94%,  #cedceb 100%);
+  font-family: 'Roboto', sans-serif;
   width: 100%;
   padding-left: 1.75rem;
   padding-top: 2.2rem;
@@ -212,7 +203,6 @@ html {
 }
 #overviewMarquee {
   font-size: 200%;
-  color: #5b524a;
   font-family: 'Roboto', sans-serif;
   text-align: left;
   margin-bottom: .5em;
