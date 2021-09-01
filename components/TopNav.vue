@@ -1,43 +1,39 @@
 
 <template>
-<div>
-  
-  <v-tabs
-    right
-    color="#668ee4"
-    class="topNavvy"
-    v-model="tab"
-  >
-  <a class="logo" href="/">
-    THE VOTER'S COMPANION
-  </a>
-    <v-spacer></v-spacer>
-    <v-tabs-slider color="blue"></v-tabs-slider>
+  <div>
+    <v-tabs right color="#668ee4" class="topNavvy" v-model="tab">
+      <a class="logo" href="/"> THE VOTER'S COMPANION </a>
+      <v-spacer></v-spacer>
+      <v-tabs-slider color="blue"></v-tabs-slider>
 
-    <v-tab v-for="item in items" :key="item">
-      {{ item }}
-    </v-tab>
-    
-  </v-tabs>
-  <a href="https://www.sos.mo.gov/elections/goVoteMissouri/register" target="_blank" class="registerBadge"><img src="registerBadge.png" /></a>
+      <v-tab v-for="item in items" :key="item">
+        {{ item }}
+      </v-tab>
+    </v-tabs>
+    <a
+      href="https://www.sos.mo.gov/elections/goVoteMissouri/register"
+      target="_blank"
+      class="registerBadge"
+      ><img src="registerBadge.png"
+    /></a>
 
-  <v-tabs-items v-model="tab">
+    <v-tabs-items v-model="tab">
       <v-tab-item :key="i">
-        <Timeline/>
+        <Timeline />
       </v-tab-item>
       <v-tab-item :key="ii">
-        <Resources/>
+        <Resources />
       </v-tab-item>
       <v-tab-item :key="iii">
-        <Officials/>
+        <Officials />
       </v-tab-item>
     </v-tabs-items>
     <footer>
       <a id="logoLink" href="https://www.usvotefoundation.org/" target="_blank">
-        <img src="voteFoundationBadge.png"/>
+        <img src="voteFoundationBadge.png" />
       </a>
     </footer>
-    </div>
+  </div>
 </template>
 
 // <script>
@@ -47,7 +43,7 @@
 
 export default {
   name: 'TopNav',
-  data () {
+  data() {
     return {
       tab: null,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -61,7 +57,7 @@ export default {
     // Officials,
     // Timeline,
     // Resources
-  }
+  },
 }
 </script>
 
@@ -71,21 +67,42 @@ export default {
   top: 7.5rem;
   right: 1rem;
   z-index: 7;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
+  /* filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
     drop-shadow(0 2px 2px rgba(0,0,0,0.07))
     drop-shadow(0 4px 4px rgba(0,0,0,0.08))
     drop-shadow(0 8px 8px rgba(0,0,0,0.09))
     drop-shadow(0 16px 16px rgba(0,0,0,0.1))
-    drop-shadow(0 32px 32px rgba(0,0,0,0.11));
+    drop-shadow(0 32px 32px rgba(0,0,0,0.11)); */
 }
-
+.registerBadge::after {
+  content: '';
+  height: 150px;
+  width: 150px;
+  border-radius: 10000px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: -1;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.253);
+}
+.registerBadge::before {
+  content: '';
+  height: 150px;
+  width: 150px;
+  border-radius: 10000px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: -1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.397);
+}
 .topNavvy .v-item-group .v-slide-group__wrapper {
-  background-color: #d5d9e1;
+  background-color: #dde0e7;
 }
 .v-tabs__item {
   font-family: 'Roboto', sans-serif;
   color: white !important;
-  letter-spacing: .065em;
+  letter-spacing: 0.065em;
   font-weight: 500;
 }
 .v-tabs__container {
@@ -94,7 +111,7 @@ export default {
 a.logo {
   margin: 0;
   position: absolute;
-  left: .7em;
+  left: 0.7em;
   top: 50%;
   height: 2.5rem;
   width: auto;
@@ -102,7 +119,7 @@ a.logo {
   font-weight: 500;
   line-height: 2.5rem;
   transform: translateY(-50%);
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: black;
 }
 
@@ -115,8 +132,10 @@ a.logo {
   z-index: 888;
   top: 6.7em;
   /* first drop shadow handles the v light shadow and the second handles the sharper shadow drop-shadow(1px 14px 6px rgba(15, 13, 2, 0.07)) */
-  filter: drop-shadow(1px 5px 3px rgba(15, 13, 2, 0.2)) drop-shadow(0px -5px 5px rgb(173, 39, 15, .2));
-  -webkit-filter: drop-shadow(1px 5px 3px rgba(15, 13, 2, 0.2)) drop-shadow(0px -5px 5px rgb(173, 39, 15, .2));
+  filter: drop-shadow(1px 5px 3px rgba(15, 13, 2, 0.2))
+    drop-shadow(0px -5px 5px rgb(173, 39, 15, 0.2));
+  -webkit-filter: drop-shadow(1px 5px 3px rgba(15, 13, 2, 0.2))
+    drop-shadow(0px -5px 5px rgb(173, 39, 15, 0.2));
 }
 /* #bigButton:hover {
   filter: drop-shadow(1px 14px 14px rgba(15, 13, 2, 0.2)) drop-shadow(1px 8px 10px rgba(15, 13, 2, 0.25));
@@ -148,13 +167,16 @@ html {
   /* background: linen url( "https://cl.ly/image/381U2k0A3L3S/bg.png" );
   min-height: 100vh;
   box-sizing: border-box; */
-  background: rgb(243, 241, 240) url( "../static/stripes.svg" ) no-repeat center center fixed;
+  background: rgb(243, 241, 240) url('../static/stripes.svg') no-repeat center
+    center fixed;
   min-height: 100vh;
   box-sizing: border-box;
   background-size: cover;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -170,11 +192,9 @@ html {
   margin-top: 1.5em;
   margin-bottom: 2em;
   text-align: center;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.04), 
-            0 2px 2px rgba(0,0,0,0.05), 
-            0 4px 4px rgba(0,0,0,0.06), 
-            0 8px 8px rgba(0,0,0,0.07), 
-            0 16px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.05),
+    0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.07),
+    0 16px 16px rgba(0, 0, 0, 0.08);
   min-height: 52em;
   position: relative;
   border-radius: 3px;
@@ -182,20 +202,45 @@ html {
   background: white;
 }
 #overviewNotice {
-  color: rgb(121, 117, 117);
-  font-size: 130%;
+  color: #1a76d2;
+  font-size: 1.5rem;
   width: 20rem;
   text-align: left;
   line-height: 150%;
   height: 12rem;
-  padding-left: .7em;
-  font-weight: 500;
+  padding-left: 0.7em;
+  font-weight: 450;
 }
 #overviewNoticeWrapper {
-  background: linear-gradient(135deg, #ebe6e5 12%, #e4e0db 46%, #e4e3e4 70%, #eaebf3 94%,  #cedceb 100%);
+  background-color: #f7f7f7;
+  background-image: radial-gradient(
+      circle farthest-corner at top left,
+      rgba(229, 235, 236, 0.822) 0%,
+      rgba(159, 187, 230, 0) 50%
+    ),
+    radial-gradient(
+      circle farthest-side at top right,
+      rgba(198, 209, 224, 0.11) 0%,
+      rgba(193, 202, 176, 0) 10%
+    ),
+    radial-gradient(
+      circle farthest-corner at bottom right,
+      rgba(228, 230, 205, 0.253) 0%,
+      rgba(138, 213, 218, 0) 33%
+    ),
+    radial-gradient(
+      circle farthest-corner at top right,
+      rgba(223, 238, 234, 0.623) 0%,
+      rgba(198, 224, 231, 0) 50%
+    ),
+    radial-gradient(
+      ellipse at bottom center,
+      #1a76d21a 0%,
+      rgba(229, 227, 233, 0) 80%
+    );
   font-family: 'Roboto', sans-serif;
   width: 100%;
-  padding-left: 1.75rem;
+  padding-left: 2rem;
   padding-top: 2.2rem;
   padding-bottom: 1rem;
   position: relative;
@@ -205,11 +250,11 @@ html {
   font-size: 200%;
   font-family: 'Roboto', sans-serif;
   text-align: left;
-  margin-bottom: .5em;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 0.5em;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   font-weight: 500;
-  letter-spacing: .08em;
-  padding-left: .4em;
+  letter-spacing: 0.08em;
+  padding-left: 0.4em;
 }
 
 a:hover {
@@ -243,11 +288,13 @@ h2 {
   font-size: 25px;
 }
 
-input, input:focus {
+input,
+input:focus {
   border: none;
   outline: none;
 }
-#takeMeOmh:visited, #takeMeOmhDaddy:visited {
+#takeMeOmh:visited,
+#takeMeOmhDaddy:visited {
   color: #5b524a !important;
 }
 #e9_texte {
@@ -295,7 +342,6 @@ input, input:focus {
   }
   35% {
     transform: rotate(0deg);
-
   }
   55% {
     opacity: 1;
@@ -308,7 +354,7 @@ input, input:focus {
     opacity: 0;
   }
 
-  100%{
+  100% {
     transform: rotate(-90deg);
   }
 }
@@ -317,25 +363,28 @@ input, input:focus {
   overflow: visible !important;
   position: relative !important;
   background-color: #acb4c5;
-  box-shadow: 0px 8px 12px rgba(58, 68, 41, 0.2), 0px 12px 20px rgba(0, 0, 0, .1), 0px 0px 17px rgba(0, 0, 0, .14)!important;
+  box-shadow: 0px 8px 12px rgba(58, 68, 41, 0.2),
+    0px 12px 20px rgba(0, 0, 0, 0.1), 0px 0px 17px rgba(0, 0, 0, 0.14) !important;
   border-color: white;
   border-style: solid;
   border-width: 5px;
 }
 
 .v--modal-overlay {
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0px;
   /* width: 100vw;
   height: 100vh; */
   border-style: none;
 }
-.scale-enter-active, .scale-leave-active {
- /* transition: all 0.5s; */
+.scale-enter-active,
+.scale-leave-active {
+  /* transition: all 0.5s; */
 }
-.scale-enter, .scale-leave-active {
- opacity: 0;
- /* transform: scale(0.3) translateY(24px); */
+.scale-enter,
+.scale-leave-active {
+  opacity: 0;
+  /* transform: scale(0.3) translateY(24px); */
 }
 @media screen and (min-width: 376px) and (max-width: 432px) {
   footer {
@@ -353,7 +402,7 @@ input, input:focus {
     min-height: 100vh !important;
     margin-bottom: 0px !important;
     margin-top: 0px;
-    box-shadow: 0 0 0 0 rgba(0,0,0, .0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     border-radius: 0px;
   }
   #overviewNoticeWrapper {
@@ -361,11 +410,11 @@ input, input:focus {
   }
   #overviewMarquee {
     font-size: 250%;
-    margin-bottom: .3em;
+    margin-bottom: 0.3em;
   }
   #overviewNotice {
     padding-right: 3em;
-    padding-left: .2em;
+    padding-left: 0.2em;
   }
   footer {
     width: 95%;
@@ -374,7 +423,8 @@ input, input:focus {
   }
 }
 @media only screen and (max-width: 380px) {
-  html, body {
+  html,
+  body {
     /* background: rgb(253, 253, 253) !important;
     min-height: 100vh; */
   }
@@ -385,7 +435,7 @@ input, input:focus {
     margin-bottom: 8px;
   }
   #logoLink {
-    top: .7em;
+    top: 0.7em;
   }
   #overviewNoticeWrapper {
     height: 175px;
@@ -399,7 +449,7 @@ input, input:focus {
 }
 @media only screen and (max-width: 330px) {
   .v-tabs__item {
-    font-size: .9em;
+    font-size: 0.9em;
   }
 }
 @media only screen and (max-width: 700px) {

@@ -1272,8 +1272,7 @@ export default {
 .siteTitle {
   z-index: 2;
   font-family: 'Oswald', serif;
-  color: rgb(219, 122, 105);
-  color: #34343d;
+  color: #2c6fa1;
   text-align: left;
   font-size: 6.5em;
   line-height: 85%;
@@ -1282,20 +1281,20 @@ export default {
   position: relative;
   text-transform: uppercase;
   top: 0.75em;
-  text-shadow: 0 0 0 rgb(228, 76, 49), 0.0025em 0.0025em 0 rgb(224, 78, 53),
-    0.005em 0.005em 0 rgb(224, 80, 55), 0.0075em 0.0075em 0 rgb(226, 82, 57),
-    0.01em 0.01em 0 rgb(231, 85, 59), 0.0125em 0.0125em 0 rgb(233, 87, 61),
-    0.015em 0.015em 0 rgb(221, 86, 63), 0.0175em 0.0175em 0 rgb(231, 90, 65),
-    0.02em 0.02em 0 rgb(226, 91, 67), 0.0225em 0.0225em 0 rgb(219, 92, 69),
-    0.025em 0.025em 0 rgb(223, 93, 71), 0.0275em 0.0275em 0 rgb(228, 96, 73),
-    0.03em 0.03em 0 rgb(223, 97, 75), 0.0325em 0.0325em 0 rgb(219, 99, 78),
-    0.035em 0.035em 0 rgb(221, 101, 80), 0.0375em 0.0375em 0 rgb(230, 104, 82),
-    0.04em 0.04em 0 rgb(223, 105, 84), 0.0425em 0.0425em 0 rgb(223, 104, 86),
-    0.045em 0.045em 0 rgb(226, 109, 88), 0.0475em 0.0475em 0 rgb(224, 111, 90),
-    0.05em 0.05em 0 rgb(214, 111, 92), 0.0525em 0.0525em 0 rgb(226, 114, 94),
-    0.055em 0.055em 0 rgb(221, 115, 96), 0.0575em 0.0575em 0 rgb(216, 116, 98),
-    0.06em 0.06em 0 rgb(223, 119, 100), 0.0625em 0.0625em 0 rgb(216, 119, 102),
-    0.065em 0.065em 0 rgb(221, 120, 103), 0.0675em 0.0675em 0 rgb(219, 122, 105),
+  text-shadow: 0 0 0 rgb(228, 76, 78), 0.0025em 0.0025em 0 rgb(224, 78, 79),
+    0.005em 0.005em 0 rgb(224, 80, 80), 0.0075em 0.0075em 0 rgb(226, 82, 81),
+    0.01em 0.01em 0 rgb(231, 85, 82), 0.0125em 0.0125em 0 rgb(233, 87, 83),
+    0.015em 0.015em 0 rgb(221, 86, 84), 0.0175em 0.0175em 0 rgb(231, 90, 85),
+    0.02em 0.02em 0 rgb(226, 91, 86), 0.0225em 0.0225em 0 rgb(219, 92, 87),
+    0.025em 0.025em 0 rgb(223, 93, 88), 0.0275em 0.0275em 0 rgb(228, 96, 89),
+    0.03em 0.03em 0 rgb(223, 97, 90), 0.0325em 0.0325em 0 rgb(219, 99, 91),
+    0.035em 0.035em 0 rgb(221, 101, 92), 0.0375em 0.0375em 0 rgb(230, 104, 93),
+    0.04em 0.04em 0 rgb(223, 105, 94), 0.0425em 0.0425em 0 rgb(223, 104, 95),
+    0.045em 0.045em 0 rgb(226, 109, 96), 0.0475em 0.0475em 0 rgb(224, 111, 97),
+    0.05em 0.05em 0 rgb(214, 111, 98), 0.0525em 0.0525em 0 rgb(226, 114, 99),
+    0.055em 0.055em 0 rgb(221, 115, 100), 0.0575em 0.0575em 0 rgb(216, 116, 101),
+    0.06em 0.06em 0 rgb(223, 119, 102), 0.0625em 0.0625em 0 rgb(216, 119, 103),
+    0.065em 0.065em 0 rgb(221, 120, 104), 0.0675em 0.0675em 0 rgb(219, 122, 105),
     0.07em 0.07em 0 rgb(219, 122, 105), 0.0725em 0.0725em 0 rgb(219, 122, 105);
 }
 .siteTitle::before {
@@ -1310,7 +1309,7 @@ export default {
 
 .fordFan {
   position: absolute;
-  width: 36%;
+  width: 33%;
   right: 9%;
   top: 9%;
   z-index: 50;
@@ -1318,8 +1317,8 @@ export default {
 #landing {
   position: relative;
   background-repeat: no-repeat;
-  outline: 3px dotted #6d7dada8;
-  outline-offset: -25px;
+  outline: 3px solid #bfc7d3;
+  outline-offset: -20px;
   height: 865px;
   background: url(../static/exclamation.svg);
   background-size: 100%;
@@ -1355,8 +1354,8 @@ export default {
     0 2px 2px rgba(111, 112, 141, 0.14), 0 4px 4px rgba(111, 112, 141, 0.15),
     0 8px 8px rgba(111, 112, 141, 0.16);
   z-index: 200;
-  background-color: #dcdcdd;
-  background-image: radial-gradient(
+  background-color: #f3ebe9;
+  /* background-image: radial-gradient(
       circle farthest-corner at top left,
       rgb(245, 241, 237) 0%,
       rgba(236, 236, 231, 0) 50%
@@ -1380,7 +1379,7 @@ export default {
       ellipse at bottom center,
       rgb(241, 238, 222) 0%,
       rgba(252, 250, 235, 0) 80%
-    );
+    ); */
 }
 #infoForTheUser {
   padding: 15px 35px 0px;
