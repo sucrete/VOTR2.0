@@ -215,23 +215,13 @@ html {
   background-color: #f7f7f7;
   background-image: radial-gradient(
       circle farthest-corner at top left,
-      rgba(229, 235, 236, 0.822) 0%,
-      rgba(159, 187, 230, 0) 50%
+      rgba(239, 242, 243, 0.822) 0%,
+      rgba(190, 205, 226, 0) 50%
     ),
     radial-gradient(
       circle farthest-side at top right,
       rgba(198, 209, 224, 0.11) 0%,
       rgba(193, 202, 176, 0) 10%
-    ),
-    radial-gradient(
-      circle farthest-corner at bottom right,
-      rgba(228, 230, 205, 0.253) 0%,
-      rgba(138, 213, 218, 0) 33%
-    ),
-    radial-gradient(
-      circle farthest-corner at top right,
-      rgba(223, 238, 234, 0.623) 0%,
-      rgba(198, 224, 231, 0) 50%
     ),
     radial-gradient(
       ellipse at bottom center,

@@ -1272,7 +1272,7 @@ export default {
 .siteTitle {
   z-index: 2;
   font-family: 'Oswald', serif;
-  color: #2c6fa1;
+  color: #1f5177;
   text-align: left;
   font-size: 6.5em;
   line-height: 85%;

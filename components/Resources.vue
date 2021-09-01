@@ -2011,7 +2011,7 @@ export default {
   margin-top: 5%;
   position: relative;
   transition: 0.3s all ease;
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid #1b77d250;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.01), 0 2px 2px rgba(0, 0, 0, 0.02),
     0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.04);
 }
@@ -2026,7 +2026,7 @@ export default {
   color: #1b76d2;
 }
 .govResourcesItem:visited {
-  color: rgb(78, 76, 74);
+  color: #1b76d2;
 }
 .govResourcesItem span {
   position: absolute;
@@ -2035,7 +2035,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 500;
-  color: rgb(78, 76, 74);
+  color: #1b76d2;
 }
 ul {
   margin: 0;
