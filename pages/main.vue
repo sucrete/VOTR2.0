@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopNav/>
+    <TopNav> </TopNav>
   </div>
 </template>
 
@@ -11,7 +11,11 @@ export default {
 </script>
 
 <style>
-#app, body::after, body::before, html::after, html::before {
+#app,
+body::after,
+body::before,
+html::after,
+html::before {
   /* background-color:white; */
   /* background-image: unset; */
 }

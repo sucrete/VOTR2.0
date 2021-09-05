@@ -1,6 +1,38 @@
 
 <template>
   <div>
+    <div class="alertsBox">
+      <v-alert
+        type="warning"
+        prominent
+        border="left"
+        colored-border
+        class="alert alert--unsupported"
+        dismissible
+        transition="scroll-x-transition"
+        icon="mdi-api-off"
+      >
+        The Voter's Companion is currently unsupported and is displaying
+        information for an example voter.
+      </v-alert>
+      <v-alert
+        border="left"
+        colored-border
+        color="blue darken-1"
+        class="alert alert--unsupported"
+        dismissible
+        prominent
+        icon="mdi-map-marker"
+        transition="scroll-x-transition"
+      >
+        Showing info for:
+        <br />
+        <strong>
+          4153 Mercier St.<br />
+          Kansas City, MO 64111
+        </strong>
+      </v-alert>
+    </div>
     <v-tabs right color="#668ee4" class="topNavvy" v-model="tab">
       <a class="logo" href="/"> THE VOTER'S COMPANION </a>
       <v-spacer></v-spacer>
@@ -28,6 +60,7 @@
         <Officials />
       </v-tab-item>
     </v-tabs-items>
+
     <footer>
       <a id="logoLink" href="https://www.usvotefoundation.org/" target="_blank">
         <img src="voteFoundationBadge.png" />
@@ -36,11 +69,7 @@
   </div>
 </template>
 
-// <script>
-// import Officials from './Officials.vue'
-// import Timeline from './Timeline.vue'
-// import Resources from './Resources.vue'
-
+<script>
 export default {
   name: 'TopNav',
   data() {
@@ -53,26 +82,37 @@ export default {
       items: ['Timeline', 'Resources', 'Officials'],
     }
   },
-  components: {
-    // Officials,
-    // Timeline,
-    // Resources
-  },
 }
 </script>
 
 <style>
+.alertsBox {
+  position: absolute;
+  width: 100%;
+  right: -50vw;
+  transform: translateX(-15px);
+  bottom: 5px;
+  height: 100%;
+  z-index: 999;
+}
+.v-alert {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.05),
+    0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.07),
+    0 16px 16px rgba(0, 0, 0, 0.08), 0 32px 32px rgba(0, 0, 0, 0.09) !important;
+}
+.alert {
+  transition: all 0.3s ease;
+  width: 50%;
+  position: sticky;
+  bottom: 0px;
+}
+.alert--unsupported {
+}
 .registerBadge {
   position: absolute;
   top: 7.5rem;
   right: 1rem;
   z-index: 7;
-  /* filter: drop-shadow(0 1px 1px rgba(0,0,0,0.06))
-    drop-shadow(0 2px 2px rgba(0,0,0,0.07))
-    drop-shadow(0 4px 4px rgba(0,0,0,0.08))
-    drop-shadow(0 8px 8px rgba(0,0,0,0.09))
-    drop-shadow(0 16px 16px rgba(0,0,0,0.1))
-    drop-shadow(0 32px 32px rgba(0,0,0,0.11)); */
 }
 .registerBadge::after {
   content: '';

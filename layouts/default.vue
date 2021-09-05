@@ -1,20 +1,16 @@
 <template>
   <v-app>
-    <Nuxt/>
+    <Nuxt />
   </v-app>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-    
-    }
-  }
+  data() {
+    return {}
+  },
 }
 </script>
 
-<style scoped>
-
-
+<style >
 </style>
