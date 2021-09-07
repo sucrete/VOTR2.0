@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <div class="alertsBox">
+    <div class="alertsBox" v-show="alert || balert">
       <v-alert
         type="warning"
         prominent
@@ -9,8 +9,8 @@
         colored-border
         class="alert alert--unsupported"
         dismissible
-        transition="scroll-x-transition"
         icon="mdi-api-off"
+        v-model="alert"
       >
         The Voter's Companion is currently unsupported and is displaying
         information for an example voter.
@@ -23,7 +23,7 @@
         dismissible
         prominent
         icon="mdi-map-marker"
-        transition="scroll-x-transition"
+        v-model="balert"
       >
         Showing info for:
         <br />
@@ -74,6 +74,9 @@ export default {
   name: 'TopNav',
   data() {
     return {
+      seen: true,
+      alert: true,
+      balert: true,
       tab: null,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       i: 'Timeline',
