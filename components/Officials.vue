@@ -31,26 +31,19 @@
                     class="mb-2 pb-0"
                     :class="`elevation-${rep.show ? 5 : 2}`"
                   >
-                    <v-layout class="thisClass" row>
-                      <v-flex xs7 class="pt-1 pr-0 pb-0 mb-0 pl-3 repTopText">
-                        <v-card-title class="pt-3 pr-0 pb-2 mb-0" primary-title>
-                          <div>
-                            <div class="repName text-xs-left" xs7>
-                              {{ rep.repName }}
-                            </div>
-                          </div>
-                        </v-card-title>
-                        <v-card-text
-                          class="text-xs-left mt-0 pt-0 pb-0 repTitle"
-                        >
-                          {{ rep.repTitle }}
-                        </v-card-text>
-                      </v-flex>
-                      <!-- 🇺🇸 testing picture breakpoints below 🇺🇸 -->
-                      <v-flex xs5 sm7 md7 class="pr-4 pt-0 mt-3 mb-0 pb-0">
-                        <v-img position="50% 2%" :src="rep.repPhotoURL"></v-img>
-                      </v-flex>
-                    </v-layout>
+                    <div class="d-flex flex-no-wrap justify-space-between">
+                      <div>
+                        <v-card-title v-text="rep.repName"></v-card-title>
+
+                        <v-card-subtitle
+                          v-text="rep.repTitle"
+                        ></v-card-subtitle>
+                      </div>
+
+                      <v-avatar class="ma-3" size="125" tile>
+                        <v-img :src="rep.repPhotoURL"></v-img>
+                      </v-avatar>
+                    </div>
 
                     <v-card-actions class="pt-0 mt-2">
                       <div v-if="rep.website" class="text-xs-center">
@@ -700,6 +693,7 @@ export default {
       })
     },
     importData() {
+      console.log('importData() fired')
       const divisions = this.googleResponse.data.divisions
       let divisionQuays = []
       divisionQuays = Object.getOwnPropertyNames(divisions)
@@ -715,6 +709,7 @@ export default {
       const GState = this.googleResponse
       const divs = GState.data.divisions
       const keys = this.divisionKeys
+      console.log('dataShaker() fired')
       for (let ttt = 0; ttt < keys.length; ttt++) {
         if (
           Object.prototype.hasOwnProperty.call(divs[keys[ttt]], 'officeIndices')
@@ -741,7 +736,7 @@ export default {
               officialObject1.repName = GState.data.officials[corazon].name
               officialObject1.repPhotoURL =
                 GState.data.officials[corazon].photoUrl ||
-                'https://wabar.asn.au/staging/wp-content/themes/wabar/img/user-placeholder.jpg'
+                'https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg'
               if (corazon === 0) {
                 officialObject1.repPhotoURL =
                   'http://i.dailymail.co.uk/i/pix/2017/10/31/14/45DEE46500000578-5035763-image-m-11_1509461782123.jpg'
@@ -815,10 +810,21 @@ export default {
 #officialsBody:not(.infoButton) {
   font-family: 'Roboto', sans-serif;
 }
-.repTitle {
-  line-height: 125%;
-  color: grey;
-  padding-right: 0px;
+.v-avatar {
+  height: 125px !important;
+  width: 125px !important;
+}
+.v-image,
+.v-avatar {
+  border-radius: 99px !important;
+}
+
+.v-card__title,
+.v-card__subtitle {
+  text-align: left !important;
+}
+.v-card {
+  word-break: unset !important;
 }
 .buttonWrapper {
   margin-left: 0.5em;
