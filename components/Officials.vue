@@ -336,6 +336,8 @@ export default {
               phones: ['(202) 224-6154'],
               urls: ['https://www.hawley.senate.gov/'],
               emails: ['senator@hawley.senate.gov'],
+              photoUrl:
+                'https://seawaves.com/wp-content/uploads/Hawley_Official_Portrait_400x.jpg',
               channels: [
                 {
                   type: 'Facebook',
@@ -393,7 +395,7 @@ export default {
               phones: ['(573) 751-3222'],
               urls: ['https://governor.mo.gov/'],
               photoUrl:
-                'https://ltgov.mo.gov/wp-content/uploads/2017/01/Parson-headshot.jpg',
+                'https://pbs.twimg.com/profile_images/1349377305517432833/VSFz5pZB_400x400.jpg',
               emails: ['ltgovinfo@ltgov.mo.gov'],
               channels: [
                 {
@@ -419,6 +421,8 @@ export default {
               party: 'Republican Party',
               phones: ['(573) 751-4727'],
               urls: ['https://ltgov.mo.gov/'],
+              photoUrl:
+                'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1028/2019/09/24092635/lt-gov-mike-kehoe.jpg',
               channels: [
                 {
                   type: 'Facebook',
@@ -444,6 +448,8 @@ export default {
               phones: ['(573) 751-4936'],
               urls: ['https://www.sos.mo.gov/'],
               emails: ['info@sos.mo.gov'],
+              photoUrl:
+                'https://www.sos.mo.gov/CMSImages/SOSMain/BioPortrait.jpg',
               channels: [
                 {
                   type: 'Facebook',
@@ -461,6 +467,8 @@ export default {
               phones: ['(573) 751-8533'],
               urls: ['https://www.treasurer.mo.gov/'],
               emails: ['info@treasurer.mo.gov'],
+              photoUrl:
+                'https://pbs.twimg.com/profile_images/1366423906014257153/0cdbg0Rv_400x400.jpg',
               channels: [
                 {
                   type: 'Facebook',
@@ -477,6 +485,8 @@ export default {
               party: 'Republican Party',
               phones: ['(573) 751-3321'],
               urls: ['https://www.ago.mo.gov/'],
+              photoUrl:
+                'data:image/jpeg;base64,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',
               channels: [
                 {
                   type: 'Facebook',
@@ -492,6 +502,8 @@ export default {
               name: 'George W. Draper, III',
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
+              photoUrl:
+                'https://bloximages.chicago2.vip.townnews.com/stlamerican.com/content/tncms/assets/v3/editorial/7/c5/7c5d8740-db4c-11e9-8163-076fcef4f299/5d84369e13756.image.jpg?crop=989%2C949%2C101%2C92',
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
             },
             {
@@ -499,36 +511,44 @@ export default {
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
+              photoUrl:
+                'https://yourmissourijudges.org/wp-content/uploads/2014/01/breckenridge.jpg',
             },
             {
               name: 'Paul C. Wilson',
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
+              photoUrl: 'https://www.courts.mo.gov/image.jsp?id=59002',
             },
             {
               name: 'Zel M. Fischer',
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
+              photoUrl: 'https://www.courts.mo.gov/image.jsp?id=46822',
             },
             {
               name: 'Laura Denvir Stith',
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
+              photoUrl: 'https://www.courts.mo.gov/image.jsp?id=70193',
             },
             {
               name: 'Mary R. Russell',
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
+              photoUrl:
+                'http://yourmissourijudges.org/wp-content/uploads/2018/09/Mary-Russell-Photo-684x1030.jpg',
             },
             {
               name: 'W. Brent Powell',
               party: 'Nonpartisan',
               phones: ['(573) 751-4144'],
               urls: ['https://www.courts.mo.gov/page.jsp?id=27'],
+              photoUrl: 'https://www.courts.mo.gov/image.jsp?id=113630',
             },
             {
               name: 'Nicole Galloway',
@@ -536,6 +556,8 @@ export default {
               phones: ['(800) 347-8597'],
               urls: ['https://auditor.mo.gov/'],
               emails: ['moaudit@auditor.mo.gov'],
+              photoUrl:
+                'https://www.koamnewsnow.com/content/uploads/2020/10/Galloway-Nicole.png',
               channels: [
                 {
                   type: 'Facebook',
@@ -561,6 +583,8 @@ export default {
               phones: ['(816) 541-1969'],
               urls: ['https://www.jacksoncountysheriff.org/'],
               emails: ['sheriff@jacksongov.org'],
+              photoUrl:
+                'https://www.jacksoncountysheriff.org/files/assets/sheriff/about-us/images/darrylforte.jpeg?dimension=pageimage&w=480',
             },
             {
               name: 'Jean Peters Baker',
@@ -575,6 +599,8 @@ export default {
               party: 'Democratic',
               phones: ['(816) 881-3555'],
               urls: ['https://www.jacksoncountyprosecutor.com/'],
+              photoUrl:
+                'https://greatermo.org/wp-content/uploads/2018/04/Jean-Peters-Baker-Portrait-8-e1554078373622-225x300.jpg',
             },
             {
               name: 'Frank White, Jr.',
@@ -591,6 +617,8 @@ export default {
               phones: ['(816) 881-3333'],
               urls: ['http://www.jacksongov.org/395/County-Executive'],
               emails: ['mhennosy@jacksongov.org'],
+              photoUrl:
+                'https://www.jacksongov.org/files/sharedassets/public/our-county/images/elected-officials/frank_white2.jpg?dimension=pageimage&w=480',
             },
             {
               name: 'Crystal Williams',
@@ -608,6 +636,8 @@ export default {
                 'https://www.jacksongov.org/704/2nd-District-At-Large-Crystal-Williams',
               ],
               emails: ['crystalwilliams@jacksongov.org'],
+              photoUrl:
+                'https://media-exp1.licdn.com/dms/image/C4E03AQHiV_1CusYeIg/profile-displayphoto-shrink_800_800/0/1516800664051?e=1636588800&v=beta&t=9uH84sYCDVTa0tH1Y-XT_ym3i2c2NL00DX1LCzGI_Gk',
             },
             {
               name: 'Tony Miller',
@@ -625,6 +655,8 @@ export default {
                 'https://www.jacksongov.org/705/3rd-District-At-Large-Tony-Miller',
               ],
               emails: ['tmiller@jacksongov.org'],
+              photoUrl:
+                'http://p3cdn4static.sharpschool.com/UserFiles/Servers/Server_133223/Image/Miller_032_150908-Edit-2.JPG',
             },
             {
               name: 'Jalen Anderson',
@@ -643,6 +675,8 @@ export default {
                 'https://www.jacksongov.org/1077/1st-District-At-Large-Jalen-Anderson',
               ],
               emails: ['JAnderson@jacksongov.org'],
+              photoUrl:
+                'https://www.jacksongov.org/files/sharedassets/public/our-county/images/elected-officials/janderson.jpg?w=600',
             },
           ],
         },
