@@ -859,11 +859,11 @@ export default {
 .v-card__title,
 .v-card__subtitle {
   text-align: left !important;
+  word-break: keep-all !important;
 }
 .v-card__title {
   line-height: 105% !important;
   padding-bottom: 01.2rem;
-  word-break: unset;
 }
 .v-card__subtitle {
   line-height: 110% !important;
