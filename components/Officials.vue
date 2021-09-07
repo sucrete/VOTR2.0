@@ -86,7 +86,12 @@
                         class="text-xs-left repInfo"
                         v-show="rep.show"
                       >
-                        {{ rep.addressLine1 }} <br />
+                        {{ rep.addressLine0 }} <br />
+                        <div v-if="rep.addressLine1">
+                          {{ rep.addressLine1 }}
+                        </div>
+                        <!-- <br v-if="rep.addressLine1" /> -->
+                        <!-- {{ rep.addressLine1 ? rep.addressLine1 :  }} <br /> -->
                         {{ rep.addressLine2 }} <br />
                         <br />
                         {{ rep.phone }}
@@ -119,6 +124,10 @@ export default {
           },
           kind: 'civicinfo#representativeInfoResponse',
           divisions: {
+            'ocd-division/country:us': {
+              name: 'United States',
+              officeIndices: [0, 1],
+            },
             'ocd-division/country:us/state:mo': {
               name: 'Missouri',
               officeIndices: [2, 4, 5, 6, 7, 8, 9, 10],
@@ -126,10 +135,6 @@ export default {
             'ocd-division/country:us/state:mo/cd:5': {
               name: "Missouri's 5th congressional district",
               officeIndices: [3],
-            },
-            'ocd-division/country:us': {
-              name: 'United States',
-              officeIndices: [0, 1],
             },
             'ocd-division/country:us/state:mo/county:jackson': {
               name: 'Jackson County',
@@ -236,7 +241,7 @@ export default {
           ],
           officials: [
             {
-              name: 'Donald J. Trump',
+              name: 'Joseph R. Biden',
               address: [
                 {
                   line1: '1600 Pennsylvania Avenue Northwest',
@@ -245,16 +250,12 @@ export default {
                   zip: '20500',
                 },
               ],
-              party: 'Republican Party',
+              party: 'Democratic Party',
               phones: ['(202) 456-1111'],
               urls: ['https://www.whitehouse.gov/'],
               photoUrl:
-                'https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/PE%20Color.jpg',
+                'https://smhttp-ssl-58547.nexcesscdn.net/nycss/images/uploads/candidates/_cropped350-420/JoeBiden21.jpg',
               channels: [
-                {
-                  type: 'Facebook',
-                  id: 'DonaldTrump',
-                },
                 {
                   type: 'Twitter',
                   id: 'potus',
@@ -266,7 +267,7 @@ export default {
               ],
             },
             {
-              name: 'Mike Pence',
+              name: 'Kamala Harris',
               address: [
                 {
                   line1: '1600 Pennsylvania Avenue Northwest',
@@ -275,16 +276,12 @@ export default {
                   zip: '20500',
                 },
               ],
-              party: 'Republican Party',
+              party: 'Democratic Party',
               phones: ['(202) 456-1111'],
               urls: ['https://www.whitehouse.gov/'],
               photoUrl:
-                'https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/VPE%20Color.jpg',
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Senator_Harris_official_senate_portrait.jpg/450px-Senator_Harris_official_senate_portrait.jpg',
               channels: [
-                {
-                  type: 'Facebook',
-                  id: 'mikepence',
-                },
                 {
                   type: 'Twitter',
                   id: 'VP',
@@ -737,16 +734,17 @@ export default {
                 'https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg'
               if (corazon === 0) {
                 officialObject1.repPhotoURL =
-                  'http://i.dailymail.co.uk/i/pix/2017/10/31/14/45DEE46500000578-5035763-image-m-11_1509461782123.jpg'
+                  'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Joe_Biden_official_portrait_2013_cropped.jpg/383px-Joe_Biden_official_portrait_2013_cropped.jpg'
               } else if (corazon === 1) {
                 officialObject1.repPhotoURL =
-                  'http://i.dailymail.co.uk/i/pix/2017/10/31/14/45DE40EA00000578-5035763-image-a-10_1509461772135.jpg'
+                  'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Senator_Harris_official_senate_portrait.jpg/450px-Senator_Harris_official_senate_portrait.jpg'
               }
               const theOfficial = GState.data.officials[corazon]
               officialObject1.party = theOfficial.party
               if (theOfficial.address !== undefined) {
                 const _oa = theOfficial.address[0]
-                officialObject1.addressLine1 = _oa.line2
+                officialObject1.addressLine0 = _oa.line1
+                officialObject1.addressLine1 = _oa.line2 || null
                 officialObject1.addressLine2 =
                   _oa.city + ', ' + _oa.state + ' ' + _oa.zip
               }
@@ -831,6 +829,7 @@ export default {
 .v-card__title {
   line-height: 105% !important;
   padding-bottom: 01.2rem;
+  word-break: unset;
 }
 .v-card__subtitle {
   line-height: 110% !important;
