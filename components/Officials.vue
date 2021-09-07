@@ -2,9 +2,7 @@
   <div class="Officials">
     <div id="overviewNoticeWrapper">
       <div id="overviewMarquee"></div>
-      <div id="overviewNotice">
-        These are your elected officials, by region.
-      </div>
+      <div id="overviewNotice">Meet your elected officials.</div>
     </div>
 
     <div class="hotBod">
@@ -813,15 +811,29 @@ export default {
 .v-avatar {
   height: 125px !important;
   width: 125px !important;
+  overflow: visible !important;
 }
-.v-image,
-.v-avatar {
+.v-image {
   border-radius: 99px !important;
 }
-
+.v-image__image {
+  background-position: 50% 2% !important;
+}
+.v-image__image,
+.v-responsive__content {
+  height: 125px !important;
+  width: 125px !important;
+}
 .v-card__title,
 .v-card__subtitle {
   text-align: left !important;
+}
+.v-card__title {
+  line-height: 105% !important;
+  padding-bottom: 01.2rem;
+}
+.v-card__subtitle {
+  line-height: 110% !important;
 }
 .v-card {
   word-break: unset !important;
@@ -893,8 +905,8 @@ h2 {
 }
 @media only screen and (min-width: 600px) {
   .v-responsive.v-image {
-    height: 115px;
-    width: 115px;
+    /* height: 115px;
+    width: 115px; */
   }
   .v-btn.v-btn--icon.theme--light {
     margin-right: 0.1em;
