@@ -43,7 +43,7 @@ footer {
     filter:drop-shadow(4px 4px 0 #A57F70)*/
 }
 html {
-  background: rgb(243, 241, 240) url('../static/stripes.svg') no-repeat center
+  background: rgb(245, 244, 243) url('../static/stripes.svg') no-repeat center
     center fixed;
   min-height: 100vh;
   box-sizing: border-box;
