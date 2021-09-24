@@ -10,7 +10,7 @@
       <img class="fordFan" src="fordfan.png" />
     </div>
     <div id="informationWrapper">
-      <div id="inputEverything">
+      <div id="inputEverything" v-bind:class="{ usingSafari: onSafari }">
         <!-- DO NOT CHANGE THE ID OF THIS INPUT! -->
         <input
           type="search"
@@ -38,6 +38,7 @@ export default {
   name: 'Landing',
   data() {
     return {
+      onSafari: false,
       stateID: '',
       // ██╗   ██╗ ██████╗ ████████╗███████╗██████╗      █████╗ ██████╗ ██╗
       // ██║   ██║██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗    ██╔══██╗██╔══██╗██║
@@ -1205,10 +1206,34 @@ export default {
       },
     }
   },
-  methods: {
-    updateValue(val) {},
-  },
   mounted() {
+    // Firefox 1.0+
+    const isFirefox = typeof InstallTrigger !== 'undefined'
+
+    // Safari 3.0+ "[object HTMLElementConstructor]"
+    const isSafari =
+      /constructor/i.test(window.HTMLElement) ||
+      (function (p) {
+        return p.toString() === '[object SafariRemoteNotification]'
+      })(
+        !window.safari ||
+          (typeof safari !== 'undefined' && window.safari.pushNotification)
+      )
+
+    // Internet Explorer 6-11
+    const isIE = false || !!document.documentMode
+
+    // Edge 20+
+    const isEdge = !isIE && !!window.StyleMedia
+
+    // Chrome 1 - 79
+    const isChrome =
+      !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime)
+    this.onSafari = isSafari
+    console.log(
+      `Detecting browsers by ducktyping: \nisFirefox:   ${isFirefox}  \nisChrome:  ${isChrome}   \nisSafari: ${isSafari}   \nisIE: ${isIE}   \nisEdge: ${isEdge}`
+    )
+    console.log(this.onSafari)
     const placesAutocomplete = places({
       container: document.getElementById('address-input'),
       type: 'address',
@@ -1232,6 +1257,9 @@ export default {
   beforeDestroy() {
     // this.placesAutocomplete.destroy();
     // return false;
+  },
+  methods: {
+    updateValue(val) {},
   },
 }
 </script>
@@ -1272,7 +1300,7 @@ export default {
 .siteTitle {
   z-index: 2;
   font-family: 'Oswald', sans-serif;
-  color: #1f5177;
+  color: #292828e8;
   text-align: left;
   font-size: 6.5em;
   line-height: 85%;
@@ -1281,30 +1309,16 @@ export default {
   position: relative;
   text-transform: uppercase;
   top: 0.75em;
-  text-shadow: 0 0 0 rgb(223, 109, 57), 0.0025em 0.0025em 0 rgb(223, 109, 57),
-    0.005em 0.005em 0 rgb(223, 109, 57), 0.0075em 0.0075em 0 rgb(223, 109, 57),
-    0.01em 0.01em 0 rgb(223, 109, 57), 0.0125em 0.0125em 0 rgb(223, 109, 57),
-    0.015em 0.015em 0 rgb(223, 109, 57), 0.0175em 0.0175em 0 rgb(223, 109, 57),
-    0.02em 0.02em 0 rgb(223, 109, 57), 0.0225em 0.0225em 0 rgb(223, 109, 57),
-    0.025em 0.025em 0 rgb(223, 109, 57), 0.0275em 0.0275em 0 rgb(223, 109, 57),
-    0.03em 0.03em 0 rgb(223, 109, 57), 0.0325em 0.0325em 0 rgb(223, 109, 57),
-    0.035em 0.035em 0 rgb(223, 109, 57), 0.0375em 0.0375em 0 rgb(223, 109, 57),
-    0.04em 0.04em 0 rgb(223, 109, 57), 0.0425em 0.0425em 0 rgb(223, 109, 57),
-    0.045em 0.045em 0 rgb(223, 109, 57), 0.0475em 0.0475em 0 rgb(223, 109, 57),
-    0.05em 0.05em 0 rgb(223, 109, 57), 0.0525em 0.0525em 0 rgb(223, 109, 57),
-    0.055em 0.055em 0 rgb(223, 109, 57), 0.0575em 0.0575em 0 rgb(223, 109, 57),
-    0.06em 0.06em 0 rgb(223, 109, 57), 0.0625em 0.0625em 0 rgb(223, 109, 57),
-    0.065em 0.065em 0 rgb(223, 109, 57), 0.0675em 0.0675em 0 rgb(223, 109, 57),
-    0.07em 0.07em 0 rgb(223, 109, 57), 0.0725em 0.0725em 0 rgb(223, 109, 57);
+  text-shadow: 0.0525em 0.0525em 0 rgb(223, 109, 57);
 }
 .siteTitle::before {
   content: attr(title);
   position: absolute;
-  -webkit-text-stroke: 0.015em #aab5ce;
+  /* -webkit-text-stroke: 0.02em #aab5ce; */
   left: 0;
   top: 0;
   padding-left: 0.9em;
-  z-index: 1;
+  z-index: -1;
 }
 
 .fordFan {
@@ -1463,6 +1477,9 @@ input:focus::-webkit-input-placeholder {
 }
 .ap-input-icon {
   transform: translateY(-18px);
+}
+#inputEverything.usingSafari .algolia-places button.ap-input-icon {
+  transform: translateY(0px);
 }
 .ap-input:hover ~ .ap-input-icon svg {
   fill: #6f6b68 !important;
