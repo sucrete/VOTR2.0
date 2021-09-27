@@ -33,12 +33,12 @@
         </strong>
       </v-alert>
     </div>
-    <v-tabs right color="#668ee4" class="topNavvy" v-model="tab">
+    <v-tabs v-model="tab" right color="#363636" class="topNavvy">
       <a class="logo" href="/"
         ><span>THE</span> V<span>OTER'S</span> C<span>OMPANION</span></a
       >
       <v-spacer></v-spacer>
-      <v-tabs-slider color="blue"></v-tabs-slider>
+      <v-tabs-slider color="rgba(0, 0, 0, 0.54)"></v-tabs-slider>
 
       <v-tab v-for="item in items" :key="item">
         {{ item }}
@@ -244,7 +244,7 @@ html {
   background: white;
 }
 #overviewNotice {
-  color: #1a76d2;
+  color: #0077ee;
   font-size: 1.5rem;
   width: 20rem;
   text-align: left;
@@ -255,21 +255,8 @@ html {
 }
 #overviewNoticeWrapper {
   background-color: #f7f7f7;
-  background-image: radial-gradient(
-      circle farthest-corner at top left,
-      rgba(239, 242, 243, 0.822) 0%,
-      rgba(190, 205, 226, 0) 50%
-    ),
-    radial-gradient(
-      circle farthest-side at top right,
-      rgba(198, 209, 224, 0.11) 0%,
-      rgba(193, 202, 176, 0) 10%
-    ),
-    radial-gradient(
-      ellipse at bottom center,
-      #1a76d21a 0%,
-      rgba(229, 227, 233, 0) 80%
-    );
+  background-size: cover;
+  background-image: url('../static/07.png');
   font-family: 'Roboto', sans-serif;
   width: 100%;
   padding-left: 2rem;

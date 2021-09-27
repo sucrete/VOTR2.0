@@ -1849,6 +1849,11 @@ export default {
 </script>
 
 <style>
+.headline {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500 !important;
+}
+
 #find-my-trolling-place {
   background-color: #ff9800;
   color: white !important;
@@ -1900,6 +1905,7 @@ export default {
   height: 36px;
   text-align: left;
 }
+
 .v-tabs.knowledgeTabs {
   /* width: 21.1em; */
 }
@@ -1907,7 +1913,6 @@ export default {
   font-family: 'Roboto', sans-serif;
   position: relative;
   width: 34em;
-  left: 0.7em;
   line-height: 1.444444;
   font-size: 16px;
   font-style: normal;
@@ -2097,8 +2102,15 @@ em {
   .v-tabs.knowledgeTabs .v-window {
   }
 }
-@media screen and (min-width: 700px) and (max-width: 750px) {
-  .v-tabs.knowledgeTabs .v-window {
+@media screen and (max-width: 750px) {
+  #Resources
+    .v-tabs.knowledgeTabs
+    .v-item-group
+    .v-slide-group__wrapper
+    .v-slide-group__content
+    .v-tab {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 @media screen and (min-width: 375px) and (max-width: 503px) {
