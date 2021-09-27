@@ -35,7 +35,9 @@
     </div>
     <v-tabs v-model="tab" right color="#363636" class="topNavvy">
       <a class="logo" href="/"
-        ><span>THE</span> V<span>OTER'S</span> C<span>OMPANION</span></a
+        ><span class="THE">THE </span>V<span>OTER'S </span>C<span
+          >OMPANION</span
+        ></a
       >
       <v-spacer></v-spacer>
       <v-tabs-slider color="rgba(0, 0, 0, 0.54)"></v-tabs-slider>
@@ -413,9 +415,6 @@ input:focus {
   .v-tabs {
     margin-right: 5px !important;
   }
-  .v-slide-group__content {
-    margin-right: 8px;
-  }
 }
 @media screen and (min-width: 376px) and (max-width: 432px) {
   footer {
@@ -428,20 +427,11 @@ input:focus {
   }
 }
 @media only screen and (max-width: 750px) {
-  .registerBadge {
-    position: absolute;
-    top: 7rem;
-    right: 1rem;
-    z-index: 7;
-  }
   a.registerBadge img {
     height: 160px !important;
     width: 160px;
   }
-  .registerBadge::after {
-    height: 115px;
-    width: 115px;
-  }
+  .registerBadge::after,
   .registerBadge::before {
     height: 115px;
     width: 115px;
@@ -471,11 +461,23 @@ input:focus {
     position: relative;
   }
 }
-@media only screen and (max-width: 380px) {
-  html,
-  body {
-    /* background: rgb(253, 253, 253) !important;
-    min-height: 100vh; */
+@media only screen and (max-width: 450px) {
+  a.registerBadge img {
+    height: 140px !important;
+    width: 140px;
+  }
+  .registerBadge::after,
+  .registerBadge::before {
+    height: 110px;
+    width: 110px;
+  }
+  #overviewNoticeWrapper {
+    padding-top: 1rem;
+    padding-left: 1.3rem;
+  }
+  #overviewNotice {
+    font-size: 1.4rem;
+    width: 70%;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -507,6 +509,21 @@ input:focus {
   }
   .v-tabs__div {
     margin-right: 0px !important;
+  }
+}
+@media only screen and (max-width: 470px) {
+  a.logo span:not(.THE) {
+    display: none;
+  }
+  a.logo {
+    font-weight: 550;
+    font-size: 1.5rem;
+    left: 0.6rem;
+    line-height: 2rem;
+  }
+  a.logo .THE {
+    font-size: 0.7rem;
+    vertical-align: super;
   }
 }
 </style>

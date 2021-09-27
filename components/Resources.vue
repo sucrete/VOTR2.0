@@ -1996,16 +1996,19 @@ export default {
   background-color: transparent !important;
   font-family: 'Roboto', sans-serif;
   padding: 0px 16px 16px 16px;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-direction: row;
+  gap: 5%;
 }
 .govResourcesItem {
-  flex-basis: 30%;
+  flex-basis: 170px;
+  flex-grow: 1;
   background-color: #fff;
   border-radius: 7px;
-
   text-align: center;
+  width: 170px;
   height: 120px;
   margin-top: 5%;
   position: relative;
@@ -2123,10 +2126,18 @@ em {
   .v-tabs.knowledgeTabs {
   }
 }
-@media screen and (min-width: 413px) and (max-width: 432px) {
+@media screen and (max-width: 502px) {
   .v-tabs.knowledgeTabs .v-window {
-    width: 90vw;
-    left: -2.2em;
+    width: 85vw;
+  }
+  #Resources
+    .v-tabs.knowledgeTabs
+    .v-item-group
+    .v-slide-group__wrapper
+    .v-slide-group__content
+    .v-tab {
+    padding-left: 7px;
+    padding-right: 7px;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -2136,7 +2147,6 @@ em {
   }
   .v-tabs.knowledgeTabs .v-window {
     width: 90vw;
-    left: -1.5em;
   }
   #additionalResources {
     width: 95%;

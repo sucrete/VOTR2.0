@@ -5,18 +5,23 @@
       <div id="overviewNotice">Timeline of elections in your region.</div>
     </div>
     <div class="dummyInfoThingy elevation-19" v-if="useDummyInfo">
-      There are no upcoming elections for your region on record. Please, revisit your Timeline at a later date. In the meantime, information on your state's voting regulations and a list of your officials are accessible from the tabs at the top of the page.
+      There are no upcoming elections for your region on record. Please, revisit
+      your Timeline at a later date. In the meantime, information on your
+      state's voting regulations and a list of your officials are accessible
+      from the tabs at the top of the page.
     </div>
-    <v-container class="timelineContainer pb-0" style="max-width: 42em;">
+    <v-container class="timelineContainer pb-0" style="max-width: 42em">
       <v-timeline align-top dense>
         <v-timeline-item
           class="mb-4"
           small
           color="orange"
-          v-bind:class="{ dummyInfo: useDummyInfo }"
+          :class="{ dummyInfo: useDummyInfo }"
         >
           <v-layout class="subheading">
-            <v-flex text-xs-left class="todayElement">{{ returnPrettyDate(todaysDate) }}</v-flex>
+            <v-flex text-xs-left class="todayElement">{{
+              returnPrettyDate(todaysDate)
+            }}</v-flex>
             <v-flex text-xs-right class="todayElement">TODAY</v-flex>
           </v-layout>
         </v-timeline-item>
@@ -24,64 +29,94 @@
         <v-timeline-item
           v-for="(votable, index) in electionsTimelineObject"
           class="mt-2 eachItem"
-          v-bind:class="{ dummyInfo: useDummyInfo }"
-          v-bind:color="votable.color"
+          :class="{ dummyInfo: useDummyInfo }"
           :key="index"
+          :color="votable.color"
           small
         >
           <v-layout justify-space-between class="subheading mb-2">
-            <v-flex xs7 text-xs-left>{{ returnPrettyDate(votable.electionDate) }}</v-flex>
-            <v-flex xs5 text-xs-right>{{ returnRelativeTime(votable.electionDate) }}</v-flex>
+            <v-flex xs7 text-xs-left>{{
+              returnPrettyDate(votable.electionDate)
+            }}</v-flex>
+            <v-flex xs5 text-xs-right>{{
+              returnRelativeTime(votable.electionDate)
+            }}</v-flex>
           </v-layout>
           <div class="text-xs-left mb-2 subheading font-weight-bold">
             <span class="electionTitle">{{ votable.electionTitle }}</span>
             <span class="infoTooltip" v-if="votable.electionType !== null">
               <span class="infoTooltipText">?</span>
-              <span class="tooltiptext" v-html="electionTypes[votable.electionType]"></span>
+              <span
+                class="tooltiptext"
+                v-html="electionTypes[votable.electionType]"
+              ></span>
             </span>
           </div>
           <div class="text-xs-left font-italic subheading">
             {{ votable.additionalInformation }}
           </div>
-          <v-list
-            class="timelineList"
-            v-bind:class="{ dummyInfo: useDummyInfo }"
-          >
+          <v-list class="timelineList" :class="{ dummyInfo: useDummyInfo }">
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title>New Voter Registration Dates</v-list-item-title>
-                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info, index) in votable.newVoterRegistrationDates" :key="index">{{ info }}</v-list-item-subtitle>
+                <v-list-item-title
+                  >New Voter Registration Dates</v-list-item-title
+                >
+                <v-list-item-subtitle
+                  :class="{ dummyInfo: useDummyInfo }"
+                  v-for="(info, index) in votable.newVoterRegistrationDates"
+                  :key="index"
+                  >{{ info }}</v-list-item-subtitle
+                >
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title>Absentee Ballot Request Dates</v-list-item-title>
-                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info, index) in votable.newVoterRegistrationDates" :key="index">{{ info }}</v-list-item-subtitle>
+                <v-list-item-title
+                  >Absentee Ballot Request Dates</v-list-item-title
+                >
+                <v-list-item-subtitle
+                  v-for="(info, index) in votable.newVoterRegistrationDates"
+                  :key="index"
+                  :class="{ dummyInfo: useDummyInfo }"
+                  >{{ info }}</v-list-item-subtitle
+                >
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title>Absentee Ballot Return Dates</v-list-item-title>
-                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }" v-for="(info,index) in votable.absenteeBallotReturnDates" :key="index">{{ info }}</v-list-item-subtitle>
+                <v-list-item-title
+                  >Absentee Ballot Return Dates</v-list-item-title
+                >
+                <v-list-item-subtitle
+                  v-for="(info, index) in votable.absenteeBallotReturnDates"
+                  :key="index"
+                  :class="{ dummyInfo: useDummyInfo }"
+                  >{{ info }}</v-list-item-subtitle
+                >
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title>Window for In-Person Absentee Voting</v-list-item-title>
-                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }">{{ votable.inPersonAbsenteeVotingToFrom }}</v-list-item-subtitle>
+                <v-list-item-title
+                  >Window for In-Person Absentee Voting</v-list-item-title
+                >
+                <v-list-item-subtitle :class="{ dummyInfo: useDummyInfo }">{{
+                  votable.inPersonAbsenteeVotingToFrom
+                }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>Window for Early Voting</v-list-item-title>
-                <v-list-item-subtitle v-bind:class="{ dummyInfo: useDummyInfo }">{{ votable.earlyVotingToFrom }}</v-list-item-subtitle>
+                <v-list-item-subtitle :class="{ dummyInfo: useDummyInfo }">{{
+                  votable.earlyVotingToFrom
+                }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
-
           </v-list>
         </v-timeline-item>
       </v-timeline>
@@ -93,7 +128,7 @@
 const hdate = require('human-date')
 export default {
   name: 'Timeline',
-  data () {
+  data() {
     return {
       timelineHTML: '',
       // presentBadge: this.$store.getters.shouldIDisplayBadge,
@@ -101,63 +136,48 @@ export default {
       electionsTimelineObject: [],
       useDummyInfo: false,
       electionTypes: {
-        'General':
-          '<p>"A <u>general election</u> is an election in which all or most members of a given political body are chosen...</p><p class="secondP">...In U.S. politics, general elections are elections held at any level (e.g. city, county, congressional district, state) that typically involve competition between at least two parties. General elections occur every two to six years...and include the presidential election..."</p><p class="wikiCitation">Wikipedia contributors. (2019, February 25). General election. In Wikipedia, The Free Encyclopedia. Retrieved 00:44, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=General_election&oldid=884941090</p>'
-        ,
-        'Runoff':
-          '<q>The two-round system is known as run-off voting in the United States, where the second round is known as a <u>run-off election</u>. Run-off voting is also sometimes used as a generic term to describe any method involving a number of rounds of voting, with eliminations after each round...</q><p class="wikiCitation">Wikipedia contributors. (2019, May 8). Two-round system. In Wikipedia, The Free Encyclopedia. Retrieved 00:49, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=Two-round_system&oldid=896105269</p>'
-        ,
-        'Primary':
-          '<q>A <u>primary election</u> is the process by which voters, either the general public (open primary) or members of a political party (closed primary), can indicate their preference for a candidate in an upcoming general election or by-election, thus narrowing the field of candidates...</q><p class="wikiCitation">Wikipedia contributors. (2019, April 16). Primary election. In Wikipedia, The Free Encyclopedia. Retrieved 00:50, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=Primary_election&oldid=892689977</p>'
-        ,
-        'Special':
-          '<q>[<u>Special elections</u>] are used to fill elected offices that have become vacant between general elections...In most cases these elections occur after the incumbent dies or resigns, but they also occur when the incumbent becomes ineligible to continue in office (because of a recall, ennoblement, criminal conviction, or failure to maintain a minimum attendance)...</q><p class="wikiCitation">Wikipedia contributors. (2019, May 11). By-election. In Wikipedia, The Free Encyclopedia. Retrieved 00:58, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=By-election&oldid=896529062</p>'
-        ,
-        'Regular':
-          '<p>Also known as a general election, a <u>regular election</u> is "...an election in which all or most members of a given political body are chosen...</p><p class="secondP">...In U.S. politics, general elections are elections held at any level (e.g. city, county, congressional district, state) that typically involve competition between at least two parties. General elections occur every two to six years...and include the presidential election..."</p><p class="wikiCitation">Wikipedia contributors. (2019, February 25). General election. In Wikipedia, The Free Encyclopedia. Retrieved 00:44, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=General_election&oldid=884941090</p>'
+        General:
+          '<p>"A <u>general election</u> is an election in which all or most members of a given political body are chosen...</p><p class="secondP">...In U.S. politics, general elections are elections held at any level (e.g. city, county, congressional district, state) that typically involve competition between at least two parties. General elections occur every two to six years...and include the presidential election..."</p><p class="wikiCitation">Wikipedia contributors. (2019, February 25). General election. In Wikipedia, The Free Encyclopedia. Retrieved 00:44, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=General_election&oldid=884941090</p>',
+        Runoff:
+          '<q>The two-round system is known as run-off voting in the United States, where the second round is known as a <u>run-off election</u>. Run-off voting is also sometimes used as a generic term to describe any method involving a number of rounds of voting, with eliminations after each round...</q><p class="wikiCitation">Wikipedia contributors. (2019, May 8). Two-round system. In Wikipedia, The Free Encyclopedia. Retrieved 00:49, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=Two-round_system&oldid=896105269</p>',
+        Primary:
+          '<q>A <u>primary election</u> is the process by which voters, either the general public (open primary) or members of a political party (closed primary), can indicate their preference for a candidate in an upcoming general election or by-election, thus narrowing the field of candidates...</q><p class="wikiCitation">Wikipedia contributors. (2019, April 16). Primary election. In Wikipedia, The Free Encyclopedia. Retrieved 00:50, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=Primary_election&oldid=892689977</p>',
+        Special:
+          '<q>[<u>Special elections</u>] are used to fill elected offices that have become vacant between general elections...In most cases these elections occur after the incumbent dies or resigns, but they also occur when the incumbent becomes ineligible to continue in office (because of a recall, ennoblement, criminal conviction, or failure to maintain a minimum attendance)...</q><p class="wikiCitation">Wikipedia contributors. (2019, May 11). By-election. In Wikipedia, The Free Encyclopedia. Retrieved 00:58, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=By-election&oldid=896529062</p>',
+        Regular:
+          '<p>Also known as a general election, a <u>regular election</u> is "...an election in which all or most members of a given political body are chosen...</p><p class="secondP">...In U.S. politics, general elections are elections held at any level (e.g. city, county, congressional district, state) that typically involve competition between at least two parties. General elections occur every two to six years...and include the presidential election..."</p><p class="wikiCitation">Wikipedia contributors. (2019, February 25). General election. In Wikipedia, The Free Encyclopedia. Retrieved 00:44, May 16, 2019, from https://en.wikipedia.org/w/index.php?title=General_election&oldid=884941090</p>',
       },
       dummyInfo: [
         {
-      		"electionDate": "04/30/2019",
-      		"electionTitle": "North Carolina District 3 Special Primary Election",
-      		"additionalInformation": "Special Election for Congressional District 3",
-      		"newVoterRegistrationDates": [
-      			"Fri Apr 5, 2019"
-      		],
-      		"absenteeBallotReturnDates": [
-      			"Tue Apr 30, 2019"
-      		],
-      		"absenteeBallotRequestDates": [
-      			"Tue Apr 23, 2019"
-      		],
-      		"inPersonAbsenteeVotingToFrom": "none on record",
-      		"earlyVotingToFrom": "Thu Apr 11, 2019 - Sat Apr 27, 2019",
-      		"electionType": null,
-      		"color": "#cedcf1"
-      	},
-      	{
-      		"electionDate": "05/14/2019",
-      		"electionTitle": "North Carolina District 9 New Primary Election",
-      		"additionalInformation": "New Election for Congressional District 9",
-      		"newVoterRegistrationDates": [
-      			"Fri Apr 19, 2019"
-      		],
-      		"absenteeBallotReturnDates": [
-      			"Tue May 14, 2019"
-      		],
-      		"absenteeBallotRequestDates": [
-      			"Tue May 7, 2019"
-      		],
-      		"inPersonAbsenteeVotingToFrom": "none on record",
-      		"earlyVotingToFrom": "Thu Apr 25, 2019 - Sat May 11, 2019",
-      		"electionType": null,
-      		"color": "#adb5c4"
-      	}
+          electionDate: '04/30/2019',
+          electionTitle: 'North Carolina District 3 Special Primary Election',
+          additionalInformation:
+            'Special Election for Congressional District 3',
+          newVoterRegistrationDates: ['Fri Apr 5, 2019'],
+          absenteeBallotReturnDates: ['Tue Apr 30, 2019'],
+          absenteeBallotRequestDates: ['Tue Apr 23, 2019'],
+          inPersonAbsenteeVotingToFrom: 'none on record',
+          earlyVotingToFrom: 'Thu Apr 11, 2019 - Sat Apr 27, 2019',
+          electionType: null,
+          color: '#cedcf1',
+        },
+        {
+          electionDate: '05/14/2019',
+          electionTitle: 'North Carolina District 9 New Primary Election',
+          additionalInformation: 'New Election for Congressional District 9',
+          newVoterRegistrationDates: ['Fri Apr 19, 2019'],
+          absenteeBallotReturnDates: ['Tue May 14, 2019'],
+          absenteeBallotRequestDates: ['Tue May 7, 2019'],
+          inPersonAbsenteeVotingToFrom: 'none on record',
+          earlyVotingToFrom: 'Thu Apr 25, 2019 - Sat May 11, 2019',
+          electionType: null,
+          color: '#adb5c4',
+        },
       ],
       timelineColors: {
-        '0': '#cedcf1',
-        '1': '#adb5c4',
-        '2': '#29417e'
+        0: '#cedcf1',
+        1: '#adb5c4',
+        2: '#29417e',
       },
       todaysDate: '',
       relativeTime: '',
@@ -172,35 +192,35 @@ export default {
         objects: [
           {
             id: 2882,
-            created_at: "2020-01-11T16:22:03.005417Z",
-            updated_at: "2020-08-24T23:44:56.005299Z",
-            title: "Missouri General Election",
+            created_at: '2020-01-11T16:22:03.005417Z',
+            updated_at: '2020-08-24T23:44:56.005299Z',
+            title: 'Missouri General Election',
             state: {
-              short_name: "MO",
-              id: "S29",
-              name: "Missouri",
+              short_name: 'MO',
+              id: 'S29',
+              name: 'Missouri',
             },
             election_level: {
               id: 18,
-              name: "Federal",
+              name: 'Federal',
             },
             election_type: {
               id: 2,
-              name: "General",
+              name: 'General',
             },
             election_type_detail: null,
-            election_status: "approved",
+            election_status: 'approved',
             election_day_registration_is_available: false,
             use_overseas_dates_as_military_dates: true,
-            election_date: "2020-11-03",
+            election_date: '2020-11-03',
             is_public: true,
-            additional_information: "",
+            additional_information: '',
             locations: [
               {
-                type: "state",
-                id: "S29",
-                geoid: "29",
-                name: "Missouri",
+                type: 'state',
+                id: 'S29',
+                geoid: '29',
+                name: 'Missouri',
               },
             ],
             urls: [
@@ -208,181 +228,183 @@ export default {
                 id: 1431,
                 url_type: {
                   id: 1,
-                  name: "Election Web Site",
+                  name: 'Election Web Site',
                 },
-                url: "http://www.sos.mo.gov/elections/govotemissouri",
-                name: "Missouri Voting",
+                url: 'http://www.sos.mo.gov/elections/govotemissouri',
+                name: 'Missouri Voting',
               },
             ],
             dates: [
               {
                 id: 39442,
-                kind: "AVT",
+                kind: 'AVT',
                 date_type: {
                   id: 49,
                   default: false,
-                  name: "In the Election Office by",
+                  name: 'In the Election Office by',
                 },
-                date: "2020-11-02",
-                time: "17:00:00",
-                time_zone: "US/Central",
-                time_zone_offset: "-0500",
+                date: '2020-11-02',
+                time: '17:00:00',
+                time_zone: 'US/Central',
+                time_zone_offset: '-0500',
                 date_human_readable:
-                  "In the Election Office by Mon Nov 2, 2020 5:00PM CST",
+                  'In the Election Office by Mon Nov 2, 2020 5:00PM CST',
               },
               {
                 id: 39443,
-                kind: "DBED",
+                kind: 'DBED',
                 date_type: {
                   id: 1,
                   default: true,
-                  name: "Blank - (Date Only - No Descriptive Label)",
+                  name: 'Blank - (Date Only - No Descriptive Label)',
                 },
-                date: "2020-11-03",
-                time: "19:00:00",
-                time_zone: "US/Central",
-                time_zone_offset: "-0500",
-                date_human_readable: "Tue Nov 3, 2020 7:00PM CST",
+                date: '2020-11-03',
+                time: '19:00:00',
+                time_zone: 'US/Central',
+                time_zone_offset: '-0500',
+                date_human_readable: 'Tue Nov 3, 2020 7:00PM CST',
               },
               {
                 id: 39444,
-                kind: "DBRD",
+                kind: 'DBRD',
                 date_type: {
                   id: 10,
                   default: false,
-                  name: "Received by",
+                  name: 'Received by',
                 },
-                date: "2020-10-21",
-                time: "17:00:00",
-                time_zone: "US/Central",
-                time_zone_offset: "-0500",
-                date_human_readable:
-                  "Received by Wed Oct 21, 2020 5:00PM CDT",
+                date: '2020-10-21',
+                time: '17:00:00',
+                time_zone: 'US/Central',
+                time_zone_offset: '-0500',
+                date_human_readable: 'Received by Wed Oct 21, 2020 5:00PM CDT',
               },
               {
                 id: 39445,
-                kind: "DRD",
+                kind: 'DRD',
                 date_type: {
                   id: 9,
                   default: false,
-                  name: "Postmarked by",
+                  name: 'Postmarked by',
                 },
-                date: "2020-10-07",
+                date: '2020-10-07',
                 time: null,
                 time_zone: null,
                 time_zone_offset: null,
-                date_human_readable: "Postmarked by Wed Oct 7, 2020",
+                date_human_readable: 'Postmarked by Wed Oct 7, 2020',
               },
               {
                 id: 39446,
-                kind: "MRD",
+                kind: 'MRD',
                 date_type: {
                   id: 52,
                   default: false,
-                  name: "Away from US on Active Duty by",
+                  name: 'Away from US on Active Duty by',
                 },
-                date: "2020-11-03",
+                date: '2020-11-03',
                 time: null,
                 time_zone: null,
                 time_zone_offset: null,
                 date_human_readable:
-                  "Away from US on Active Duty by Tue Nov 3, 2020",
+                  'Away from US on Active Duty by Tue Nov 3, 2020',
               },
               {
                 id: 39447,
-                kind: "OBED",
+                kind: 'OBED',
                 date_type: {
                   id: 9,
                   default: false,
-                  name: "Postmarked by",
+                  name: 'Postmarked by',
                 },
-                date: "2020-11-02",
+                date: '2020-11-02',
                 time: null,
                 time_zone: null,
                 time_zone_offset: null,
-                date_human_readable: "Postmarked by Mon Nov 2, 2020",
+                date_human_readable: 'Postmarked by Mon Nov 2, 2020',
               },
               {
                 id: 39448,
-                kind: "OBED",
+                kind: 'OBED',
                 date_type: {
                   id: 15,
                   default: false,
-                  name: "Post received by",
+                  name: 'Post received by',
                 },
-                date: "2020-11-06",
-                time: "12:00:00",
-                time_zone: "US/Central",
-                time_zone_offset: "-0500",
+                date: '2020-11-06',
+                time: '12:00:00',
+                time_zone: 'US/Central',
+                time_zone_offset: '-0500',
                 date_human_readable:
-                  "Post received by Fri Nov 6, 2020 12:00PM CST",
+                  'Post received by Fri Nov 6, 2020 12:00PM CST',
               },
               {
                 id: 39449,
-                kind: "OBED",
+                kind: 'OBED',
                 date_type: {
                   id: 32,
                   default: false,
-                  name: "Email or Fax by",
+                  name: 'Email or Fax by',
                 },
-                date: "2020-11-03",
-                time: "19:00:00",
-                time_zone: "US/Central",
-                time_zone_offset: "-0500",
+                date: '2020-11-03',
+                time: '19:00:00',
+                time_zone: 'US/Central',
+                time_zone_offset: '-0500',
                 date_human_readable:
-                  "Email or Fax by Tue Nov 3, 2020 7:00PM CST",
+                  'Email or Fax by Tue Nov 3, 2020 7:00PM CST',
               },
               {
                 id: 39450,
-                kind: "OBRD",
+                kind: 'OBRD',
                 date_type: {
                   id: 10,
                   default: false,
-                  name: "Received by",
+                  name: 'Received by',
                 },
-                date: "2020-10-21",
-                time: "17:00:00",
-                time_zone: "US/Central",
-                time_zone_offset: "-0500",
-                date_human_readable:
-                  "Received by Wed Oct 21, 2020 5:00PM CDT",
+                date: '2020-10-21',
+                time: '17:00:00',
+                time_zone: 'US/Central',
+                time_zone_offset: '-0500',
+                date_human_readable: 'Received by Wed Oct 21, 2020 5:00PM CDT',
               },
               {
                 id: 39451,
-                kind: "ORD",
+                kind: 'ORD',
                 date_type: {
                   id: 9,
                   default: false,
-                  name: "Postmarked by",
+                  name: 'Postmarked by',
                 },
-                date: "2020-10-07",
+                date: '2020-10-07',
                 time: null,
                 time_zone: null,
                 time_zone_offset: null,
-                date_human_readable: "Postmarked by Wed Oct 7, 2020",
+                date_human_readable: 'Postmarked by Wed Oct 7, 2020',
               },
             ],
-            short_url: "https://api.usvotefoundation.org/e/cic/",
+            short_url: 'https://api.usvotefoundation.org/e/cic/',
           },
         ],
-      }
+      },
     }
   },
+  mounted() {
+    this.timeToVoteGuys()
+    this.getTodaysDate()
+  },
   methods: {
-    returnRelativeTime (date) {
-      return hdate.relativeTime(date, {futureSuffix: 'from TODAY'})
+    returnRelativeTime(date) {
+      return hdate.relativeTime(date, { futureSuffix: 'from TODAY' })
     },
-    returnPrettyDate (date) {
+    returnPrettyDate(date) {
       return hdate.prettyPrint(date)
     },
-    getTodaysDate () {  
+    getTodaysDate() {
       const currentDate = new Date()
       const day = currentDate.getDate()
       const month = currentDate.getMonth() + 1
       const year = currentDate.getFullYear()
       this.todaysDate = month + '/' + day + '/' + year
     },
-    timeToVoteGuys () {
+    timeToVoteGuys() {
       // const electionsInfo = this.$store.getters.getElections.objects
       const electionsInfoSorted = this.electionInfo.objects.sort(this.sorter)
 
@@ -393,7 +415,7 @@ export default {
       // colorIndex key: 0 = baby blue (#cedcf1), 1 = dusty blue (#adb5c4), 2 = strong blue (#29417e)
       // console.log(' 🤲 🤲 🤲 🤲 🤲 🤲 🤲 ' + '\n' + JSON.stringify(this.electionInfo, null, '\t'))
       let colorIndex = 0
-      electionsInfoSorted.forEach(tally => {
+      electionsInfoSorted.forEach((tally) => {
         const timelineItemSaver = {}
         const electionDateArray = tally.election_date.split('-')
         const firstElement = electionDateArray.shift()
@@ -406,7 +428,7 @@ export default {
         // "additional information", quote, but often very explanatory
         timelineItemSaver.additionalInformation = null
         if (!(tally.additional_information === '')) {
-           timelineItemSaver.additionalInformation = tally.additional_information
+          timelineItemSaver.additionalInformation = tally.additional_information
         }
         timelineItemSaver.newVoterRegistrationDates = []
         timelineItemSaver.absenteeBallotReturnDates = []
@@ -415,38 +437,47 @@ export default {
         timelineItemSaver.earlyVotingToFrom = 'none on record'
         switch (tally.election_type.name) {
           case 'General':
-            timelineItemSaver.electionType = tally.election_type.name;
-            break;
+            timelineItemSaver.electionType = tally.election_type.name
+            break
           case 'Runoff':
-            timelineItemSaver.electionType = tally.election_type.name;
-            break;
+            timelineItemSaver.electionType = tally.election_type.name
+            break
           case 'Primary':
-             timelineItemSaver.electionType = tally.election_type.name;
-            break;
+            timelineItemSaver.electionType = tally.election_type.name
+            break
           case 'Special':
-            timelineItemSaver.electionType = tally.election_type.name;
-            break;
+            timelineItemSaver.electionType = tally.election_type.name
+            break
           case 'Regular':
-            timelineItemSaver.electionType = tally.election_type.name;
-            break;
+            timelineItemSaver.electionType = tally.election_type.name
+            break
           default:
             timelineItemSaver.electionType = null
         }
-        tally.dates.forEach(booger => {
+        tally.dates.forEach((booger) => {
           if (booger.kind === 'DRD') {
-            timelineItemSaver.newVoterRegistrationDates.push(booger.date_human_readable)
+            timelineItemSaver.newVoterRegistrationDates.push(
+              booger.date_human_readable
+            )
           } else if (booger.kind === 'DBED') {
-            timelineItemSaver.absenteeBallotReturnDates.push(booger.date_human_readable)
+            timelineItemSaver.absenteeBallotReturnDates.push(
+              booger.date_human_readable
+            )
           } else if (booger.kind === 'DBRD') {
-            timelineItemSaver.absenteeBallotRequestDates.push(booger.date_human_readable)
+            timelineItemSaver.absenteeBallotRequestDates.push(
+              booger.date_human_readable
+            )
           } else if (booger.kind === 'AVF') {
-            timelineItemSaver.inPersonAbsenteeVotingToFrom = booger.date_human_readable
+            timelineItemSaver.inPersonAbsenteeVotingToFrom =
+              booger.date_human_readable
           } else if (booger.kind === 'AVT') {
-            timelineItemSaver.inPersonAbsenteeVotingToFrom += ' - ' + booger.date_human_readable
+            timelineItemSaver.inPersonAbsenteeVotingToFrom +=
+              ' - ' + booger.date_human_readable
           } else if (booger.kind === 'EVF') {
             timelineItemSaver.earlyVotingToFrom = booger.date_human_readable
           } else if (booger.kind === 'EVT') {
-            timelineItemSaver.earlyVotingToFrom += ' - ' + booger.date_human_readable
+            timelineItemSaver.earlyVotingToFrom +=
+              ' - ' + booger.date_human_readable
           }
         })
         if (colorIndex === 3) {
@@ -457,7 +488,7 @@ export default {
         this.electionsTimelineObject.push(timelineItemSaver)
       })
     },
-    sorter (a, b) {
+    sorter(a, b) {
       const obj1 = a.election_date
       const obj2 = b.election_date
 
@@ -469,16 +500,21 @@ export default {
       }
       return comparison
     },
-   
   },
-  mounted () {
-    this.timeToVoteGuys()
-    this.getTodaysDate()
-  }
 }
 </script>
 
 <style >
+@media only screen and (max-width: 450px) {
+  .timelineContainer {
+    padding-left: 0;
+    margin-left: -0.4em;
+  }
+  .v-list-item__title,
+  .v-list-item__subtitle {
+    white-space: normal;
+  }
+}
 .dummyInfoThingy {
   color: #1168da;
   position: absolute;
@@ -498,7 +534,7 @@ export default {
   background-color: #ffffffd9;
   z-index: 70;
   padding: 40px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 .eachItem:last-child {
   padding-bottom: 60px;
@@ -506,10 +542,12 @@ export default {
 .todayElement {
   position: relative;
 }
-.todayElement:nth-of-type(1),.text-xs-left {
+.todayElement:nth-of-type(1),
+.text-xs-left {
   text-align: left;
 }
-.todayElement:nth-of-type(2),.text-xs-right {
+.todayElement:nth-of-type(2),
+.text-xs-right {
   text-align: right;
 }
 .timelineContainer {
@@ -531,7 +569,8 @@ footer {
   width: 22px;
   position: relative;
 }
-span.tooltiptext p, span.tooltiptext q {
+span.tooltiptext p,
+span.tooltiptext q {
   margin-bottom: 10px !important;
 }
 .infoTooltipText {
@@ -539,7 +578,7 @@ span.tooltiptext p, span.tooltiptext q {
   transform: rotate(7deg);
   color: black;
   font-size: 120%;
-  animation: shake 17.82s cubic-bezier(.36,.07,.19,.97) both infinite;
+  animation: shake 17.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
   animation-delay: 2.5s;
   bottom: -3px;
   left: -3px;
@@ -550,23 +589,18 @@ span.tooltiptext p, span.tooltiptext q {
 @keyframes shake {
   0% {
     color: black;
-    
   }
   .25% {
     font-size: 120%;
   }
   .46015713% {
     transform: rotate(6deg);
-    
-    
   }
   .92031425% {
     transform: rotate(9.25deg);
-    
   }
   1.38047138% {
     transform: rotate(2.5deg);
-    
   }
   1.84062851% {
     transform: rotate(12.5deg);
@@ -575,7 +609,6 @@ span.tooltiptext p, span.tooltiptext q {
   }
   2.30078563% {
     transform: rotate(2.25deg);
-    
   }
   2.76094276% {
     transform: rotate(12.5deg);
@@ -588,14 +621,12 @@ span.tooltiptext p, span.tooltiptext q {
   }
   4.14141414% {
     transform: rotate(6deg);
-    
   }
   8% {
-    
     font-size: 140%;
   }
   8.5% {
-color: green;
+    color: green;
   }
   10% {
     font-size: 120%;
@@ -618,19 +649,17 @@ color: green;
   margin-left: -256px;
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: .8em;
+  font-size: 0.8em;
   padding-top: 18px;
   padding-left: 18px;
   padding-bottom: 5px;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,0.04), 
-              0 2px 2px rgba(0,0,0,0.05), 
-              0 4px 4px rgba(0,0,0,0.06), 
-              0 8px 8px rgba(0,0,0,0.07), 
-              0 16px 16px rgba(0,0,0,0.08),
-              0 32px 32px rgba(0,0,0,.09);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.04),
+    0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.06),
+    0 8px 8px rgba(0, 0, 0, 0.07), 0 16px 16px rgba(0, 0, 0, 0.08),
+    0 32px 32px rgba(0, 0, 0, 0.09);
 }
 .infoTooltip .tooltiptext::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100%;
   left: 50%;
@@ -641,7 +670,7 @@ color: green;
 }
 .wikiCitation {
   color: rgb(186, 186, 186);
-  font-size: .85em
+  font-size: 0.85em;
 }
 .infoTooltip:hover .tooltiptext {
   visibility: visible !important;
@@ -653,14 +682,14 @@ color: green;
 }
 .votableHeader {
   text-align: left;
-  margin-top: -.75rem;
+  margin-top: -0.75rem;
   padding-left: 1.75rem;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
   width: 36.9rem;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  padding-top: .65rem;
-  padding-bottom: .5rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.5rem;
   font-weight: 500;
   font-size: 140%;
 }
@@ -670,28 +699,30 @@ color: green;
 ul.timeline {
   margin-left: -1.3rem;
 }
-.v-list-item .v-list-item__title, .v-list-item .v-list-item__subtitle {
+.v-list-item .v-list-item__title,
+.v-list-item .v-list-item__subtitle {
   color: grey !important;
 }
 .timelineList {
   /* background-color: transparent !important; */
   position: relative;
-  left: -.9em;
+  left: -0.9em;
   background-color: #f7f7f7 !important;
   border-radius: 5px !important;
 }
 .timeline-item-content {
-  margin-top: .2rem;
+  margin-top: 0.2rem;
   font-size: 90%;
   display: grid;
   grid-template-columns: 35% auto;
   grid-template-rows: repeat(5, 20%);
   text-align: left;
-  grid-column-gap: .2rem;
-  grid-row-gap: .2rem;
+  grid-column-gap: 0.2rem;
+  grid-row-gap: 0.2rem;
   width: 37rem;
 }
-.votableInfo, .votableInfo *{
+.votableInfo,
+.votableInfo * {
   display: block;
 }
 .votingType {
@@ -700,8 +731,8 @@ ul.timeline {
   font-weight: 500;
   text-align: left;
   position: relative;
-  padding-left: calc( 4em / 2 );
-  padding-top: .25rem;
+  padding-left: calc(4em / 2);
+  padding-top: 0.25rem;
   z-index: 1;
 }
 .votingValue {
@@ -709,8 +740,8 @@ ul.timeline {
   grid-column-end: 3;
   line-height: 97%;
   position: relative;
-  padding-left: .5rem;
-  padding-top: .4rem;
+  padding-left: 0.5rem;
+  padding-top: 0.4rem;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   overflow: auto;
@@ -725,7 +756,7 @@ ul.timeline {
   width: inherit;
   padding-left: 1.75rem;
   margin-top: 1rem;
-  padding-top: .2rem;
+  padding-top: 0.2rem;
   position: relative;
   left: -1.6rem;
   min-height: 2rem;
@@ -735,7 +766,7 @@ ul.timeline {
   position: relative;
   margin-left: 1.65rem;
   padding-bottom: 2em;
-  width: 36.9rem
+  width: 36.9rem;
 }
 .votingDates {
   line-height: 110%;
@@ -744,96 +775,99 @@ ul.timeline {
 p {
   text-align: left;
 }
-.heading, .votingType, .votableHeader {
-
-  margin-left: .08rem;
+.heading,
+.votingType,
+.votableHeader {
+  margin-left: 0.08rem;
 }
 .heading {
   display: block;
   font-size: 110%;
   letter-spacing: 1px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   position: relative;
   top: 2px;
   padding-left: 1.75rem;
-  margin-top: .6rem;
-  padding-top: .35rem;
+  margin-top: 0.6rem;
+  padding-top: 0.35rem;
   color: #588937;
   border-top-right-radius: 5px;
   width: 36.9rem;
 }
 
 .timeline .timeline-header {
-    width: 4em;
+  width: 4em;
 }
 
 .timeline .timeline-item {
-    display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    position: relative;
-    border-left: .1rem solid #dbdbdb;
-    margin-left: calc( 4em / 2 );
-    padding-bottom: .5rem;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  position: relative;
+  border-left: 0.1rem solid #dbdbdb;
+  margin-left: calc(4em / 2);
+  padding-bottom: 0.5rem;
 }
 
 .timeline .timeline-item .timeline-marker {
-    position: absolute;
-    background: #dbdbdb;
-    border: .1em solid #dbdbdb;
-    border-radius: 100%;
-    content: "";
-    display: block;
-    height: 1rem;
-    left: -0.55rem;
-    position: absolute;
-    top: 1.2rem;
-    width: 1rem;
-    z-index: 3;
+  position: absolute;
+  background: #dbdbdb;
+  border: 0.1em solid #dbdbdb;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  height: 1rem;
+  left: -0.55rem;
+  position: absolute;
+  top: 1.2rem;
+  width: 1rem;
+  z-index: 3;
 }
 .v-list__tile {
   height: 100% !important;
 }
 
 .timeline .timeline-item .timeline-marker.is-primary {
-    background-color: #588937 !important;
-    border-color: #588937 !important
+  background-color: #588937 !important;
+  border-color: #588937 !important;
 }
-
 
 .timeline .timeline-item .timeline-marker.is-warning {
-    background-color: #ffdd57 !important;
-    border-color: #ffdd57 !important
+  background-color: #ffdd57 !important;
+  border-color: #ffdd57 !important;
 }
-
 
 .timeline .timeline-item .timeline-marker.is-past {
-    background-color: #b60000 !important;
-    border-color: #b60000 !important
+  background-color: #b60000 !important;
+  border-color: #b60000 !important;
 }
 
-
-
 .timeline .timeline-item .timeline-content .heading {
-    font-weight: 500
+  font-weight: 500;
 }
 
 .timeline .timeline-item.is-primary {
-    border-left-color: #588937;
-    z-index: 600;
+  border-left-color: #588937;
+  z-index: 600;
 }
 
 .timeline .timeline-item.is-past {
-    border-left-color: #b60000;
-    z-index: 600;
+  border-left-color: #b60000;
+  z-index: 600;
 }
 
-.timeline-item:nth-child(even) .timeline-content .heading, .timeline-item:nth-child(even) .timeline-content .votableHeader, .timeline-item:nth-child(even) .timeline-content .timeline-item-content > *, .timeline-item:nth-child(even) .timeline-content .additionalInformation {
+.timeline-item:nth-child(even) .timeline-content .heading,
+.timeline-item:nth-child(even) .timeline-content .votableHeader,
+.timeline-item:nth-child(even) .timeline-content .timeline-item-content > *,
+.timeline-item:nth-child(even) .timeline-content .additionalInformation {
   background-color: #ede8e8 !important;
 }
 
-.timeline-item:nth-child(odd) .timeline-content .heading, .timeline-item:nth-child(odd) .timeline-content .votableHeader, .timeline-item:nth-child(odd) .timeline-content .timeline-item-content > *, .timeline-item:nth-child(odd) .timeline-content .additionalInformation {
+.timeline-item:nth-child(odd) .timeline-content .heading,
+.timeline-item:nth-child(odd) .timeline-content .votableHeader,
+.timeline-item:nth-child(odd) .timeline-content .timeline-item-content > *,
+.timeline-item:nth-child(odd) .timeline-content .additionalInformation {
   background-color: #ede8e8 !important;
 }
 
@@ -844,11 +878,11 @@ p {
 ul {
   list-style-type: none;
 }
-ul>li {
-    text-indent: 0px;
+ul > li {
+  text-indent: 0px;
 }
 .tag {
-  background-color: #588937!important;
+  background-color: #588937 !important;
   border-radius: 3px;
   padding: 5px;
   padding-left: 7px;
@@ -860,20 +894,22 @@ ul>li {
 @media screen and (max-width: 600px) {
   /* works 600px and smaller including on the iPhone 5,6,7, and X */
   .timelineContainer {
-    padding-right: calc(20vw/3.2);
+    padding-right: calc(20vw / 3.2);
   }
 }
 @media only screen and (max-width: 375px) {
   .v-timeline--dense .v-timeline-item__body {
-      max-width: calc(100% - 53px) !important;
+    max-width: calc(100% - 53px) !important;
   }
 }
-.dummyInfo, .dummyInfo > *, .timelineList.dummyInfo {
+.dummyInfo,
+.dummyInfo > *,
+.timelineList.dummyInfo {
   color: rgb(169, 173, 177) !important;
 }
 @media only screen and (max-width: 700px) {
   .infoTooltip {
-      visibility: hidden;
+    visibility: hidden;
   }
 }
 </style>
