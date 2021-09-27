@@ -34,7 +34,9 @@
       </v-alert>
     </div>
     <v-tabs right color="#668ee4" class="topNavvy" v-model="tab">
-      <a class="logo" href="/"> THE VOTER'S COMPANION </a>
+      <a class="logo" href="/"
+        ><span>THE</span> V<span>OTER'S</span> C<span>OMPANION</span></a
+      >
       <v-spacer></v-spacer>
       <v-tabs-slider color="blue"></v-tabs-slider>
 
@@ -164,6 +166,7 @@ a.logo {
   transform: translateY(-50%);
   font-family: 'Oswald', sans-serif;
   color: black;
+  transition: all 0.3s ease;
 }
 
 .v-tabs__div {
@@ -180,10 +183,6 @@ a.logo {
   -webkit-filter: drop-shadow(1px 5px 3px rgba(15, 13, 2, 0.2))
     drop-shadow(0px -5px 5px rgb(173, 39, 15, 0.2));
 }
-/* #bigButton:hover {
-  filter: drop-shadow(1px 14px 14px rgba(15, 13, 2, 0.2)) drop-shadow(1px 8px 10px rgba(15, 13, 2, 0.25));
-  -webkit-filter: drop-shadow(1px 14px 14px rgba(15, 13, 2, 0.2)) drop-shadow(1px 8px 10px rgba(15, 13, 2, 0.25));
-} */
 footer {
   /* position: absolute; */
   background-color: rgb(222, 222, 222);
@@ -249,7 +248,7 @@ html {
   font-size: 1.5rem;
   width: 20rem;
   text-align: left;
-  line-height: 150%;
+  line-height: 120%;
   height: 12rem;
   padding-left: 0.7em;
   font-weight: 450;
@@ -419,6 +418,18 @@ input:focus {
   opacity: 0;
   /* transform: scale(0.3) translateY(24px); */
 }
+@media screen and (max-width: 570px) {
+  .v-tab {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+  .v-tabs {
+    margin-right: 5px !important;
+  }
+  .v-slide-group__content {
+    margin-right: 8px;
+  }
+}
 @media screen and (min-width: 376px) and (max-width: 432px) {
   footer {
     bottom: 8px !important;
@@ -426,10 +437,28 @@ input:focus {
 }
 @media screen and (min-width: 432px) and (max-width: 750px) {
   footer {
-    margin-bottom: 2.5px !important;
+    margin-bottom: 8px !important;
   }
 }
 @media only screen and (max-width: 750px) {
+  .registerBadge {
+    position: absolute;
+    top: 7rem;
+    right: 1rem;
+    z-index: 7;
+  }
+  a.registerBadge img {
+    height: 160px !important;
+    width: 160px;
+  }
+  .registerBadge::after {
+    height: 115px;
+    width: 115px;
+  }
+  .registerBadge::before {
+    height: 115px;
+    width: 115px;
+  }
   #app {
     width: 100vw;
     min-height: 100vh !important;

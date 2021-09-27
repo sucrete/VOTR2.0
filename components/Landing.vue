@@ -1300,16 +1300,16 @@ export default {
 .siteTitle {
   z-index: 2;
   font-family: 'Oswald', sans-serif;
-  color: #292828e8;
+  color: #3a2e27ef;
   text-align: left;
   font-size: 6.5em;
-  line-height: 85%;
+  line-height: 80%;
   font-weight: 600;
   padding-left: 0.9em;
   position: relative;
   text-transform: uppercase;
   top: 0.75em;
-  text-shadow: 0.0525em 0.0525em 0 rgb(223, 109, 57);
+  text-shadow: 0.0525em 0.0525em 0 rgba(209, 127, 89, 0.781);
 }
 .siteTitle::before {
   content: attr(title);
@@ -1358,7 +1358,6 @@ export default {
   height: 100px;
 }
 #informationWrapper {
-  background-color: #e4e3e4;
   width: 35em;
   height: 21.5em;
   border-radius: 0.5em;
@@ -1368,7 +1367,9 @@ export default {
     0 2px 2px rgba(111, 112, 141, 0.14), 0 4px 4px rgba(111, 112, 141, 0.15),
     0 8px 8px rgba(111, 112, 141, 0.16);
   z-index: 200;
-  background-color: #f3ebe9;
+  background-color: #f3ece9;
+  background-image: url('../static/01.png');
+  background-size: cover;
   /* background-image: radial-gradient(
       circle farthest-corner at top left,
       rgb(245, 241, 237) 0%,
@@ -1397,7 +1398,7 @@ export default {
 }
 #infoForTheUser {
   padding: 15px 35px 0px;
-  color: #e78340;
+  color: #42312a;
   width: 70%;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -1424,7 +1425,7 @@ export default {
   padding-top: 2px;
   display: block;
   color: #807b77;
-  background-color: white;
+  background-color: rgb(248, 247, 246) !important;
   position: relative;
   /* width: 35em !important; */
   margin: 0 auto;
@@ -1445,7 +1446,7 @@ export default {
 input:focus {
   outline: none;
   color: #605c59 !important;
-  background-color: #dad7d5;
+  background-color: rgb(248, 247, 246);
 }
 input:hover::-webkit-input-placeholder {
   color: #605c59 !important;
@@ -1454,11 +1455,11 @@ input:focus::-webkit-input-placeholder {
   color: #605c59 !important;
 }
 #address-input:hover {
-  background-color: white !important;
+  background-color: rgb(248, 247, 246) !important;
 }
 #address-input:focus {
   color: #605c59 !important;
-  background-color: white !important;
+  background-color: rgb(248, 247, 246) !important;
 }
 #address-input:focus {
   border-color: rgba(230, 134, 23, 0.9);

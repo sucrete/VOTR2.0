@@ -6,13 +6,7 @@
         Understand your eligibility and what you need to vote.
       </div>
     </div>
-    <v-tabs
-      class="knowledgeTabs"
-      v-model="tab"
-      style="margin: 0 auto; margin-bottom: 1.5em"
-      hide-slider
-      centered
-    >
+    <v-tabs v-model="tab" class="knowledgeTabs" hide-slider centered>
       <v-tab :key="i">{{ i }}</v-tab>
       <v-tab :key="ii">{{ ii }}</v-tab>
       <v-tab :key="iii">{{ iii }}</v-tab>
@@ -1773,6 +1767,13 @@ export default {
       stateName: 'New York',
     }
   },
+  mounted() {
+    this.fillItUp()
+    console.log('beef eater')
+    // this.$nextTick(function () {
+    //   this.insertIcon()
+    // })
+  },
   methods: {
     makeActive: (item) => {
       this.active = item
@@ -1843,13 +1844,6 @@ export default {
       const flippedstring = str.split('\r\n').join('<br />')
       return flippedstring
     },
-  },
-  mounted() {
-    this.fillItUp()
-    console.log('beef eater')
-    // this.$nextTick(function () {
-    //   this.insertIcon()
-    // })
   },
 }
 </script>
@@ -2081,37 +2075,30 @@ em {
 }
 @media screen and (min-width: 430px) and (max-width: 470px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -12vw;
   }
 }
 @media screen and (min-width: 470px) and (max-width: 500px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -14vw;
   }
 }
 @media screen and (min-width: 500px) and (max-width: 550px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -16vw;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 580px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -18vw;
   }
 }
 @media screen and (min-width: 580px) and (max-width: 650px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -20vw;
   }
 }
 @media screen and (min-width: 650px) and (max-width: 700px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -22vw;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 750px) {
   .v-tabs.knowledgeTabs .v-window {
-    left: -24vw;
   }
 }
 @media screen and (min-width: 375px) and (max-width: 503px) {
@@ -2122,7 +2109,6 @@ em {
 }
 @media screen and (max-width: 700px) {
   .v-tabs.knowledgeTabs {
-    width: 20.7em !important;
   }
 }
 @media screen and (min-width: 413px) and (max-width: 432px) {
