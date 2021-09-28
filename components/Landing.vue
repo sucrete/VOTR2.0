@@ -1300,7 +1300,7 @@ export default {
 .siteTitle {
   z-index: 2;
   font-family: 'Oswald', sans-serif;
-  color: #3a2e27ef;
+  color: #302823ef;
   text-align: left;
   font-size: 6.5em;
   line-height: 80%;
@@ -1339,6 +1339,7 @@ export default {
   background-position: 20% -140%;
   background-repeat: no-repeat;
 }
+
 .USVoteBadge {
   position: absolute;
   right: 28px;
@@ -1398,7 +1399,7 @@ export default {
 }
 #infoForTheUser {
   padding: 15px 35px 0px;
-  color: #42312a;
+  color: #493c37;
   width: 70%;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -1534,6 +1535,7 @@ input::placeholder {
   z-index: 4;
   overflow: hidden;
 }
+
 @media screen and (max-width: 750px) {
   .siteTitle::before {
     content: unset;
@@ -1547,9 +1549,7 @@ input::placeholder {
     width: 88vw;
     border-radius: 0.3em;
   }
-  #landing {
-    background-image: unset;
-  }
+
   .ap-dropdown-menu {
     width: 88vw;
   }
@@ -1559,6 +1559,76 @@ input::placeholder {
   }
   .siteTitle:first-of-type {
     margin-top: unset;
+  }
+}
+@media screen and (max-width: 730px) {
+  #landing {
+    background-size: cover;
+    background-position: 60% -240%;
+    outline: 3px solid #c3cbdb;
+  }
+  #informationWrapper {
+    width: 80vw;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 2.6em;
+  }
+  .siteTitle {
+    top: 1em;
+  }
+}
+@media screen and (max-width: 640px) {
+  .siteTitle {
+    top: 1em;
+    font-size: 5.7em;
+  }
+  #informationWrapper {
+    height: 24.5em;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 2em;
+  }
+  #infoForTheUser {
+    width: 65%;
+    font-size: 1.4em;
+  }
+  .USVoteBadge {
+    bottom: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .siteTitle {
+    top: 1em;
+    font-size: 5.5em;
+  }
+  #infoForTheUser {
+    font-size: 1.3em;
+  }
+  #informationWrapper {
+    height: 25em;
+  }
+  .fordFan {
+    top: 14%;
+    right: 7%;
+  }
+}
+@media screen and (max-width: 559px) {
+  #infoForTheUser {
+    width: 100%;
+    font-size: 1.4em;
+    line-height: 120%;
+  }
+  .USVoteBadge {
+    width: 125px;
+  }
+  .siteTitle {
+    top: 1em;
+    font-size: 5.2em;
+  }
+}
+@media screen and (max-width: 550px) {
+  #informationWrapper {
+    height: 26em;
   }
 }
 @media screen and (min-width: 250px) and (max-width: 320px) {
