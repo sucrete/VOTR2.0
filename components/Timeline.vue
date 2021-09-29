@@ -661,19 +661,6 @@ span.tooltiptext q {
 #Timeline * {
   font-family: 'Roboto', sans-serif;
 }
-.votableHeader {
-  text-align: left;
-  margin-top: -0.75rem;
-  padding-left: 1.75rem;
-  padding-bottom: 0.2rem;
-  width: 36.9rem;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  padding-top: 0.65rem;
-  padding-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 140%;
-}
 .tag-past {
   background-color: #b60000;
 }
@@ -876,7 +863,7 @@ ul > li {
   /* works 600px and smaller including on the iPhone 5,6,7, and X */
   .timelineContainer {
     padding-right: calc(20vw / 3.2);
-    margin-left: -0.8rem;
+    margin-left: -0.5rem !important;
   }
 }
 @media only screen and (max-width: 375px) {
