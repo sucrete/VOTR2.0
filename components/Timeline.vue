@@ -514,7 +514,7 @@ export default {
   }
   .v-list-item__title,
   .v-list-item__subtitle {
-    white-space: normal;
+    white-space: normal !important;
   }
 }
 .eachItem:last-child {
@@ -674,7 +674,6 @@ ul.timeline {
 .timelineList {
   /* background-color: transparent !important; */
   position: relative;
-  left: -0.9em;
   background-color: #f7f7f7 !important;
   border-radius: 5px !important;
 }
@@ -864,6 +863,10 @@ ul > li {
   .timelineContainer {
     padding-right: calc(20vw / 3.2);
     margin-left: -0.8rem !important;
+  }
+  .timelineList {
+    left: -0.2em !important;
+    width: calc(100% + 0.2em) !important;
   }
 }
 @media only screen and (max-width: 375px) {
