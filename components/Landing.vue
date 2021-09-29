@@ -1683,11 +1683,12 @@ input::placeholder {
     right: 6vw;
   }
   .siteTitle {
-    padding-left: 7vw;
+    padding-left: 7.5vw;
     font-size: 4.5em;
     line-height: 78%;
     font-weight: 600;
     top: 0.9em;
+    letter-spacing: -0.02em;
   }
   .fordFan {
     width: 37%;
@@ -1695,9 +1696,10 @@ input::placeholder {
   }
   #infoForTheUser {
     font-size: 1.2em;
+    padding-top: 0.5em;
   }
   .USVoteBadge {
-    width: 100px;
+    width: 95px;
     right: unset;
     left: 28px;
   }
@@ -1775,7 +1777,7 @@ input::placeholder {
     -moz-osx-font-smoothing: grayscale;
   }
 }
-/* below is for iPhone X */
+/* iPhone X */
 @media screen and (max-width: 376px) and (min-height: 811px) {
   .siteTitle {
     top: 1.2em;
@@ -1785,6 +1787,25 @@ input::placeholder {
   }
   #siteTitleWrapper {
     padding-bottom: 0px;
+  }
+  #informationWrapper {
+    height: 29em;
+  }
+  #infoForTheUser {
+    font-size: 1.45em;
+  }
+}
+/* below is for Pixel 2 */
+@media screen and (max-width: 412px) and (min-height: 822px) {
+  .siteTitle {
+    top: 1.2em;
+    font-size: 4.2em;
+  }
+  .fordFan {
+    top: 18%;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 0.5em;
   }
   #informationWrapper {
     height: 29em;
@@ -1815,11 +1836,6 @@ input::placeholder {
   }
 }
 @media screen and (min-width: 418px) and (max-width: 515px) {
-  #USVoteHeader {
-    padding-top: 4em;
-    padding-left: 9vw;
-    width: 92%;
-  }
   .siteTitle {
     padding-left: 10vw !important;
   }
