@@ -1263,7 +1263,6 @@ export default {
   },
 }
 </script>
-<!-- if you add "scoped" next to your <style> tag your modal will not be a circle -->
 <style >
 #USSign {
   width: 65px;
@@ -1470,7 +1469,7 @@ input:focus::-webkit-input-placeholder {
 
 /* #address-input:focus, #address-input:hover {
   box-shadow: inset 0 1px 1px 0px rgb(249, 249, 249);
-} */
+} 
 .ap-input {
   border: none !important;
 }
@@ -1479,10 +1478,9 @@ input:focus::-webkit-input-placeholder {
 }
 .ap-input-icon {
   transform: translateY(-18px);
-}
-#inputEverything.usingSafari .algolia-places button.ap-input-icon {
+} #inputEverything.usingSafari .algolia-places button.ap-input-icon {
   transform: translateY(0px);
-}
+} */
 .ap-input:hover ~ .ap-input-icon svg {
   fill: #6f6b68 !important;
 }
@@ -1491,17 +1489,10 @@ input:focus::-webkit-input-placeholder {
 }
 .ap-input-icon svg {
   fill: #98938f !important;
-  border: 0;
   background: transparent;
-  position: relative;
-  -webkit-transform: translateY(6%);
-  transform: translateY(6%);
   outline: none;
-  /* right: 5em; */
-  /* top: .13em; */
 }
 .ap-icon-clear {
-  right: 15px;
 }
 .theme--dark.v-application {
   color: unset;
@@ -1670,18 +1661,17 @@ input::placeholder {
     height: 100vh !important;
     overflow: hidden;
     outline: 0px solid transparent;
-    background-position: 50% 5%;
+    background-position: 50% 0%;
     background-size: 100%;
   }
   #app,
   html {
-    overflow-y: hidden;
   }
   #siteTitleWrapper {
     padding-bottom: 0em;
   }
   #informationWrapper {
-    height: 25em;
+    height: 23.5em;
     margin-top: -0.5em;
   }
   #informationWrapper,
@@ -1695,7 +1685,6 @@ input::placeholder {
     font-size: 1em !important;
   }
   .ap-input-icon svg {
-    right: 6vw;
   }
   .siteTitle {
     padding-left: 7.5vw;
@@ -1707,7 +1696,7 @@ input::placeholder {
   }
   .fordFan {
     width: 37%;
-    top: 12%;
+    top: 11%;
   }
   #infoForTheUser {
     font-size: 1.2em;
@@ -1740,10 +1729,8 @@ input::placeholder {
     padding-bottom: 0.8em;
   }
   .ap-input-icon.ap-icon-clear {
-    right: -10px !important;
   }
   .ap-input-icon.ap-icon-pin {
-    right: -13px;
   }
   .USVoteBadge {
     width: 100px;
@@ -1879,24 +1866,21 @@ input::placeholder {
 /* below for iPhone 6/7/8 plus  */
 @media screen and (min-width: 413px) and (max-width: 432px) {
   .ap-input-icon.ap-icon-pin {
-    right: -20px;
   }
   .ap-input-icon.ap-icon-clear {
-    right: -17px;
   }
   .ap-dataset-places .ap-suggestions .ap-suggestion.ap-cursor {
     padding-left: 0.8vw;
   }
   .ap-input-icon svg {
-    right: 7vw;
   }
 }
 
 @media screen and (min-width: 430) and (max-width: 750px) {
-  .ap-input-icon {
+  /* .ap-input-icon {
     right: calc(2vw - 3vw * 0.9) !important;
     left: unset;
-  }
+  }*/
 }
 
 @media screen and (min-width: 418px) and (max-width: 515px) {
