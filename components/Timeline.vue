@@ -863,7 +863,7 @@ ul > li {
   /* works 600px and smaller including on the iPhone 5,6,7, and X */
   .timelineContainer {
     padding-right: calc(20vw / 3.2);
-    margin-left: -0.5rem !important;
+    margin-left: -0.8rem !important;
   }
 }
 @media only screen and (max-width: 375px) {

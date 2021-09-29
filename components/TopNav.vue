@@ -369,7 +369,7 @@ h2 {
 @media only screen and (max-width: 450px) {
   #overviewNoticeWrapper {
     padding-top: 1rem;
-    padding-left: 1.3rem;
+    padding-left: 1.4rem;
   }
   #overviewNotice {
     font-size: 1.4rem;
