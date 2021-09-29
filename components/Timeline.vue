@@ -510,7 +510,7 @@ export default {
 }
 @media screen and (max-width: 450px) {
   .timelineContainer {
-    padding-left: 0;
+    padding-left: 0 !important;
   }
   .v-list-item__title,
   .v-list-item__subtitle {
@@ -861,7 +861,7 @@ ul > li {
 @media screen and (max-width: 600px) {
   /* works 600px and smaller including on the iPhone 5,6,7, and X */
   .timelineContainer {
-    padding-right: calc(20vw / 3.2);
+    padding-right: calc(20vw / 3.2) !important;
     margin-left: -0.8rem !important;
   }
   .timelineList {
