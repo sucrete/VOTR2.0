@@ -505,7 +505,10 @@ export default {
 </script>
 
 <style >
-@media only screen and (max-width: 450px) {
+.v-timeline:before {
+  height: 110%;
+}
+@media screen and (max-width: 450px) {
   .timelineContainer {
     padding-left: 0;
     margin-left: -0.4em;
@@ -514,27 +517,6 @@ export default {
   .v-list-item__subtitle {
     white-space: normal;
   }
-}
-.dummyInfoThingy {
-  color: #1168da;
-  position: absolute;
-  border-radius: 6px;
-  width: 400px;
-  max-width: 63vw;
-  min-height: 100px;
-  font-size: 170%;
-  text-align: center;
-  left: 0;
-  font-weight: 400;
-  font-style: italic;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  background-color: #ffffffd9;
-  z-index: 70;
-  padding: 40px;
-  letter-spacing: 0.05em;
 }
 .eachItem:last-child {
   padding-bottom: 60px;
@@ -901,11 +883,6 @@ ul > li {
   .v-timeline--dense .v-timeline-item__body {
     max-width: calc(100% - 53px) !important;
   }
-}
-.dummyInfo,
-.dummyInfo > *,
-.timelineList.dummyInfo {
-  color: rgb(169, 173, 177) !important;
 }
 @media only screen and (max-width: 700px) {
   .infoTooltip {

@@ -108,6 +108,9 @@ export default {
   height: 100%;
   z-index: 999;
 }
+.logoType {
+  font-family: 'Oswald', sans-serif;
+}
 .v-alert {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.05),
     0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.07),
@@ -323,16 +326,6 @@ h2 {
     margin-right: 5px !important;
   }
 }
-@media screen and (min-width: 376px) and (max-width: 432px) {
-  footer {
-    bottom: 8px !important;
-  }
-}
-@media screen and (max-width: 750px) {
-  footer {
-    margin-bottom: 10px !important;
-  }
-}
 @media only screen and (max-width: 750px) {
   .alertsBox {
     right: 0px;
@@ -370,6 +363,7 @@ h2 {
     width: 95%;
     margin: 0 auto;
     position: relative;
+    margin-bottom: 10px;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -381,11 +375,13 @@ h2 {
     font-size: 1.4rem;
     width: 70%;
   }
+  footer {
+    margin-bottom: 5px;
+  }
 }
 @media only screen and (max-width: 375px) {
   footer {
     width: 95%;
-    margin-bottom: 8px;
   }
   #logoLink {
     top: 0.7em;
