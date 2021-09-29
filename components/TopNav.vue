@@ -35,10 +35,9 @@
     </div>
     <v-tabs v-model="tab" right color="#363636" class="topNavvy">
       <a class="logo" href="/"
-        ><span class="THE">THE </span>V<span>OTER'S </span>C<span
-          >OMPANION</span
-        ></a
-      >
+        ><span class="logoType">THE VOTER'S COMPANION</span
+        ><img class="flagLogo" src="../static/flagLogo.svg"
+      /></a>
       <v-spacer></v-spacer>
       <v-tabs-slider color="rgba(0, 0, 0, 0.54)"></v-tabs-slider>
 
@@ -46,13 +45,6 @@
         {{ item }}
       </v-tab>
     </v-tabs>
-    <a
-      href="https://www.sos.mo.gov/elections/goVoteMissouri/register"
-      target="_blank"
-      class="registerBadge"
-      ><img src="registerBadge.png"
-    /></a>
-
     <v-tabs-items v-model="tab">
       <v-tab-item :key="i">
         <Timeline />
@@ -66,6 +58,12 @@
     </v-tabs-items>
 
     <footer>
+      <a
+        href="https://www.sos.mo.gov/elections/goVoteMissouri/register"
+        target="_blank"
+        class="registerBadge"
+        ><img src="registerBadge.png"
+      /></a>
       <a id="logoLink" href="https://www.usvotefoundation.org/" target="_blank">
         <img src="voteFoundationBadge.png" />
       </a>
@@ -93,6 +91,12 @@ export default {
 </script>
 
 <style>
+.flagLogo {
+  height: 55%;
+  top: 3px;
+  left: 2px;
+  position: relative;
+}
 .alertsBox {
   position: absolute;
   width: 100%;
@@ -108,18 +112,17 @@ export default {
     0 16px 16px rgba(0, 0, 0, 0.08), 0 32px 32px rgba(0, 0, 0, 0.09) !important;
 }
 .alert {
-  transition: all 0.3s ease;
   width: 50%;
   position: sticky;
   bottom: 0px;
 }
-.alert--unsupported {
-}
 .registerBadge {
   position: absolute;
-  top: 7.5rem;
-  right: 1rem;
-  z-index: 7;
+  top: 54%;
+  transform: translateY(-50%);
+
+  right: 12rem;
+  z-index: 778;
 }
 .registerBadge::after {
   content: '';
@@ -203,7 +206,7 @@ footer {
   z-index: 777;
   position: absolute;
   top: 52%;
-  right: 2.5rem;
+  right: 2.2rem;
   transform: translateY(-50%);
   filter: drop-shadow(0 2px 3px rgba(60, 63, 76, 0.46));
 }
@@ -309,104 +312,6 @@ h2 {
   font-size: 25px;
 }
 
-input,
-input:focus {
-  border: none;
-  outline: none;
-}
-#takeMeOmh:visited,
-#takeMeOmhDaddy:visited {
-  color: #5b524a !important;
-}
-#e9_texte {
-  font-size: 1.5rem;
-  font-family: 'Karla', sans-serif;
-}
-/* loading modal below this line ================================= */
-/* The modal-loader below created by Alex Rutherford >>> https://codepen.io/Ruddy/pen/RNRybN */
-.v--modal {
-  border-radius: 100% !important;
-  box-sizing: none !important;
-  position: relative;
-}
-.image {
-  width: 100px;
-  height: 160px;
-  font-size: 40px;
-  text-align: center;
-  transform-origin: bottom center;
-  animation: 3s rotate infinite !important;
-  opacity: 0;
-  color: blue;
-  top: 2.1rem;
-  left: 3.2rem;
-  position: relative;
-}
-.v--modal-box span {
-  color: white;
-  display: block;
-  font-size: 115%;
-  width: 100%;
-  text-align: center;
-  position: absolute !important;
-  z-index: 778;
-  bottom: 50px;
-}
-
-/* The loader below created by Alex Rutherford >>> https://codepen.io/Ruddy/pen/RNRybN  */
-@keyframes rotate {
-  0% {
-    transform: rotate(90deg);
-  }
-  10% {
-    opacity: 0;
-  }
-  35% {
-    transform: rotate(0deg);
-  }
-  55% {
-    opacity: 1;
-  }
-  65% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-
-  100% {
-    transform: rotate(-90deg);
-  }
-}
-
-.v--modal-overlay .v--modal-box {
-  overflow: visible !important;
-  position: relative !important;
-  background-color: #acb4c5;
-  box-shadow: 0px 8px 12px rgba(58, 68, 41, 0.2),
-    0px 12px 20px rgba(0, 0, 0, 0.1), 0px 0px 17px rgba(0, 0, 0, 0.14) !important;
-  border-color: white;
-  border-style: solid;
-  border-width: 5px;
-}
-
-.v--modal-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 0px;
-  /* width: 100vw;
-  height: 100vh; */
-  border-style: none;
-}
-.scale-enter-active,
-.scale-leave-active {
-  /* transition: all 0.5s; */
-}
-.scale-enter,
-.scale-leave-active {
-  opacity: 0;
-  /* transform: scale(0.3) translateY(24px); */
-}
 @media screen and (max-width: 570px) {
   .v-tab {
     padding-right: 2px;
@@ -421,20 +326,24 @@ input:focus {
     bottom: 8px !important;
   }
 }
-@media screen and (min-width: 432px) and (max-width: 750px) {
+@media screen and (max-width: 750px) {
   footer {
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
   }
 }
 @media only screen and (max-width: 750px) {
-  a.registerBadge img {
-    height: 160px !important;
-    width: 160px;
+  .alertsBox {
+    right: 0px;
+    transform: translateX(0px);
   }
-  .registerBadge::after,
-  .registerBadge::before {
-    height: 115px;
-    width: 115px;
+  .timelineContainer {
+    margin-left: -0.5rem;
+  }
+  .alert {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
   }
   #app {
     width: 100vw;
@@ -462,15 +371,6 @@ input:focus {
   }
 }
 @media only screen and (max-width: 450px) {
-  a.registerBadge img {
-    height: 140px !important;
-    width: 140px;
-  }
-  .registerBadge::after,
-  .registerBadge::before {
-    height: 110px;
-    width: 110px;
-  }
   #overviewNoticeWrapper {
     padding-top: 1rem;
     padding-left: 1.3rem;
