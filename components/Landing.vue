@@ -1561,6 +1561,7 @@ input::placeholder {
     margin-top: unset;
   }
 }
+
 @media screen and (max-width: 730px) {
   #landing {
     background-size: cover;
@@ -1577,6 +1578,7 @@ input::placeholder {
     top: 1em;
   }
 }
+
 @media screen and (max-width: 640px) {
   .siteTitle {
     top: 1em;
@@ -1596,6 +1598,7 @@ input::placeholder {
     bottom: 25px;
   }
 }
+
 @media screen and (max-width: 600px) {
   .siteTitle {
     top: 1em;
@@ -1612,6 +1615,7 @@ input::placeholder {
     right: 7%;
   }
 }
+
 @media screen and (max-width: 559px) {
   #infoForTheUser {
     width: 100%;
@@ -1626,6 +1630,7 @@ input::placeholder {
     font-size: 5.2em;
   }
 }
+
 @media screen and (max-width: 550px) {
   .siteTitle {
     line-height: 80%;
@@ -1641,6 +1646,7 @@ input::placeholder {
     width: 37%;
   }
 }
+
 @media screen and (min-width: 250px) and (max-width: 320px) {
   #inputEverything {
     font-size: 100%;
@@ -1667,6 +1673,10 @@ input::placeholder {
     background-position: 50% 5%;
     background-size: 100%;
   }
+  #app,
+  html {
+    overflow-y: hidden;
+  }
   #siteTitleWrapper {
     padding-bottom: 0em;
   }
@@ -1678,6 +1688,11 @@ input::placeholder {
   .ap-dropdown-menu {
     width: 85vw !important;
     left: 0em !important;
+  }
+  .ap-input,
+  input:focus,
+  #address-input:focus {
+    font-size: 1em !important;
   }
   .ap-input-icon svg {
     right: 6vw;
@@ -1704,6 +1719,7 @@ input::placeholder {
     left: 28px;
   }
 }
+
 /* for iPhone 5 below for widths on iPhone 5-X (not "plus" sizes)*/
 @media screen and (max-width: 413px) {
   #informationWrapper {
@@ -1742,6 +1758,7 @@ input::placeholder {
     padding: 5px 25px 0px;
   }
 }
+
 @media screen and (max-width: 320px) {
   .siteTitle {
     font-size: 3.3em;
@@ -1784,6 +1801,7 @@ input::placeholder {
     margin-top: 4.8em;
   }
 }
+
 @media screen and (max-width: 411px) and (max-height: 731px) {
   .siteTitle {
     line-height: 75%;
@@ -1805,17 +1823,20 @@ input::placeholder {
     padding-bottom: 0;
   }
 }
+
 @media screen and (min-width: 450px) and (max-width: 750px) {
   .siteTitle {
     padding-left: 12.5vw;
   }
 }
+
 @media screen and (max-width: 692px) {
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
 /* iPhone X */
 @media screen and (max-width: 376px) and (min-height: 811px) {
   .siteTitle {
@@ -1834,6 +1855,7 @@ input::placeholder {
     font-size: 1.45em;
   }
 }
+
 /* below is for Pixel 2 */
 @media screen and (max-width: 412px) and (min-height: 822px) {
   .siteTitle {
@@ -1853,6 +1875,7 @@ input::placeholder {
     font-size: 1.45em;
   }
 }
+
 /* below for iPhone 6/7/8 plus  */
 @media screen and (min-width: 413px) and (max-width: 432px) {
   .ap-input-icon.ap-icon-pin {
@@ -1868,12 +1891,14 @@ input::placeholder {
     right: 7vw;
   }
 }
+
 @media screen and (min-width: 430) and (max-width: 750px) {
   .ap-input-icon {
     right: calc(2vw - 3vw * 0.9) !important;
     left: unset;
   }
 }
+
 @media screen and (min-width: 418px) and (max-width: 515px) {
   .siteTitle {
     padding-left: 10vw !important;
