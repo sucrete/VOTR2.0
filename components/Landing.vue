@@ -1656,48 +1656,6 @@ input::placeholder {
     top: 1rem;
   }
 }
-/* for iPhone 5 below for widths on iPhone 5-X (not "plus" sizes)*/
-@media screen and (max-width: 413px) {
-  #informationWrapper {
-    height: 27em;
-  }
-  .ap-dropdown-menu {
-    width: 80vw !important;
-  }
-  .ap-input-icon.ap-icon-clear {
-    right: -10px !important;
-  }
-  .ap-input-icon.ap-icon-pin {
-    right: -13px;
-  }
-  #USVoteHeader,
-  #infoForTheUser {
-    font-size: 1.2em;
-  }
-  #USVoteHeader {
-    padding: 0px 25px 0px;
-  }
-  #infoForTheUser {
-    padding: 5px 25px 0px;
-  }
-  #landing {
-    background-image: unset;
-  }
-}
-.siteTitle {
-  line-height: 70%;
-}
-#inputEverything {
-  margin-bottom: 0.7em;
-}
-#siteTitleWrapper {
-  top: unset;
-  padding-bottom: 0.2em;
-}
-
-.v-application--wrap {
-  min-height: unset;
-}
 
 /* below for screens widths on iPhone 5-8 */
 @media screen and (max-width: 455px) {
@@ -1744,6 +1702,44 @@ input::placeholder {
     left: 28px;
   }
 }
+/* for iPhone 5 below for widths on iPhone 5-X (not "plus" sizes)*/
+@media screen and (max-width: 413px) {
+  #informationWrapper {
+    height: 22.5em;
+    margin-top: 0;
+  }
+  .siteTitle {
+    font-size: 3.9em;
+    padding-left: 9vw;
+    line-height: 75%;
+    letter-spacing: -0.001em;
+  }
+  .fordFan {
+    width: 38%;
+    top: 9%;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 0.8em;
+  }
+  .ap-input-icon.ap-icon-clear {
+    right: -10px !important;
+  }
+  .ap-input-icon.ap-icon-pin {
+    right: -13px;
+  }
+  .USVoteBadge {
+    width: 100px;
+    right: unset;
+    left: 20px;
+    bottom: 20px;
+  }
+  #infoForTheUser {
+    font-size: 1.1em;
+  }
+  #infoForTheUser {
+    padding: 5px 25px 0px;
+  }
+}
 @media screen and (min-width: 315px) and (max-width: 374px) {
   .logoBlock {
     top: 1.3rem;
@@ -1779,7 +1775,24 @@ input::placeholder {
     -moz-osx-font-smoothing: grayscale;
   }
 }
-
+/* below is for iPhone X */
+@media screen and (max-width: 376px) and (min-height: 811px) {
+  .siteTitle {
+    top: 1.2em;
+  }
+  .fordFan {
+    top: 18%;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 0px;
+  }
+  #informationWrapper {
+    height: 29em;
+  }
+  #infoForTheUser {
+    font-size: 1.45em;
+  }
+}
 /* below for iPhone 6/7/8 plus  */
 @media screen and (min-width: 413px) and (max-width: 432px) {
   .ap-input-icon.ap-icon-pin {
