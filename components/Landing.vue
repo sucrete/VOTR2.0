@@ -1671,7 +1671,7 @@ input::placeholder {
     padding-bottom: 0em;
   }
   #informationWrapper {
-    height: 24em;
+    height: 25em;
     margin-top: -0.5em;
   }
   #informationWrapper,
@@ -1685,7 +1685,7 @@ input::placeholder {
   .siteTitle {
     padding-left: 7.5vw;
     font-size: 4.5em;
-    line-height: 78%;
+    line-height: 70%;
     font-weight: 600;
     top: 0.9em;
     letter-spacing: -0.02em;
@@ -1742,13 +1742,40 @@ input::placeholder {
     padding: 5px 25px 0px;
   }
 }
-@media screen and (min-width: 315px) and (max-width: 374px) {
-  .logoBlock {
-    top: 1.3rem;
-    left: -1px;
-  }
+@media screen and (max-width: 320px) {
   .siteTitle {
-    font-size: 2.9em !important;
+    font-size: 3.3em;
+    line-height: 60%;
+    font-weight: 600;
+    top: 1.1em;
+  }
+  #landing {
+    background-position-y: -4%;
+  }
+  #address-input {
+    font-size: 0.7em;
+  }
+  .ap-input,
+  input:focus,
+  #address-input:focus {
+    font-size: 0.7em !important;
+  }
+  .ap-suggestion {
+    font-size: 0.7em;
+  }
+  .ap-input-icon svg,
+  .ap-suggestion-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  #informationWrapper {
+    height: 19em;
+  }
+  #infoForTheUser {
+    font-size: 0.9em;
+  }
+  .USVoteBadge {
+    width: 80px;
   }
 }
 
@@ -1757,18 +1784,30 @@ input::placeholder {
     margin-top: 4.8em;
   }
 }
-
-@media screen and (min-width: 750px) {
-  #usVotersIcon {
-    right: 8em;
+@media screen and (max-width: 411px) and (max-height: 731px) {
+  .siteTitle {
+    line-height: 75%;
+    font-size: 4.2em;
+    top: 1em;
+  }
+  .ap-input,
+  input:focus,
+  #address-input:focus {
+    font-size: 1em !important;
+  }
+  #infoForTheUser {
+    font-size: 1.2em;
+  }
+  #informationWrapper {
+    height: 24em;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 0;
   }
 }
 @media screen and (min-width: 450px) and (max-width: 750px) {
   .siteTitle {
     padding-left: 12.5vw;
-  }
-  #usVotersIcon {
-    right: 15vw;
   }
 }
 @media screen and (max-width: 692px) {
