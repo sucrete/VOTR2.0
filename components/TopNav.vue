@@ -93,9 +93,11 @@ export default {
 <style>
 .flagLogo {
   height: 55%;
-  top: 3px;
+  top: 50%;
   left: 2px;
-  position: relative;
+  transform: translateY(-50%);
+  position: absolute;
+  display: none;
 }
 .alertsBox {
   position: absolute;
@@ -314,8 +316,8 @@ h2 {
 
 @media screen and (max-width: 570px) {
   .v-tab {
-    padding-right: 2px;
-    padding-left: 2px;
+    padding-right: 2px !important;
+    padding-left: 2px !important;
   }
   .v-tabs {
     margin-right: 5px !important;
@@ -398,6 +400,14 @@ h2 {
     border-top-right-radius: 0px;
   }
 }
+@media only screen and (max-width: 500px) {
+  .logoType {
+    display: none;
+  }
+  .flagLogo {
+    display: inline;
+  }
+}
 @media only screen and (max-width: 330px) {
   .v-tabs__item {
     font-size: 0.9em;
@@ -412,9 +422,6 @@ h2 {
   }
 }
 @media only screen and (max-width: 470px) {
-  a.logo span:not(.THE) {
-    display: none;
-  }
   a.logo {
     font-weight: 550;
     font-size: 1.5rem;
