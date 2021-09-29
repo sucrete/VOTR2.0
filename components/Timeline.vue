@@ -511,7 +511,6 @@ export default {
 @media screen and (max-width: 450px) {
   .timelineContainer {
     padding-left: 0;
-    margin-left: -0.4em;
   }
   .v-list-item__title,
   .v-list-item__subtitle {
@@ -533,7 +532,7 @@ export default {
   text-align: right;
 }
 .timelineContainer {
-  padding-top: 0px;
+  padding-top: 0px !important;
 }
 footer {
   display: block;
@@ -877,6 +876,7 @@ ul > li {
   /* works 600px and smaller including on the iPhone 5,6,7, and X */
   .timelineContainer {
     padding-right: calc(20vw / 3.2);
+    margin-left: -0.8rem;
   }
 }
 @media only screen and (max-width: 375px) {
