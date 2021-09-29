@@ -1619,7 +1619,7 @@ input::placeholder {
     line-height: 120%;
   }
   .USVoteBadge {
-    width: 125px;
+    width: 135px;
   }
   .siteTitle {
     top: 1em;
@@ -1627,8 +1627,18 @@ input::placeholder {
   }
 }
 @media screen and (max-width: 550px) {
+  .siteTitle {
+    line-height: 80%;
+    top: 1.1em;
+  }
   #informationWrapper {
-    height: 26em;
+    height: 27em;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 1.3em;
+  }
+  .fordFan {
+    width: 37%;
   }
 }
 @media screen and (min-width: 250px) and (max-width: 320px) {
@@ -1639,7 +1649,6 @@ input::placeholder {
     padding-left: 9px;
     position: absolute;
   }
-
   .logoBlock {
     width: 14.6rem;
     height: 11rem;
@@ -1648,15 +1657,12 @@ input::placeholder {
   }
 }
 /* for iPhone 5 below for widths on iPhone 5-X (not "plus" sizes)*/
-@media screen and (min-width: 365px) and (max-width: 413px) {
-  #generous {
-    display: none;
-  }
+@media screen and (max-width: 413px) {
   #informationWrapper {
     height: 27em;
   }
   .ap-dropdown-menu {
-    width: 88vw !important;
+    width: 80vw !important;
   }
   .ap-input-icon.ap-icon-clear {
     right: -10px !important;
@@ -1677,55 +1683,65 @@ input::placeholder {
   #landing {
     background-image: unset;
   }
-  #voteWithThis {
-    width: 95px;
-    right: 3.4em;
-    bottom: 17.5em;
-  }
-  #USSign {
-    right: 3.5em;
-    bottom: -16em;
-    width: 50px;
-  }
-  .siteTitle {
-    line-height: 70%;
-  }
-  #inputEverything {
-    margin-bottom: 0.7em;
-  }
-  #usvLink::before {
-    width: 59.7%;
-    bottom: -2px;
-  }
-  #siteTitleWrapper {
-    top: unset;
-    padding-bottom: 0.2em;
-  }
 }
+.siteTitle {
+  line-height: 70%;
+}
+#inputEverything {
+  margin-bottom: 0.7em;
+}
+#siteTitleWrapper {
+  top: unset;
+  padding-bottom: 0.2em;
+}
+
 .v-application--wrap {
   min-height: unset;
 }
-@media screen and (max-width: 450px) {
-  #infoAndStarsWrapper,
-  .buttonWrapper,
-  .spin3d > span {
-    width: unset;
-  }
-}
+
 /* below for screens widths on iPhone 5-8 */
-@media screen and (max-width: 375px) {
-  #app,
-  body,
+@media screen and (max-width: 455px) {
   #landing {
-    width: 100vw;
-    height: 100vw;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+    outline: 0px solid transparent;
+    background-position: 50% 5%;
+    background-size: 100%;
+  }
+  #siteTitleWrapper {
+    padding-bottom: 0em;
+  }
+  #informationWrapper {
+    height: 24em;
+    margin-top: -0.5em;
+  }
+  #informationWrapper,
+  .ap-dropdown-menu {
+    width: 85vw !important;
+    left: 0em !important;
   }
   .ap-input-icon svg {
     right: 6vw;
   }
   .siteTitle {
-    font-size: 3.5em;
-    padding-left: 0.6em;
+    padding-left: 7vw;
+    font-size: 4.5em;
+    line-height: 78%;
+    font-weight: 600;
+    top: 0.9em;
+  }
+  .fordFan {
+    width: 37%;
+    top: 12%;
+  }
+  #infoForTheUser {
+    font-size: 1.2em;
+  }
+  .USVoteBadge {
+    width: 100px;
+    right: unset;
+    left: 28px;
   }
 }
 @media screen and (min-width: 315px) and (max-width: 374px) {
@@ -1766,21 +1782,11 @@ input::placeholder {
 
 /* below for iPhone 6/7/8 plus  */
 @media screen and (min-width: 413px) and (max-width: 432px) {
-  .siteTitle {
-    padding-left: 8.5vw !important;
-    font-size: 4.7em;
-  }
   .ap-input-icon.ap-icon-pin {
     right: -20px;
   }
   .ap-input-icon.ap-icon-clear {
     right: -17px;
-  }
-  #generous {
-    display: none;
-  }
-  #siteTitleWrapper {
-    top: 20px;
   }
   .ap-dataset-places .ap-suggestions .ap-suggestion.ap-cursor {
     padding-left: 0.8vw;
@@ -1788,31 +1794,6 @@ input::placeholder {
   .ap-input-icon svg {
     right: 7vw;
   }
-  #usvLink::before {
-    width: 57%;
-  }
-  #informationWrapper {
-    height: 28em;
-  }
-  #voteWithThis {
-    width: 95px;
-    right: 3.4em;
-    bottom: 36em;
-  }
-  #inputEverything {
-    margin-bottom: 1em !important;
-  }
-  #USVoteHeader,
-  #infoForTheUser {
-    margin: 0 auto;
-    font-size: 1.6em;
-  }
-  .ap-dropdown-menu {
-    width: 88vw !important;
-    left: 0em !important;
-  }
-}
-@media screen and (min-width: 319px) and (max-width: 415px) {
 }
 @media screen and (min-width: 430) and (max-width: 750px) {
   .ap-input-icon {
@@ -1821,9 +1802,6 @@ input::placeholder {
   }
 }
 @media screen and (min-width: 418px) and (max-width: 515px) {
-  #infoAndStarsWrapper {
-    padding-left: 6.3vw !important;
-  }
   #USVoteHeader {
     padding-top: 4em;
     padding-left: 9vw;
