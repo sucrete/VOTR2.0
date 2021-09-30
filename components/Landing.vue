@@ -1492,10 +1492,12 @@ input:focus::-webkit-input-placeholder {
   background: transparent;
   outline: none;
 }
-.ap-icon-clear {
-}
 .theme--dark.v-application {
   color: unset;
+}
+
+.v-application--wrap {
+  min-height: unset !important;
 }
 .ap-dropdown-menu {
   margin-top: 0px;
@@ -1886,6 +1888,49 @@ input::placeholder {
 @media screen and (min-width: 418px) and (max-width: 515px) {
   .siteTitle {
     padding-left: 10vw !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .siteTitle {
+    font-size: 3.3em;
+    line-height: 60%;
+    font-weight: 600;
+    top: 1.1em;
+  }
+  .v-tab {
+    font-size: 0.7rem !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  #landing {
+    background-position-y: -4%;
+  }
+  #address-input {
+    font-size: 0.7em;
+  }
+  .ap-input,
+  input:focus,
+  #address-input:focus {
+    font-size: 0.7em !important;
+  }
+  .ap-suggestion {
+    font-size: 0.7em;
+  }
+  .ap-input-icon svg,
+  .ap-suggestion-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  #informationWrapper {
+    height: 19em;
+    top: 0.7em;
+  }
+  #infoForTheUser {
+    font-size: 0.9em;
+  }
+  .USVoteBadge {
+    width: 80px;
   }
 }
 </style>
