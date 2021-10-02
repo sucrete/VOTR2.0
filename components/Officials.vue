@@ -58,13 +58,13 @@
                       </div>
                       <v-spacer></v-spacer>
                       <v-btn
-                        class="infoButton mr-1"
                         v-if="
                           rep.phone ||
                           rep.addressLine1 ||
                           rep.addressLine2 ||
                           rep.channels[0]
                         "
+                        class="infoButton mr-1"
                         icon
                         @click="rep.show = !rep.show"
                       >
@@ -83,8 +83,8 @@
                       "
                     >
                       <v-card-text
-                        class="text-xs-left repInfo"
                         v-show="rep.show"
+                        class="text-xs-left repInfo"
                       >
                         {{ rep.addressLine0 }} <br />
                         <div v-if="rep.addressLine1">
@@ -707,12 +707,13 @@ export default {
       },
       divisionKeys: [],
       divisionsAndOfficials: [],
-      phoneIconURL: 'https://i.imgur.com/kXKmZrE.png',
-      linkIconURL: 'https://i.imgur.com/7O903TX.png',
-      locationIconURL: 'https://i.imgur.com/6rxdk4T.png',
       show: false,
       show2: false,
     }
+  },
+  beforeMount() {
+    this.importData()
+    this.dataShaker()
   },
   methods: {
     toTitleCase(str) {
@@ -829,10 +830,6 @@ export default {
       // console.log('📛📛📛 ➖➖➖➖➖➖➖➖ all rep info ➖➖➖➖➖➖➖➖  📛📛📛' + '\n' + JSON.stringify(this.divisionsAndOfficials, null, '\t'))
     },
   },
-  beforeMount() {
-    this.importData()
-    this.dataShaker()
-  },
 }
 </script>
 
@@ -903,10 +900,6 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-.layout.row {
-  /* height: 160px; */
-}
 .sectionHeader:first-of-type {
   margin-top: 1em;
 }
@@ -937,10 +930,6 @@ h2 {
   }
 }
 @media only screen and (min-width: 600px) {
-  .v-responsive.v-image {
-    /* height: 115px;
-    width: 115px; */
-  }
   .v-btn.v-btn--icon.theme--light {
     margin-right: 0.1em;
   }
@@ -954,33 +943,7 @@ h2 {
     font-size: 80%;
   }
 }
-@media only screen and (min-width: 700px) and (max-width: 749px) {
-  .v-responsive.v-image {
-    right: -0.7em;
-  }
-}
-@media screen and (min-width: 675px) and (max-width: 700px) {
-  .v-responsive {
-    /* top: -.4em; */
-  }
-}
-@media screen and (min-width: 635px) and (max-width: 674px) {
-  .v-responsive {
-    /* top: -.6em; */
-  }
-}
-@media screen and (min-width: 601px) and (max-width: 634px) {
-  .v-responsive {
-    /* top: -.9em; */
-  }
-}
 @media only screen and (max-width: 599px) {
-  .v-responsive.v-image {
-    top: 0.3em;
-    left: 0.5em;
-    height: 155px;
-    width: 155px;
-  }
   .repTopText {
     position: relative;
     top: 0.5em;
@@ -1017,11 +980,6 @@ h2 {
     padding-left: 1em;
   }
 }
-@media screen and (min-width: 350px) and (max-width: 380px) {
-  .v-responsive.v-image {
-    left: -0.6em !important;
-  }
-}
 @media only screen and (max-width: 375px) {
   .container.grid-list-lg .layout .flex.cardWrapperFlex {
     margin: 0 auto;
@@ -1038,15 +996,8 @@ h2 {
     margin-top: 0px !important;
     height: 55px;
   }
-  .v-responsive.v-image {
-    height: 125px;
-    width: 125px;
-  }
 }
 @media screen and (min-width: 400px) and (max-width: 432) {
-  .v-responsive.v-image {
-    left: -0.2em !important;
-  }
   .repTopText {
     top: 0em !important;
   }
@@ -1068,12 +1019,6 @@ h2 {
   .v-card__actions {
     margin-top: 0px !important;
     height: 55px;
-  }
-}
-@media screen and (min-width: 350px) and (max-width: 500px) {
-  .v-responsive.v-image {
-    height: calc(155px - 5vw);
-    width: calc(155px - 5vw);
   }
 }
 </style>
