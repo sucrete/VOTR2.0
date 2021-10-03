@@ -44,7 +44,7 @@ footer {
 }
 html {
   background: rgb(245, 244, 243) url('../static/stripes.svg') no-repeat center
-    center fixed;
+    fixed;
   min-height: 100vh;
   box-sizing: border-box;
   background-size: cover;
