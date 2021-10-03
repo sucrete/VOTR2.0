@@ -264,7 +264,7 @@ html {
   font-weight: 450;
 }
 #overviewNoticeWrapper {
-  background-color: #f7f7f7;
+  background-color: #fcfcfc;
   background-size: cover;
   background-image: url('../static/07.png');
   font-family: 'Roboto', sans-serif;
@@ -274,6 +274,7 @@ html {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 0em;
+  overflow: hidden;
 }
 #overviewMarquee {
   font-size: 200%;

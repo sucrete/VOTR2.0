@@ -3,6 +3,10 @@
     <div id="overviewNoticeWrapper">
       <div id="overviewMarquee"></div>
       <div id="overviewNotice">Timeline of elections in your region.</div>
+      <!--<img
+        class="womanBehindCurtain"
+        src="womanVotingBehindCurtainCroppedStock.png"
+      />-->
     </div>
     <div class="dummyInfoThingy elevation-19" v-if="useDummyInfo">
       There are no upcoming elections for your region on record. Please, revisit
@@ -505,6 +509,12 @@ export default {
 </script>
 
 <style >
+.womanBehindCurtain {
+  position: absolute;
+  width: 400px;
+  right: 10px;
+  bottom: -20px;
+}
 .v-timeline:before {
   height: 110%;
 }

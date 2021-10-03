@@ -5,6 +5,7 @@
       <div id="overviewNotice">
         Understand your eligibility and what you need to vote.
       </div>
+      <!--<img class="womanVoting" src="womanVotingCutOutStock.png" />-->
     </div>
     <v-tabs v-model="tab" class="knowledgeTabs" hide-slider centered>
       <v-tab :key="i">{{ i }}</v-tab>
@@ -1849,6 +1850,12 @@ export default {
 </script>
 
 <style>
+.womanVoting {
+  position: absolute;
+  width: 370px;
+  right: 10px;
+  bottom: -60px;
+}
 .headline {
   font-family: 'Roboto', sans-serif;
   font-weight: 500 !important;
